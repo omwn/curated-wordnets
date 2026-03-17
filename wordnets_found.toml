@@ -21,6 +21,7 @@ known_in_cygnet = true
 notes = "Primary / canonical open English wordnet. Formerly Princeton WordNet fork."
 confidence = "high"
 acl_ids = ["2019.gwc-1.31"]
+type = "standalone"
 
 
 [[wordnet]]
@@ -34,6 +35,7 @@ license = "CC BY 4.0"
 known_in_cygnet = false
 notes = "Extension of OEWN with proper names / named entities."
 confidence = "high"
+type = "extension"
 
 # ── ARABIC ───────────────────────────────────────────────────────────────────
 bib = '''
@@ -61,6 +63,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0 release. Originally from Arabic WordNet project."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -74,6 +77,7 @@ example_file = "https://github.com/Salah-Sal/arabic-wordnet-v4/blob/main/output/
 known_in_cygnet = false
 notes = "109,823 synsets translated from Open English WordNet. Unsure if GWA LMF compliant."
 confidence = "medium"
+type = "expand"
 bib = '''
 % HANDMADE: Arabic WordNet (AWN) — Elkateb et al. 2006 (LREC)
 @inproceedings{elkateb-etal-2006-arabic,
@@ -103,6 +107,7 @@ confidence = "high"
 
 # ── BULGARIAN ────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -120,6 +125,7 @@ confidence = "high"
 
 # ── CATALAN ──────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -137,6 +143,7 @@ confidence = "high"
 
 # ── CHINESE (MANDARIN) ───────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -152,6 +159,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["W13-4302", "2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -165,6 +173,7 @@ example_file = "https://github.com/bond-lab/cow/blob/master/docs/data/0.9/wn-dat
 known_in_cygnet = false
 notes = "Older COW data in OMW 1.0 tab format. May be superseded by omw-cmn."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Cornetto release; no ACL Anthology entry
 @inproceedings{vossen-cornetto-2013,
@@ -193,6 +202,7 @@ confidence = "high"
 
 # ── DANISH ───────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -208,6 +218,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -225,6 +236,7 @@ confidence = "high"
 
 # ── GERMAN ───────────────────────────────────────────────────────────────────
 acl_ids = ["2021.gwc-1.31"]
+type = "standalone"
 bib = '''
 @inproceedings{pedersen-dannet-2009,
   title     = {{DanNet} -- the Challenge of Compiling a {WordNet} for Danish by Reusing a Monolingual Dictionary},
@@ -251,6 +263,7 @@ known_in_cygnet = true
 notes = "100 stars. Active open German wordnet."
 confidence = "high"
 acl_ids = ["2021.gwc-1.22"]
+type = "merge"
 
 
 [[wordnet]]
@@ -269,6 +282,7 @@ confidence = "high"
 
 # ── GREEK ────────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -286,6 +300,7 @@ confidence = "high"
 
 # ── SPANISH ──────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -301,6 +316,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. From MCR."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -319,6 +335,7 @@ confidence = "high"
 
 # ── BASQUE ───────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -336,6 +353,7 @@ confidence = "high"
 
 # ── FINNISH ──────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -353,6 +371,7 @@ confidence = "high"
 
 # ── FRENCH ───────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 bib = '''
 % HANDMADE: FinnWordNet — from XML citation field
 @article{linden-carlson-2010-finnwordnet,
@@ -380,6 +399,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. From WOLF."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -398,6 +418,7 @@ confidence = "high"
 
 # ── GALICIAN ─────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -413,6 +434,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. From MCR."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -429,6 +451,7 @@ confidence = "high"
 
 # ── HEBREW ───────────────────────────────────────────────────────────────────
 acl_ids = ["2016.gwc-1.12"]
+type = "expand"
 bib = '''
 % HANDMADE: GalNet — from XML citation field (updated to LRE 2018 paper)
 @article{gomez-guinovart-solla-portela-2018-galnet,
@@ -459,6 +482,7 @@ confidence = "high"
 
 # ── CROATIAN ─────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -476,6 +500,7 @@ confidence = "high"
 
 # ── ICELANDIC ────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -493,6 +518,7 @@ confidence = "high"
 
 # ── ITALIAN ──────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -508,6 +534,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. From MultiWordNet."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -523,6 +550,7 @@ known_in_cygnet = true
 notes = "ItalWordNet packaged via omw-data."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 bib = '''
 % HANDMADE: OMW IndoWordNet
 @inproceedings{bhattacharyya-indown-2010,
@@ -546,6 +574,8 @@ example_file = "https://github.com/valeq/IWN-OMW/blob/main/data/LMF-XML/IWN-OMW_
 known_in_cygnet = false
 notes = "ItalWordNet in GWA LMF format. May be same source as omw-iwn."
 confidence = "high"
+type = "expand"
+supersedes = ["omw-iwn"]
 
 # ── JAPANESE ─────────────────────────────────────────────────────────────────
 bib = '''
@@ -574,6 +604,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -590,6 +621,7 @@ known_in_cygnet = true
 notes = "TUFS basic vocabulary."
 confidence = "high"
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -605,6 +637,7 @@ confidence = "medium"
 
 # ── MALAY ────────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.22"]
+type = "expand"
 
 
 [[wordnet]]
@@ -620,6 +653,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. Part of WordNet Bahasa."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -638,6 +672,7 @@ confidence = "high"
 
 # ── INDONESIAN ───────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -653,6 +688,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0. Part of WordNet Bahasa."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -671,6 +707,7 @@ confidence = "high"
 
 # ── KURDISH ──────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -687,6 +724,7 @@ confidence = "high"
 
 # ── LITHUANIAN ───────────────────────────────────────────────────────────────
 acl_ids = ["W14-0101"]
+type = "expand"
 bib = '''
 % HANDMADE: KurdNet (Kurdish WordNet)
 @inproceedings{aliabadi-kurdnet-2014,
@@ -714,6 +752,7 @@ confidence = "high"
 
 # ── NORWEGIAN ────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -729,6 +768,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 bib = '''
 % HANDMADE: NorNet / OMW Norwegian Bokmål — from XML citation field
 @inproceedings{fjeld-nygaard-2009-nornet,
@@ -755,6 +795,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 bib = '''
 % HANDMADE: NorNet / OMW Norwegian Nynorsk — from XML citation field
 @inproceedings{fjeld-nygaard-2009-nornet,
@@ -780,6 +821,7 @@ license = "CC BY 4.0"
 known_in_cygnet = false
 notes = "v1.1.2. Standalone Norwegian Bokmål wordnet (~305K synsets incl. 250K proper names, ~55K common concepts). DanNet-derived tabular format (synsets.tab, words.tab, relations.tab). No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nb."
 confidence = "high"
+type = "standalone"
 bib = '''
 % HANDMADE: Norsk Ordvev – Bokmål (National Library of Norway)
 @misc{nb-norsk-ordvev-nob-2024,
@@ -804,6 +846,7 @@ license = "CC BY 4.0"
 known_in_cygnet = false
 notes = "v1.1.0. Standalone Norwegian Nynorsk wordnet (~305K synsets incl. 250K proper names). DanNet-derived tabular format. No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nn."
 confidence = "high"
+type = "standalone"
 
 # ── DUTCH ────────────────────────────────────────────────────────────────────
 bib = '''
@@ -831,6 +874,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -846,6 +890,7 @@ known_in_cygnet = false
 notes = "69 stars. The available XML uses an old proprietary ODWN-ORBN format (not GWA LMF): missing dc namespace, uses non-standard attributes (owner, languageCoding). Needs custom conversion."
 confidence = "high"
 acl_ids = ["2016.gwc-1.43"]
+type = "merge"
 bib = '''
 % HANDMADE: ODWN main reference
 @inproceedings{postma-odwn-2016,
@@ -875,6 +920,8 @@ confidence = "high"
 
 # ── POLISH ───────────────────────────────────────────────────────────────────
 acl_ids = ["2016.gwc-1.43"]
+type = "merge"
+supersedes = ["odwn"]
 bib = '''
 % HANDMADE: ODWN v1.3 Zenodo release
 @misc{postma-odwn-lmf-2023,
@@ -901,6 +948,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -917,6 +965,7 @@ confidence = "high"
 
 # ── PORTUGUESE ───────────────────────────────────────────────────────────────
 acl_ids = ["2019.gwc-1.45"]
+type = "standalone"
 bib = '''
 % HANDMADE: plWordNet main reference
 @inproceedings{maziarz-plwordnet-2012,
@@ -943,6 +992,7 @@ known_in_cygnet = true
 notes = "160 stars. Open Portuguese wordnet. Data in RDF/TTL; also released as GWA LMF in tar.gz."
 confidence = "high"
 acl_ids = ["W14-0153"]
+type = "expand"
 bib = '''
 % HANDMADE: OpenWordNet-PT
 @inproceedings{de-paiva-own-pt-2012,
@@ -972,6 +1022,7 @@ confidence = "high"
 
 # ── ROMANIAN ─────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -987,6 +1038,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1000,6 +1052,7 @@ example_file = "https://raw.githubusercontent.com/racai-ai/RoWordNet/master/xml/
 known_in_cygnet = false
 notes = "Romanian WordNet XML (custom ROWN format). visdic2lmf.py can convert to GWA LMF. Python API at dumitrescustefan/RoWordNet."
 confidence = "high"
+type = "standalone"
 
 # ── SLOVAK ───────────────────────────────────────────────────────────────────
 bib = '''
@@ -1031,6 +1084,7 @@ confidence = "high"
 
 # ── SLOVENIAN ────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1048,6 +1102,7 @@ confidence = "high"
 
 # ── ALBANIAN ─────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1065,6 +1120,7 @@ confidence = "high"
 
 # ── SWEDISH ──────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1082,6 +1138,7 @@ confidence = "high"
 
 # ── THAI ─────────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1097,6 +1154,7 @@ known_in_cygnet = true
 notes = "Part of OMW v2.0."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1115,6 +1173,7 @@ confidence = "high"
 
 # ── LATVIAN ──────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1132,6 +1191,7 @@ confidence = "high"
 
 # ── ASSAMESE ─────────────────────────────────────────────────────────────────
 acl_ids = ["2023.gwc-1.23"]
+type = "standalone"
 bib = '''
 % HANDMADE: Tēzaurs (Latvian WordNet)
 @inproceedings{spektors-tezaurs-2014,
@@ -1160,6 +1220,7 @@ confidence = "high"
 
 # ── KHMER ────────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1178,6 +1239,7 @@ confidence = "high"
 
 # ── KOREAN ───────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1196,6 +1258,7 @@ confidence = "high"
 
 # ── LAO ──────────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1214,6 +1277,7 @@ confidence = "high"
 
 # ── MONGOLIAN ────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1232,6 +1296,7 @@ confidence = "high"
 
 # ── BURMESE / MYANMAR ────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1248,6 +1313,7 @@ known_in_cygnet = true
 notes = "TUFS basic vocabulary."
 confidence = "high"
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1262,6 +1328,7 @@ license = "CC BY 4.0"
 known_in_cygnet = false
 notes = "v0.1.3 in OMW 1.0 tab format. Cygnet mentions getting newer version. Also mirrored at omwn/mow."
 confidence = "high"
+type = "expand"
 
 # ── RUSSIAN ──────────────────────────────────────────────────────────────────
 bib = '''
@@ -1292,6 +1359,7 @@ confidence = "high"
 
 # ── FILIPINO / TAGALOG ───────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1310,6 +1378,7 @@ confidence = "high"
 
 # ── TURKISH ──────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1326,6 +1395,7 @@ known_in_cygnet = true
 notes = "TUFS basic vocabulary."
 confidence = "high"
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1342,6 +1412,7 @@ confidence = "high"
 
 # ── URDU ─────────────────────────────────────────────────────────────────────
 acl_ids = ["2021.gwc-1.19"]
+type = "standalone"
 bib = '''
 % HANDMADE: KeNet (Turkish WordNet by Starlang)
 @inproceedings{ozdemir-kenet-2020,
@@ -1371,6 +1442,7 @@ confidence = "high"
 
 # ── VIETNAMESE ───────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1387,6 +1459,7 @@ known_in_cygnet = true
 notes = "TUFS basic vocabulary."
 confidence = "high"
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1400,6 +1473,7 @@ example_file = "https://github.com/zeloru/vietnamese-wordnet/blob/main/vi-wordne
 known_in_cygnet = false
 notes = "34 stars. Data in tar.xz; format inside unknown. Separate from TUFS."
 confidence = "medium"
+type = "expand"
 
 # ── CANTONESE ────────────────────────────────────────────────────────────────
 bib = '''
@@ -1429,6 +1503,7 @@ confidence = "high"
 
 # ── ABUI ─────────────────────────────────────────────────────────────────────
 acl_ids = ["2019.gwc-1.26"]
+type = "expand"
 bib = '''
 % HANDMADE: Cantonese WordNet
 @inproceedings{lamas-cantonese-2018,
@@ -1456,6 +1531,7 @@ confidence = "high"
 
 # ── OLD JAVANESE ─────────────────────────────────────────────────────────────
 acl_ids = ["2022.fieldmatters-1.7", "2023.gwc-1.38"]
+type = "expand"
 
 
 [[wordnet]]
@@ -1469,6 +1545,7 @@ example_file = "https://github.com/omwn/OJW/blob/master/wn-kaw.tab"
 known_in_cygnet = false
 notes = "OMW 1.0 tab format. kaw is ISO 639-3 for Old Javanese (Kawi)."
 confidence = "high"
+type = "expand"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ADDITIONAL WORDNETS FOUND — NOT IN CYGNET
@@ -1499,6 +1576,7 @@ license = "unknown"
 known_in_cygnet = false
 notes = "Work-in-progress Irish semantic network in LMF format. 12 stars."
 confidence = "medium"
+type = "expand"
 bib = '''
 % HANDMADE: Irish WordNet (Gramadán/Foclóir Gaeilge WordNet)
 @misc{wordnet-gaeilge,
@@ -1519,6 +1597,7 @@ example_file = "https://github.com/TommasoPetrolito/wn-data-gle.tab/blob/main/wn
 known_in_cygnet = false
 notes = "Conversion of wordnet-gaeilge to OMW 1.0 tab format for use with OMW."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Irish WordNet data
 @misc{wn-data-gle,
@@ -1539,6 +1618,7 @@ example_file = "https://github.com/jimregan/lemonGAWN/blob/master/gawn-lemon.ttl
 known_in_cygnet = false
 notes = "Irish WordNet in lemon (linked lexical data) format."
 confidence = "medium"
+type = "expand"
 
 # ── UZBEK ────────────────────────────────────────────────────────────────────
 bib = '''
@@ -1565,6 +1645,7 @@ confidence = "medium"
 
 # ── AFRIKAANS ────────────────────────────────────────────────────────────────
 acl_ids = ["2021.gwc-1.2"]
+type = "expand"
 bib = '''
 % HANDMADE: Uzbek WordNet
 @inproceedings{uz-wordnet-2020,
@@ -1589,6 +1670,7 @@ license = "CC BY-SA 4.0"
 known_in_cygnet = false
 notes = "Confirmed GWA LMF header. Inferred from English wordnet. passivlingo.com project."
 confidence = "high"
+type = "expand"
 
 # ── UKRAINIAN ────────────────────────────────────────────────────────────────
 bib = '''
@@ -1615,6 +1697,7 @@ confidence = "medium"
 
 # ── XHOSA ────────────────────────────────────────────────────────────────────
 acl_ids = ["2023.unlp-1.7"]
+type = "expand"
 bib = '''
 % HANDMADE: Ukrainian WordNet
 @inproceedings{shavrina-ua-wordnet-2023,
@@ -1639,6 +1722,7 @@ license = "GPL-3.0"
 known_in_cygnet = false
 notes = "Confirmed GWA LMF XML inside zip (xh_inferred_plus.xml). Same passivlingo.com project."
 confidence = "high"
+type = "expand"
 
 # ── ZULU ─────────────────────────────────────────────────────────────────────
 bib = '''
@@ -1662,6 +1746,7 @@ license = "GPL-3.0"
 known_in_cygnet = false
 notes = "Likely GWA LMF based on Xhosa sibling. Same passivlingo.com project."
 confidence = "medium"
+type = "expand"
 
 # ── SESOTHO ──────────────────────────────────────────────────────────────────
 bib = '''
@@ -1685,6 +1770,7 @@ license = "GPL-3.0"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
+type = "expand"
 
 # ── TSONGA ───────────────────────────────────────────────────────────────────
 bib = '''
@@ -1708,6 +1794,7 @@ license = "GPL-3.0"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
+type = "expand"
 
 # ── HUNGARIAN ────────────────────────────────────────────────────────────────
 bib = '''
@@ -1730,6 +1817,7 @@ example_file = "https://raw.githubusercontent.com/mmihaltz/huwn.rdf/master/huwn.
 known_in_cygnet = false
 notes = "Hungarian WordNet in RDF/Turtle (OntoLex/Lemon). Not GWA LMF — needs conversion."
 confidence = "high"
+type = "expand"
 
 # ── TAMIL ────────────────────────────────────────────────────────────────────
 bib = '''
@@ -1756,6 +1844,7 @@ license = "GPL-3.0"
 known_in_cygnet = false
 notes = "Repo exists but no data files visible in tree (only LICENSE + README). Data may be elsewhere."
 confidence = "low"
+type = "expand"
 
 # ── GF WORDNET (MULTILINGUAL) ────────────────────────────────────────────────
 bib = '''
@@ -1781,6 +1870,7 @@ license = "unknown"
 known_in_cygnet = false
 notes = "28 stars. Multilingual WordNet in GF format covering English, Swedish, Bulgarian as primary; bootstrapped for 100+ others including major European, Asian languages. Not GWA LMF."
 confidence = "high"
+type = "auto"
 
 # ── PUNJABI ──────────────────────────────────────────────────────────────────
 bib = '''
@@ -1809,6 +1899,7 @@ confidence = "medium"
 
 # ── SINHALA ──────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 bib = '''
 % HANDMADE: TUFS Brazilian Portuguese — part of TUFS collection
 @misc{bond-tufs-2009,
@@ -1833,6 +1924,7 @@ confidence = "low"
 
 # ── SERBIAN ──────────────────────────────────────────────────────────────────
 acl_ids = ["W14-0114"]
+type = "expand"
 bib = '''
 % HANDMADE: Sinhala WordNet
 @inproceedings{welgama-sinhala-2007,
@@ -1854,6 +1946,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "Repo focuses on sentiment analysis using Serbian WordNet; actual SrpWN data not hosted here. SrpWN exists at University of Belgrade."
 confidence = "low"
+type = "expand"
 
 # ── VIETNAMESE (additional) ──────────────────────────────────────────────────
 bib = '''
@@ -1878,6 +1971,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "Scripts for constructing Vietnamese wordnet lexicographer files. Not a data release."
 confidence = "low"
+type = "expand"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ADDITIONAL FINDS — TOPIC:WORDNET GITHUB SEARCH
@@ -1903,6 +1997,7 @@ known_in_cygnet = false
 notes = "17 stars. wn-data-mon.tsv in repo. May supersede tufs-mn. By Khuyagbaatar Batsuren."
 confidence = "high"
 acl_ids = ["2019.gwc-1.30"]
+type = "expand"
 bib = '''
 % HANDMADE: Mongolian WordNet
 @inproceedings{garad-monwn-2020,
@@ -1926,6 +2021,7 @@ license = "BSD-2-Clause"
 known_in_cygnet = false
 notes = "Welsh lexical database with synsets and lexico-semantic relations. JSON format; not GWA LMF."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Welsh WordNet (CorCenCC)
 @inproceedings{donnelly-wncy-2019,
@@ -1950,6 +2046,7 @@ example_file = "https://github.com/JosephSefara/AfricanWordNet/blob/main/data/in
 known_in_cygnet = false
 notes = "Implements WordNets for South African languages per GWC 2021 paper. Data in zip; languages unclear (likely Zulu, Xhosa, Sotho, Tswana). index.xml returned 404 when checked."
 confidence = "medium"
+type = "expand"
 bib = '''
 % HANDMADE: AfricanWordNet (South African)
 @misc{african-wn-sefara,
@@ -1971,6 +2068,7 @@ example_file = "https://github.com/CIRCSE/latinWordnet-revision/blob/main/lwn31.
 known_in_cygnet = false
 notes = "Revision of Minozzi's Latin WordNet mapped to Princeton WN 3.0. Also has CSV. CIRCSE = Catholic University Milan."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Latin WordNet (revision)
 @inproceedings{minozzi-latinwn-2010,
@@ -1994,6 +2092,7 @@ example_file = "https://github.com/latinwordnet/latinwordnet-archive/tree/main/j
 known_in_cygnet = false
 notes = "Archived export of Latin WordNet in JSON format. API at greekwordnet.chs.harvard.edu. Same project as greekwordnet org."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Latin WordNet (Bizzoni et al.)
 @inproceedings{bizzoni-latinwn-2014,
@@ -2017,6 +2116,7 @@ example_file = "https://github.com/cfiltnlp/IWN-En/blob/master/data/english-hind
 known_in_cygnet = false
 notes = "Alignment file linking English PWN synsets to 18 Indian language WordNets (Hindi, Assamese, Bengali, Bodo, Gujarati, Kannada, Kashmiri, Konkani, Malayalam, Manipuri, Marathi, Nepali, Odia, Punjabi, Sanskrit, Tamil, Telugu, Urdu). Not an OMW 1.0 tab file. bond-lab/indown-omw is a conversion tool that converts IndoWordNet TSV → GWA LMF; could be used here. From CFILT IIT Bombay."
 confidence = "high"
+type = "alignment"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CLARIN REPOSITORIES
@@ -2046,6 +2146,7 @@ license = "CC BY-SA"
 known_in_cygnet = false
 notes = "91,493 synsets. XML/LMF confirmed. Maintained by Tartu University. Also browsable at teksaurus.keeleressursid.ee. Multiple versions in CLARIN (2.1, kb73, 2.4.0)."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Estonian WordNet
 @inproceedings{klesment-estwn-2007,
@@ -2070,6 +2171,7 @@ license = "CC BY 4.0"
 known_in_cygnet = false
 notes = "79.66 MB ZIP with RDF encoded using OntoLex and SKOS. Published by Árni Magnússon Institute. Separate from OMW Icelandic. Not GWA LMF."
 confidence = "high"
+type = "standalone"
 bib = '''
 % HANDMADE: Icelandic WordWeb
 @misc{icelandic-wordweb,
@@ -2092,6 +2194,7 @@ license = "CC BY-SA 4.0"
 known_in_cygnet = false
 notes = "7,447 synsets, 22,420 lemmas. JSON archive on GitHub. Also at CLARIN ILC (Italy). API at greekwordnet.chs.harvard.edu. Collaboration: CHS Harvard, U Exeter, U Pavia."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Arabic-Greek Wordnet (AGWN, ILSP)
 @misc{agwn-clarin,
@@ -2114,6 +2217,7 @@ license = "CC BY-NC-SA 4.0"
 known_in_cygnet = false
 notes = "CLARIN ILC Italy. VisDic/DEBVisDic XML format. Separate from IWN-OMW GWA LMF version."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: ItalWordNet v2 (ELRA)
 @inproceedings{roventini-italwordnet-2003,
@@ -2138,6 +2242,7 @@ license = "CC BY-SA 4.0"
 known_in_cygnet = false
 notes = "9.48 MB ZIP. DEBVisDic XML (WN root). visdic2lmf.py converts to GWA LMF with --lang sl. Contains Princeton WN 3.0 + 70,000+ Slovenian literals. Separate from omw-sl."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: sloWNet (Slovenian WordNet)
 @inproceedings{fiser-slownet-2012,
@@ -2162,6 +2267,7 @@ license = "CC BY-SA 4.0"
 known_in_cygnet = false
 notes = "95,262 synsets, 164,904 literals. XML in ZIP. Derived from Open English WordNet via translation. Newer than sloWNet."
 confidence = "high"
+type = "standalone"
 bib = '''
 % HANDMADE: Open Slovene WordNet
 @misc{jevsnik-oswn-2023,
@@ -2186,6 +2292,7 @@ license = "CC BY 3.0"
 known_in_cygnet = false
 notes = "CC BY 3.0 + Princeton WN license. ZIP contains Princeton WNDB (dict/) and TSV relation files; no GWA LMF or OMW 1.0 tab. Needs custom conversion. Released 2012. Finnish coverage also in omw-fi (same source data)."
 confidence = "high"
+type = "standalone"
 bib = '''
 % HANDMADE: FinnWordNet 2.0 (Princeton WNDB release from Kielipankki/Language Bank of Finland)
 @article{linden-carlson-2010-finnwordnet,
@@ -2213,6 +2320,7 @@ known_in_cygnet = false
 notes = "World's largest wordnet. Custom plWordNet XML format (not GWA LMF). jmccrae/plwordnet-to-gw has a GWA LMF conversion. CLARIN-PL."
 confidence = "high"
 acl_ids = ["2025.gwc-1.19"]
+type = "standalone"
 bib = '''
 % HANDMADE: plWordNet 4.x
 @inproceedings{maziarz-plwordnet-2016,
@@ -2238,6 +2346,7 @@ license = "CC BY-NC-SA 3.0"
 known_in_cygnet = false
 notes = "23,094 word senses. VisDic XML (bare SYNSET stream, ISO-8859-2). visdic2lmf.py converts to GWA LMF with --encoding iso-8859-2. LINDAT/CLARIAH-CZ."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Czech WordNet
 @article{pala-smrz-czechwn-2004,
@@ -2263,6 +2372,7 @@ release_url = "http://hdl.handle.net/11356/1656"
 known_in_cygnet = false
 notes = "26,966 entries. LMF-XML confirmed. IXA NLP group, UPV/EHU. Aligned to Princeton WN 3.0. Separate from omw-eu (MCR-based)."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: Basque Wordnet (EusWordNet / MCR)
 @inproceedings{agirre-basque-1998,
@@ -2285,6 +2395,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "30,000+ synsets (v4.0). Via CLaDA-BG / ELDA. Not freely downloadable. Separate from omw-bg and BulNet."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: BTB-WN (Bulgarian WordNet)
 @inproceedings{koeva-btb-2010,
@@ -2307,6 +2418,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "85,000+ synsets. Bulgarian Academy of Sciences. ELDA distribution. Not freely downloadable."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE: BulNet (Bulgarian WordNet, ELRA)
 @inproceedings{koeva-bulnet-2002,
@@ -2330,6 +2442,7 @@ license = "CC BY-NC"
 known_in_cygnet = false
 notes = "CC BY-NC. Available via MetaShare/ELDA request. U Belgrade Faculty of Mathematics. Format unknown."
 confidence = "high"
+type = "expand"
 bib = '''
 % HANDMADE (see also ACL entry): Serbian WordNet
 @inproceedings{krstev-srpwn-2008,
@@ -2353,6 +2466,7 @@ license = "MS-C-NoReD-ND"
 known_in_cygnet = false
 notes = "41,000+ concepts, 38,000 lexical units. PORTULAN CLARIN. Restrictive license (no redistribution, no derivatives). Separate from own-pt."
 confidence = "high"
+type = "expand"
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ADDITIONAL FINDS — OMW v1 LIST + OTHER SOURCES
@@ -2380,6 +2494,7 @@ release_url = "https://lope.linguistics.ntu.edu.tw/cwn/download/"
 known_in_cygnet = false
 notes = "National Taiwan University LOPE Lab. LMF-encoded version documented (CWN-LMF, ALR 2009). Sense-based, distinct from Princeton-mapped COW."
 confidence = "high"
+type = "standalone"
 bib = '''
 % HANDMADE: Chinese WordNet (Taiwan)
 @inproceedings{huang-cwn-taiwan-2004,
@@ -2402,6 +2517,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "Shahid Beheshti University NLP lab. Listed in OMW v1. Format and openness unclear. Also listed as pwn.ir."
 confidence = "medium"
+type = "expand"
 bib = '''
 % HANDMADE: FarsNet (Persian WordNet)
 @inproceedings{shamsfard-farsnet-2010,
@@ -2425,6 +2541,7 @@ example_file = "https://raw.githubusercontent.com/sufianj/WolfApi/master/wolf-1.
 known_in_cygnet = false
 notes = "INRIA Almanach. DEBVisDic XML (WN root, French-only SYNONYM). visdic2lmf.py converts to GWA LMF. GitHub mirror of v1.0b4 at sufianj/WolfApi. Separate from omw-fr."
 confidence = "high"
+type = "auto"
 bib = '''
 @inproceedings{sagot-wolf-2008,
   title     = {{WOLF}: A French {W}ord{N}et Built from Misc. Resources},
@@ -2447,6 +2564,7 @@ example_file = "https://github.com/okfngr/wordnet/blob/master/wngre2.xml"
 known_in_cygnet = false
 notes = "Listed in OMW v1. Has wngre2.xml. Likely VisDic XML. 8 stars. Separate from omw-el."
 confidence = "medium"
+type = "expand"
 bib = '''
 % HANDMADE: Greek WordNet (Open Knowledge Foundation Greece)
 @misc{greek-wn-okfngr,
@@ -2467,6 +2585,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "Listed in OMW v1 as Albanet. fjalnet.com. No GitHub found. Separate from omw-sq."
 confidence = "medium"
+type = "expand"
 
 # ── ARABIC (additional) ───────────────────────────────────────────────────────
 bib = '''
@@ -2491,6 +2610,7 @@ format = "GWA LMF"
 known_in_cygnet = false
 notes = "Paper: Karmani et al. 2014 (GWC 2014). Built in ISO LMF format. No public repository found; contact authors (REGIM Lab, Univ. of Sfax, Tunisia). Citation: W14-0110."
 confidence = "medium"
+type = "expand"
 
 # ── SARDINIAN ─────────────────────────────────────────────────────────────────
 bib = '''
@@ -2517,6 +2637,7 @@ format = "unknown"
 known_in_cygnet = false
 notes = "Paper: Angioni et al. 2018 (GWC 2018). University of Cagliari. Work in progress as of 2018. No public data release found. Citation: 2018.gwc-1.53."
 confidence = "low"
+type = "standalone"
 
 # ── SANSKRIT ──────────────────────────────────────────────────────────────────
 bib = '''
@@ -2545,6 +2666,7 @@ license = "CC BY-SA 4.0"
 known_in_cygnet = false
 notes = "Archived data (April 2020): CSV and JSON files. REST API at sanskritwordnet.unipv.it/api. Directed by William Michael Short and Silvia Luraghi (Univ. Pavia/Exeter). Core induced from Vedic text annotations using Princeton WN synsets. Format is CSV/JSON (not GWA LMF). Separate from CFILT IIT Bombay Sanskrit WN (part of iwn-en)."
 confidence = "medium"
+type = "standalone"
 
 # ── COPTIC ────────────────────────────────────────────────────────────────────
 bib = '''
@@ -2572,4 +2694,5 @@ known_in_cygnet = false
 notes = "25,871 synsets (218,677 senses, v1.0, 2019). Sahidic dialect. WN-LMF-1.0 format (CILI integrated). License CC BY 4.0 confirmed in XML Lexicon header. Citation also in XML metadata. No GitHub releases — use example_file URL directly. Also provides OMW TSV (copwn.tsv). Cite: Slaughter et al. 2019 (GWC 2019)."
 confidence = "high"
 acl_ids = ["2019.gwc-1.21"]
+type = "standalone"
 
