@@ -1,0 +1,23 @@
+# build artefacts (downloaded + converted wordnets, results)
+build/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+.eggs/
+
+# editors / OS
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# project-specific
+memory/
+ext/

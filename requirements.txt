@@ -1,0 +1,4 @@
+wn
+requests
+tomli
+pytest
