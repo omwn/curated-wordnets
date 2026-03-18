@@ -28,6 +28,7 @@ For each wordnet we aim to record:
 | — fully clean | 44 |
 | — with warnings only | 30 |
 | XML parse errors | 4 |
+| Download OK | 80 |
 | Download failed / restricted | 18 |
 
 See [SUMMARY.md](SUMMARY.md) for the full per-wordnet table.
@@ -71,10 +72,20 @@ Each `[[wordnet]]` entry in `wordnets_found.toml` has:
 | `notes` | | Free-text notes |
 | `acl_ids` | | List of ACL Anthology paper IDs for citation |
 | `bib` | | Raw BibTeX string (overrides `acl_ids`) |
+| `type` | | Construction method (see below) |
+| `supersedes` | | List of `id`s this entry replaces |
 
 **Format values:** `GWA LMF`, `OMW 1.0 tab`, `Princeton WNDB`, `RDF/TTL`,
 `VisDic XML`, `DanNet TAB`, `custom XML`, `YAML`, `GF`, `Lemon TTL`,
 `alignment TSV`, `JSON`, `unknown`
+
+**Type values:**
+- `expand` — built by expanding/translating Princeton WordNet synsets
+- `standalone` — built independently from scratch
+- `merge` — built by merging multiple existing wordnets
+- `auto` — automatically generated (e.g. from corpora or alignments)
+- `extension` — extends an existing wordnet with additional entries
+- `alignment` — a mapping/alignment between wordnets or to another resource
 
 ## Scripts
 

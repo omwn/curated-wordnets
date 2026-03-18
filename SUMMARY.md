@@ -23,8 +23,8 @@
 |--------|-------|
 | GWA LMF | 52 |
 | OMW 1.0 tab | 27 |
-| unknown | 14 |
-| custom XML | 9 |
+| unknown | 13 |
+| custom XML | 10 |
 | RDF/TTL | 5 |
 | VisDic XML | 4 |
 | JSON | 3 |
@@ -149,7 +149,7 @@
 | euswn             | Basque WordNet EusWN 3.0                           | Basque                           | eu     | GWA LMF        | ?             | high       | dl failed                                          |
 | btb-wordnet       | BTB-WordNet (Bulgarian)                            | Bulgarian                        | bg     | unknown        | ?             | high       | dl failed                                          |
 | bulnet            | BulNet (Bulgarian WordNet)                         | Bulgarian                        | bg     | unknown        | ?             | high       | dl failed                                          |
-| srpwn             | SrpWN (Serbian WordNet)                            | Serbian                          | sr     | unknown        | CC BY         | high       | dl failed                                          |
+| srpwn             | SrpWN (Serbian WordNet)                            | Serbian                          | sr     | custom XML     | CC BY         | high       | dl failed                                          |
 | mwnpt             | MWN.PT — WordNet of Portuguese                     | Portuguese                       | pt     | unknown        | MS-C-NoReD-ND | high       | dl failed                                          |
 | cwn-taiwan        | Chinese Wordnet (Taiwan, CWN)                      | Chinese (Mandarin)               | cmn    | GWA LMF        | ?             | high       | dl failed                                          |
 | farsnet           | FarsNet (Persian WordNet)                          | Persian                          | fas    | unknown        | ?             | medium     | not tried                                          |
