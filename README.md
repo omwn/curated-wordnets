@@ -200,5 +200,6 @@ uv run pytest --run-slow       # include network integration tests
 
 ## Licence
 
-This project is CC BY 4.0.  Individual wordnets have their own licences —
+This project (the catalogue and tooling) is MIT licensed — see [LICENSE](LICENSE).
+Individual wordnets have their own licences —
 see the `license` field in `wordnets_found.toml` and `citations/` for details.
