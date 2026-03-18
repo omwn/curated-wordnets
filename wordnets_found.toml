@@ -683,7 +683,6 @@ notes = "69 stars. The available XML uses an old proprietary ODWN-ORBN format (n
 confidence = "high"
 acl_ids = ["2016.gwc-1.43"]
 type = "merge"
-superseded-by = ["odwn-lmf"]
 bib = '''
 % HANDMADE: ODWN main reference
 @inproceedings{postma-odwn-2016,
@@ -1415,7 +1414,6 @@ notes = "ItalWordNet packaged via omw-data."
 confidence = "high"
 acl_ids = ["2023.gwc-1.18"]
 type = "expand"
-superseded-by = ["iwn-omw"]
 bib = '''
 % HANDMADE: OMW IndoWordNet
 @inproceedings{bhattacharyya-indown-2010,
@@ -1863,6 +1861,34 @@ bib = '''
   title = {African{W}ord{N}et},
   author = {Sefara, Tshephisho Joseph},
   url   = {https://github.com/JosephSefara/AfricanWordNet}
+}
+'''
+
+
+[[wordnet]]
+id = "afwn"
+name = "African Wordnet (AfWN)"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+language = "multiple South African languages"
+bcp47 = "mul"
+format = "unknown"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "Version 1.0 (2022-09-20), 9.62 MB zip from SADiLaR. Covers 9 languages: Setswana, isiXhosa, isiZulu, Sesotho sa Leboa, Tshivenda (~10,000 synsets each) plus Sesotho, Xitsonga, isiNdebele, Siswati (~1,000 synsets). XML format; GWA LMF conformance unconfirmed. Handle: https://hdl.handle.net/20.500.12185/684"
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: African Wordnet (Griesel & Bosch)
+@article{bosch-afwn-2017,
+  title   = {Strategies for building wordnets for under-resourced languages: the case of {A}frican languages},
+  author  = {Bosch, Sonja and Griesel, Marissa},
+  journal = {Literator},
+  volume  = {38},
+  number  = {1},
+  year    = {2017},
+  url     = {https://africanwordnet.wordpress.com/}
 }
 '''
 

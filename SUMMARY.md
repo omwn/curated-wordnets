@@ -2,14 +2,14 @@
 
 | Metric | Count |
 |--------|-------|
-| Total entries in TOML | 121 |
-| High confidence | 99 |
+| Total entries in TOML | 122 |
+| High confidence | 100 |
 | Medium confidence | 17 |
 | Low confidence | 5 |
 | Download attempted | 98 |
 | Download OK | 80 |
 | Download failed | 18 |
-| Not yet tried | 23 |
+| Not yet tried | 24 |
 | **Validated OK** | **74** |
 | — of which with warnings | 30 |
 | — of which fully clean | 44 |
@@ -23,7 +23,7 @@
 |--------|-------|
 | GWA LMF | 52 |
 | OMW 1.0 tab | 27 |
-| unknown | 13 |
+| unknown | 14 |
 | custom XML | 10 |
 | RDF/TTL | 5 |
 | VisDic XML | 4 |
@@ -115,6 +115,7 @@
 | gf-wordnet        | GF Wordnet (Grammatical Framework)                 | multilingual (100+ languages)    | mul    | GF             | unknown                  | high       | dl failed                                          |
 | iwn-en            | Indian Wordnet–English Links (IWN-En)              | multiple Indian languages        | mul    | alignment TSV  | CC-BY-NC-SA-4.0          | high       | skipped (conversion failed: INFO:tsv2lmf:Converti) |
 | african-wn-sefara | AfricanWordNet (South African languages)           | multiple South African languages | mul    | unknown        | CC-BY-NC-SA-4.0          | medium     | not tried                                          |
+| afwn              | African Wordnet (AfWN)                             | multiple South African languages | mul    | unknown        | CC-BY-4.0                | high       | not tried                                          |
 | norsk-ordvev-nb   | Norsk Ordvev – Bokmål (Norwegian Wordnet Bokmål)   | Norwegian Bokmål                 | nb     | DanNet TAB     | CC-BY-4.0                | high       | not tried                                          |
 | omw-nb            | OMW Norwegian Bokmål Wordnet                       | Norwegian Bokmål                 | nb     | GWA LMF        | wordnet                  | high       | ✓ ok                                               |
 | norsk-ordvev-nn   | Norsk Ordvev – Nynorsk (Norwegian Wordnet Nynorsk) | Norwegian Nynorsk                | nn     | DanNet TAB     | CC-BY-4.0                | high       | not tried                                          |
