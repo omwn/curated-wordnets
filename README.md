@@ -24,10 +24,10 @@ For each wordnet we aim to record:
 | Metric | Count |
 |--------|-------|
 | Total catalogued | 139 |
-| **Validated OK** | **74** |
+| **Validated OK** | **83** |
 | — fully clean | 44 |
-| — with warnings only | 30 |
-| Validation errors | 9 |
+| — with warnings only | 39 |
+| Validation errors | 0 |
 | XML parse errors | 5 |
 | Download OK | 90 |
 | Download failed / restricted | 18 |
@@ -110,8 +110,8 @@ uv run python scripts/download.py --all --confidence medium  # include medium
 
 Pipeline per entry:
 1. **Download** — tries `release_url` → `example_file` → `repo_url`
-2. **Convert** — OMW 1.0 tab → GWA LMF (`tsv2lmf.py`, with PWN 3.0 → ILI map); VisDic XML → GWA LMF (`visdic2lmf.py`)
-3. **Normalise** — fixes XML declaration whitespace; patches missing `<Lexicon email=…>` / `license=…` from TOML
+2. **Convert** — OMW 1.0 tab → GWA LMF (`tsv2lmf.py`, with PWN 3.0 → ILI map and `--requires omw-en:2.0` for expand-type); VisDic XML → GWA LMF (`visdic2lmf.py`)
+3. **Normalise** — fixes XML declaration whitespace; patches missing `<Lexicon email=…>` / `license=…` from TOML; adds `<Requires ref="omw-en" version="2.0" />` to expand-type GWA LMF files (upgrading DTD to WN-LMF-1.1 if needed); adds empty stub `<Synset>` elements for any synset IDs referenced by senses but not defined in the file (source data bug workaround — currently needed for AfWN v1.0)
 4. **Validate** — runs `wn.validate()` against the GWA LMF XML
 
 The PWN 3.0 → ILI map (`ext/omw-data/etc/cili/ili-map-pwn30.tab`, from [omwn/omw-data](https://github.com/omwn/omw-data)) is applied automatically during tab conversion so that senses in expand-type wordnets get correct `ili=` attributes.

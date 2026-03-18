@@ -2000,7 +2000,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "Version 1.0 (2022-09-20), 9.62 MB zip from SADiLaR. Confirmed GWA LMF (WN-LMF-1.0). Covers 9 languages: Setswana, isiXhosa, isiZulu, Sepedi, Tshivenda (~10,000 synsets each) plus Sesotho, Xitsonga, isiNdebele, Siswati (~1,000 synsets). Individual per-language entries: afwn-nso, afwn-st, afwn-tn, afwn-ss, afwn-ve, afwn-ts, afwn-nd, afwn-xh, afwn-zu. Handle: https://hdl.handle.net/20.500.12185/684"
+notes = "Version 1.0 (2022-09-20), 9.62 MB zip from SADiLaR. Confirmed GWA LMF (WN-LMF-1.0). Covers 9 languages: Setswana, isiXhosa, isiZulu, Sepedi, Tshivenda (~10,000 synsets each) plus Sesotho, Xitsonga, isiNdebele, Siswati (~1,000 synsets). Individual per-language entries: afwn-nso, afwn-st, afwn-tn, afwn-ss, afwn-ve, afwn-ts, afwn-nd, afwn-xh, afwn-zu. Handle: https://hdl.handle.net/20.500.12185/684. DATA BUG: all 9 language files have senses referencing synset IDs (nso-syn-UUID style) that are never defined anywhere in the zip. Our pipeline adds empty stub <Synset> elements so the files validate; stub counts per language: nso=6548, tn=8490, xh=11071, zu=5714, ve=3589, st=968, ss=967, nd=967, ts=296. To be reported upstream to Griesel/Bosch (griesel@unisa.ac.za)."
 confidence = "high"
 type = "expand"
 bib = '''
@@ -2035,7 +2035,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 6548 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -2779,7 +2779,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 967 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -2800,7 +2800,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 968 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -2862,7 +2862,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 967 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -2975,7 +2975,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 296 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -3020,7 +3020,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 8490 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -3204,7 +3204,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Note: filename has trailing space."
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Note: filename has trailing space. Source data bug: 3589 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -3323,7 +3323,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 11071 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 
@@ -3369,7 +3369,7 @@ format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Source data bug: 5714 synset IDs referenced by senses but never defined in the XML; pipeline adds empty stubs to allow validation. To be reported upstream."
 confidence = "high"
 type = "expand"
 

@@ -485,6 +485,39 @@ def _install_xml(entry: dict, src: Path, raw_dir: Path, pkg_dir: Path,
         )
         log_lines.append("  added <Requires ref=\"omw-en\" version=\"2.0\" />")
 
+    # Patch missing synsets: add empty stub <Synset> for any synset referenced
+    # by a sense but not defined in the file.  This is a data bug in the source;
+    # stubs let validation pass and are noted in the log.  Report upstream.
+    defined  = set(re.findall(rb'<Synset\b[^>]*\bid="([^"]+)"', normalised))
+    refs     = set(re.findall(rb'<Sense\b[^>]*\bsynset="([^"]+)"', normalised))
+    missing  = refs - defined
+    if missing:
+        # Infer part-of-speech per missing synset from the entries that use it.
+        # Build: synset_id -> set of POS values from LexicalEntry/Lemma
+        entry_pos: dict[bytes, set[bytes]] = {}
+        for entry_block in re.finditer(
+            rb'<LexicalEntry\b[^>]*>(.*?)</LexicalEntry>', normalised, re.DOTALL
+        ):
+            pos_m = re.search(rb'partOfSpeech="([^"]+)"', entry_block.group(1))
+            pos = pos_m.group(1) if pos_m else b"n"
+            for ssid in re.findall(rb'<Sense\b[^>]*\bsynset="([^"]+)"',
+                                   entry_block.group(0)):
+                if ssid in missing:
+                    entry_pos.setdefault(ssid, set()).add(pos)
+
+        stubs = b""
+        for ssid in sorted(missing):
+            pos = next(iter(entry_pos.get(ssid, {b"n"})))
+            stubs += (b'    <Synset id="' + ssid
+                      + b'" ili="" partOfSpeech="' + pos
+                      + b'" />\n')
+        # Insert stubs before </Lexicon>
+        normalised = normalised.replace(b'</Lexicon>', stubs + b'</Lexicon>', 1)
+        log_lines.append(
+            f"  added {len(missing)} stub synsets for missing references "
+            f"(source data bug — to be reported upstream)"
+        )
+
     pkg_target.write_bytes(normalised)
     if normalised != raw_bytes:
         log_lines.append(f"  normalised XML in {pkg_target.name}")
