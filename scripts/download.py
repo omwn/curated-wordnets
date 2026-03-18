@@ -365,6 +365,11 @@ def _extract_archive(entry: dict, archive: Path, raw_dir: Path, pkg_dir: Path,
                 if sys.version_info >= (3, 12):
                     tf.extractall(extract_to, filter="data")
                 else:
+                    extract_real = str(extract_to.resolve())
+                    for member in tf.getmembers():
+                        dest = str((extract_to / member.name).resolve())
+                        if not dest.startswith(extract_real):
+                            raise ValueError(f"Tar path traversal attempt: {member.name}")
                     tf.extractall(extract_to)
         elif name.endswith(".zip"):
             with zipfile.ZipFile(raw_archive) as zf:

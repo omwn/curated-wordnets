@@ -8,14 +8,8 @@ Integration tests (slow, needs network) are in test_integration.py and are
 skipped by default.  Use:  pytest --run-slow  to run them.
 """
 
-import sys
-from pathlib import Path
 
-import pytest
-
-# Allow importing download.py from the project root
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
+# scripts/ is added to sys.path by conftest.py
 import download as dl
 
 

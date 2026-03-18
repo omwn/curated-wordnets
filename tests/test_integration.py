@@ -12,7 +12,6 @@ Or run all slow tests:
   pytest --run-slow
 """
 
-import json
 import sys
 from pathlib import Path
 
