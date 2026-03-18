@@ -460,9 +460,34 @@ def _install_xml(entry: dict, src: Path, raw_dir: Path, pkg_dir: Path,
                 inner += f' email="{email}"'.encode()
             return b"<Lexicon" + inner + b">"
         normalised = re.sub(rb'<Lexicon\b[^>]*>', _patch_lexicon, normalised)
+    # Add <Requires ref="omw-en" version="2.0" /> for expand-type wordnets
+    # that reference PWN synsets but don't already declare the dependency.
+    # Add <Requires> for expand-type wordnets; upgrade 1.0 DTD → 1.1 if needed.
+    lmf_version_m = re.search(rb'WN-LMF-1\.(\d+)\.dtd', normalised)
+    lmf_minor = int(lmf_version_m.group(1)) if lmf_version_m else 0
+    if (entry.get("type") == "expand"
+            and b'ref="omw-en"' not in normalised
+            and b'ili="i' in normalised):
+        # Upgrade 1.0 → 1.1 (Requires was added in 1.1; 1.1 is backward-compatible)
+        if lmf_minor == 0:
+            normalised = normalised.replace(
+                b'WN-LMF-1.0.dtd',
+                b'WN-LMF-1.1.dtd',
+                1,
+            )
+            log_lines.append("  upgraded DTD 1.0 → 1.1 (for Requires support)")
+        requires_line = b'    <Requires ref="omw-en" version="2.0" />\n'
+        # Insert after the closing > of the opening <Lexicon ...> tag
+        normalised = re.sub(
+            rb'(<Lexicon\b[^>]*>)',
+            rb'\1\n' + requires_line,
+            normalised, count=1,
+        )
+        log_lines.append("  added <Requires ref=\"omw-en\" version=\"2.0\" />")
+
     pkg_target.write_bytes(normalised)
     if normalised != raw_bytes:
-        log_lines.append(f"  normalised XML declaration in {pkg_target.name}")
+        log_lines.append(f"  normalised XML in {pkg_target.name}")
     else:
         log_lines.append(f"  installed: {pkg_target.name}")
     return {"xml": str(pkg_target.relative_to(ROOT)), "format": "GWA LMF"}
@@ -523,6 +548,8 @@ def _convert_tab(entry: dict, tab: Path, raw_dir: Path, pkg_dir: Path,
         cmd += ["--url", url]
     if ILI_MAP_PATH.exists():
         cmd += ["--ili-map", str(ILI_MAP_PATH)]
+    if entry.get("type") == "expand":
+        cmd += ["--requires", "omw-en:2.0"]
 
     log_lines.append(f"  converting tab → LMF: {' '.join(cmd[-6:])}")
     result = subprocess.run(cmd, capture_output=True, text=True)
