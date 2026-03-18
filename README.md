@@ -16,7 +16,7 @@ For each wordnet we aim to record:
   see [wn LMF packages](https://wn.readthedocs.io/en/latest/guides/lexicons.html#wn-lmf-files-packages-and-collections))
 - Format and validation status
 - Open licence
-- Type: expand / merge / extend / auto-generated
+- Type: expand / merge / extension / auto-generated
 - Whether it supersedes an earlier wordnet
 
 ## Current status
@@ -25,8 +25,8 @@ For each wordnet we aim to record:
 |--------|-------|
 | Total catalogued | 139 |
 | **Validated OK** | **83** |
-| — fully clean | 44 |
-| — with warnings only | 39 |
+| — fully clean | 45 |
+| — with warnings only | 38 |
 | Validation errors | 0 |
 | XML parse errors | 5 |
 | Download OK | 90 |
@@ -162,7 +162,10 @@ The suggestion is a guide for human review — use it to decide whether to add
 ### `visdic2lmf.py` — VisDic/DEBVisDic/ROWN → GWA LMF
 
 ```bash
-uv run python scripts/visdic2lmf.py input.xml output.xml
+uv run python scripts/visdic2lmf.py input.xml \
+    --id mywordnet --label "My WordNet" \
+    --language en --license "CC-BY-4.0" \
+    -o output.xml
 ```
 
 ## Formats and conversion status

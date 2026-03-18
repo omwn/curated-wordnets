@@ -10,10 +10,10 @@
 | Download OK | 90 |
 | Download failed | 18 |
 | Not yet tried | 31 |
-| **Validated OK** | **74** |
-| — of which with warnings | 30 |
-| — of which fully clean | 44 |
-| Validation errors | 9 |
+| **Validated OK** | **83** |
+| — of which with warnings | 38 |
+| — of which fully clean | 45 |
+| Validation errors | 0 |
 | XML parse errors | 5 |
 | Skipped (non-LMF) | 20 |
 
@@ -123,7 +123,7 @@
 | iwn-en            | Indian Wordnet–English Links (IWN-En)              | multiple Indian languages        | mul    | alignment TSV  | CC-BY-NC-SA-4.0          | high       | skipped (conversion failed: INFO:tsv2lmf:Converti) |
 | african-wn-sefara | AfricanWordNet (South African languages)           | multiple South African languages | mul    | unknown        | CC-BY-NC-SA-4.0          | medium     | not tried                                          |
 | afwn              | African Wordnet (AfWN)                             | multiple South African languages | mul    | GWA LMF        | CC-BY-4.0                | high       | ✗ parse error                                      |
-| afwn-nso          | African Wordnet — Sepedi (Sesotho sa Leboa)        | Northern Sotho                   | nso    | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (9776E)                                   |
+| afwn-nso          | African Wordnet — Sepedi (Sesotho sa Leboa)        | Northern Sotho                   | nso    | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (2569W)                                       |
 | norsk-ordvev-nb   | Norsk Ordvev – Bokmål (Norwegian Wordnet Bokmål)   | Norwegian Bokmål                 | nb     | DanNet TAB     | CC-BY-4.0                | high       | not tried                                          |
 | omw-nb            | OMW Norwegian Bokmål Wordnet                       | Norwegian Bokmål                 | nb     | GWA LMF        | wordnet                  | high       | ✓ ok                                               |
 | norsk-ordvev-nn   | Norsk Ordvev – Nynorsk (Norwegian Wordnet Nynorsk) | Norwegian Nynorsk                | nn     | DanNet TAB     | CC-BY-4.0                | high       | not tried                                          |
@@ -151,31 +151,31 @@
 | omw-sl            | OMW Slovenian Wordnet                              | Slovenian                        | sl     | GWA LMF        | CC-BY-SA-3.0             | high       | ✓ ok (159W)                                        |
 | oswn              | Open Slovene WordNet (OSWN) 1.0                    | Slovenian                        | sl     | GWA LMF        | CC-BY-SA-4.0             | high       | ✓ ok (3177W)                                       |
 | slownet           | sloWNet 3.1                                        | Slovenian                        | sl     | VisDic XML     | CC-BY-SA-3.0             | high       | ✓ ok (150522W)                                     |
-| afwn-nd           | African Wordnet — isiNdebele                       | South Ndebele                    | nd     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (1134E)                                   |
-| afwn-st           | African Wordnet — Sesotho                          | Southern Sotho                   | st     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (983E)                                    |
+| afwn-nd           | African Wordnet — isiNdebele                       | South Ndebele                    | nd     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (30W)                                         |
+| afwn-st           | African Wordnet — Sesotho                          | Southern Sotho                   | st     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (1W)                                          |
 | omw-es            | OMW Spanish Wordnet                                | Spanish                          | es     | GWA LMF        | CC-BY-3.0                | high       | ✓ ok (1091W)                                       |
 | tufs-es           | TUFS Spanish                                       | Spanish                          | es     | OMW 1.0 tab    | CC-BY-4.0                | high       | ✓ ok                                               |
-| afwn-ss           | African Wordnet — Siswati                          | Swati                            | ss     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (1051E)                                   |
+| afwn-ss           | African Wordnet — Siswati                          | Swati                            | ss     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok                                               |
 | omw-sv            | OMW Swedish Wordnet                                | Swedish                          | sv     | GWA LMF        | CC-BY-3.0                | high       | ✓ ok                                               |
 | twn               | Tamil WordNet                                      | Tamil                            | ta     | unknown        | GPL                      | low        | not tried                                          |
 | omw-th            | OMW Thai Wordnet                                   | Thai                             | th     | GWA LMF        | wordnet                  | high       | ✓ ok                                               |
 | tufs-th           | TUFS Thai                                          | Thai                             | th     | OMW 1.0 tab    | CC-BY-4.0                | high       | ✓ ok                                               |
-| afwn-ts           | African Wordnet — Xitsonga                         | Tsonga                           | ts     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (296E)                                    |
+| afwn-ts           | African Wordnet — Xitsonga                         | Tsonga                           | ts     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (49W)                                         |
 | open-tsonga-wn    | Open Tsonga Wordnet                                | Tsonga                           | ts     | GWA LMF        | GPL                      | medium     | not tried                                          |
-| afwn-tn           | African Wordnet — Setswana                         | Tswana                           | tn     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (14255E)                                  |
+| afwn-tn           | African Wordnet — Setswana                         | Tswana                           | tn     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (11188W)                                      |
 | aeb-wn            | Tunisian Arabic WordNet (aeb)                      | Tunisian Arabic                  | aeb    | GWA LMF        | ?                        | medium     | not tried                                          |
 | kenet             | Turkish WordNet KeNet                              | Turkish                          | tr     | custom XML     | ?                        | high       | ✗ parse error                                      |
 | tufs-tr           | TUFS Turkish                                       | Turkish                          | tr     | OMW 1.0 tab    | CC-BY-4.0                | high       | ✓ ok                                               |
 | ua-wordnet        | Open Ukrainian Wordnet                             | Ukrainian                        | uk     | GWA LMF        | GPL                      | medium     | not tried                                          |
 | tufs-ur           | TUFS Urdu                                          | Urdu                             | ur     | OMW 1.0 tab    | CC-BY-4.0                | high       | ✓ ok                                               |
 | uzwordnet         | UzWordnet (Uzbek Wordnet)                          | Uzbek                            | uz     | custom XML     | CC-BY-SA-4.0             | medium     | not tried                                          |
-| afwn-ve           | African Wordnet — Tshivenda                        | Venda                            | ve     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (4366E)                                   |
+| afwn-ve           | African Wordnet — Tshivenda                        | Venda                            | ve     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (68W)                                         |
 | tufs-vi           | TUFS Vietnamese                                    | Vietnamese                       | vi     | OMW 1.0 tab    | CC-BY-4.0                | high       | ✓ ok                                               |
 | viwn              | Vietnamese WordNet                                 | Vietnamese                       | vi     | unknown        | ?                        | medium     | not tried                                          |
 | viwn-build        | Vietnamese Wordnet (build scripts)                 | Vietnamese                       | vi     | unknown        | ?                        | low        | not tried                                          |
 | wncy              | WordNet Cymraeg (Welsh WordNet)                    | Welsh                            | cy     | JSON           | BSD-2-Clause             | high       | dl failed                                          |
-| afwn-xh           | African Wordnet — isiXhosa                         | Xhosa                            | xh     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (15577E)                                  |
+| afwn-xh           | African Wordnet — isiXhosa                         | Xhosa                            | xh     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (13359W)                                      |
 | open-xhosa-wn     | Open Xhosa Wordnet                                 | Xhosa                            | xh     | GWA LMF        | CC-BY-SA-4.0             | high       | ✓ ok (5956W)                                       |
-| afwn-zu           | African Wordnet — isiZulu                          | Zulu                             | zu     | GWA LMF        | CC-BY-4.0                | high       | ✗ errors (6428E)                                   |
+| afwn-zu           | African Wordnet — isiZulu                          | Zulu                             | zu     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (8287W)                                       |
 | open-zulu-wn      | Open Zulu Wordnet                                  | Zulu                             | zu     | GWA LMF        | GPL                      | medium     | not tried                                          |
 

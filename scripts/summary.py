@@ -3,9 +3,9 @@
 summary.py — Print statistics and a Markdown table for all wordnets.
 
 Usage:
-  uv run python summary.py              # full table + stats
-  uv run python summary.py --stats      # stats only
-  uv run python summary.py --md > README_table.md
+  uv run python scripts/summary.py              # full table + stats
+  uv run python scripts/summary.py --stats      # stats only
+  uv run python scripts/summary.py > SUMMARY.md # redirect to file
 """
 
 import argparse
@@ -13,7 +13,10 @@ import json
 import sys
 from pathlib import Path
 
-import tomllib
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib  # type: ignore
 
 ROOT = Path(__file__).parent.parent
 TOML_PATH = ROOT / "wordnets_found.toml"
@@ -68,7 +71,6 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--stats", action="store_true", help="Print stats only, no table")
-    p.add_argument("--md", action="store_true", help="Output Markdown (default: also print stats)")
     args = p.parse_args(argv)
 
     with open(TOML_PATH, "rb") as f:

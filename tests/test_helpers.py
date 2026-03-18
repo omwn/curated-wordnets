@@ -5,7 +5,7 @@ These tests are fast and require no network access or real wordnet files.
 Run with:  pytest tests/test_helpers.py
 
 Integration tests (slow, needs network) are in test_integration.py and are
-skipped by default.  Use:  pytest -m slow  to run them.
+skipped by default.  Use:  pytest --run-slow  to run them.
 """
 
 import sys

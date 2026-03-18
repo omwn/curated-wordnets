@@ -5,10 +5,10 @@ These tests actually download and validate small wordnets to verify
 the full pipeline works end-to-end.  They are skipped by default.
 
 Run with:
-  pytest -m slow tests/test_integration.py
-  pytest -m slow tests/test_integration.py -v
+  pytest --run-slow tests/test_integration.py
+  pytest --run-slow tests/test_integration.py -v
 
-Or run all tests including slow ones:
+Or run all slow tests:
   pytest --run-slow
 """
 

@@ -111,14 +111,12 @@ def load_ili_map() -> dict[str, str]:
     return m
 
 # ── logging ────────────────────────────────────────────────────────────────
+# FileHandler is added in main() after BUILD_DIR is created.
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(levelname)s  %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler(BUILD_DIR / "download.log", mode="a"),
-    ],
+    handlers=[logging.StreamHandler(sys.stdout)],
 )
 log = logging.getLogger("download")
 
@@ -364,9 +362,17 @@ def _extract_archive(entry: dict, archive: Path, raw_dir: Path, pkg_dir: Path,
         name = raw_archive.name
         if name.endswith((".tar.xz", ".tar.gz", ".tgz", ".tar.bz2")):
             with tarfile.open(raw_archive) as tf:
-                tf.extractall(extract_to, filter="data")
+                if sys.version_info >= (3, 12):
+                    tf.extractall(extract_to, filter="data")
+                else:
+                    tf.extractall(extract_to)
         elif name.endswith(".zip"):
             with zipfile.ZipFile(raw_archive) as zf:
+                extract_real = str(extract_to.resolve())
+                for member in zf.infolist():
+                    dest = str((extract_to / member.filename).resolve())
+                    if not dest.startswith(extract_real):
+                        raise ValueError(f"Zip path traversal attempt: {member.filename}")
                 zf.extractall(extract_to)
         elif name.endswith(".gz"):
             inner = extract_to / name[:-3]
@@ -959,6 +965,9 @@ def main():
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     PKG_DIR.mkdir(parents=True, exist_ok=True)
+    fh = logging.FileHandler(BUILD_DIR / "download.log", mode="a")
+    fh.setFormatter(logging.Formatter("%(levelname)s  %(message)s"))
+    logging.getLogger().addHandler(fh)
 
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
