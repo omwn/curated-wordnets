@@ -150,7 +150,8 @@ def compare_pair(id_a: str, id_b: str) -> dict:
     n_only_a = len(only_a)
     n_only_b = len(only_b)
 
-    pct = lambda n: (100.0 * n / n_union) if n_union else 0.0
+    def pct(n):
+        return (100.0 * n / n_union) if n_union else 0.0
 
     # Jaccard similarity
     jaccard = (n_both / n_union) if n_union else 0.0

@@ -58,7 +58,6 @@ DIRECTORY LAYOUT
 
 import argparse
 import gzip
-import io
 import json
 import logging
 import re
@@ -66,7 +65,6 @@ import shutil
 import subprocess
 import sys
 import tarfile
-import traceback
 import zipfile
 from pathlib import Path
 from urllib.parse import urlparse
@@ -87,6 +85,30 @@ PKG_DIR   = BUILD_DIR / "pkg"
 EXT_DIR   = ROOT / "ext"
 RESULTS   = BUILD_DIR / "results.json"
 OMW_DATA  = EXT_DIR / "omw-data"
+ILI_MAP_PATH = OMW_DATA / "etc" / "cili" / "ili-map-pwn30.tab"
+
+_ILI_MAP_CACHE: dict[str, str] | None = None
+
+
+def load_ili_map() -> dict[str, str]:
+    """Load the PWN 3.0 offset-pos → ILI map (cached after first load)."""
+    global _ILI_MAP_CACHE
+    if _ILI_MAP_CACHE is not None:
+        return _ILI_MAP_CACHE
+    if not ILI_MAP_PATH.exists():
+        return {}
+    m: dict[str, str] = {}
+    with ILI_MAP_PATH.open() as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            ili, ssid = line.split("\t")
+            m[ssid] = ili
+            if ssid.endswith("-s"):
+                m[ssid[:-2] + "-a"] = ili
+    _ILI_MAP_CACHE = m
+    return m
 
 # ── logging ────────────────────────────────────────────────────────────────
 
@@ -260,7 +282,7 @@ def download_one(entry: dict, force: bool = False) -> dict:
             write_log(pkg_dir, log_lines)
             log.info("  [%s] ✓ downloaded via %s", wn_id, key)
             return {"download": "ok", "source": key, "url": url, **result}
-        log_lines.append(f"  → failed")
+        log_lines.append("  → failed")
 
     msg = "All URL attempts failed"
     log.warning("  [%s] ✗ %s", wn_id, msg)
@@ -499,6 +521,8 @@ def _convert_tab(entry: dict, tab: Path, raw_dir: Path, pkg_dir: Path,
     ]
     if url := entry.get("repo_url") or entry.get("release_url"):
         cmd += ["--url", url]
+    if ILI_MAP_PATH.exists():
+        cmd += ["--ili-map", str(ILI_MAP_PATH)]
 
     log_lines.append(f"  converting tab → LMF: {' '.join(cmd[-6:])}")
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -782,7 +806,6 @@ def analyze_results(results: dict):
         if ids:
             print(f"\n{label} [{len(ids)}]{' — ' + note if note else ''}")
             for i in ids:
-                name = results[i].get("name", i)
                 extra = results[i].get("validation_note") or results[i].get("note", "")
                 print(f"  {i:30s}  {extra[:60]}")
 
@@ -836,9 +859,9 @@ def analyze_results(results: dict):
         opts.append(f"C) Fix E401 missing relation targets "
                     f"({len(error_code_tally['E401'])} wordnets) — often removable")
     if error_code_tally.get("E101"):
-        opts.append(f"D) Fix E101 duplicate IDs — often auto-fixable")
+        opts.append("D) Fix E101 duplicate IDs — often auto-fixable")
     if error_code_tally.get("W404"):
-        opts.append(f"E) Add W404 reverse relations — wn can often infer these")
+        opts.append("E) Add W404 reverse relations — wn can often infer these")
     if categories["failed"]:
         opts.append(f"F) Investigate {len(categories['failed'])} failed downloads")
     if categories["no_download"]:

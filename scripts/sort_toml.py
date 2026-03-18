@@ -37,7 +37,6 @@ SECTION_LINE = "# {bar} {lang} {bar2}"
 
 
 def section_header(lang: str) -> str:
-    bar = "──"
     total = 78
     inner = f" {lang} "
     dashes = "─" * max(0, (total - len(inner) - 4) // 2)

@@ -101,9 +101,9 @@ def main(argv=None):
     conf = Counter(e.get("confidence", "?") for e in entries)
     fmt  = Counter(e.get("format", "unknown") for e in entries)
 
-    print(f"## Wordnet Summary\n")
-    print(f"| Metric | Count |")
-    print(f"|--------|-------|")
+    print("## Wordnet Summary\n")
+    print("| Metric | Count |")
+    print("|--------|-------|")
     print(f"| Total entries in TOML | {total} |")
     print(f"| High confidence | {conf.get('high', 0)} |")
     print(f"| Medium confidence | {conf.get('medium', 0)} |")
@@ -120,9 +120,9 @@ def main(argv=None):
     print(f"| Skipped (non-LMF) | {skipped} |")
     print()
 
-    print(f"### Formats\n")
-    print(f"| Format | Count |")
-    print(f"|--------|-------|")
+    print("### Formats\n")
+    print("| Format | Count |")
+    print("|--------|-------|")
     for f, n in fmt.most_common():
         print(f"| {f} | {n} |")
     print()

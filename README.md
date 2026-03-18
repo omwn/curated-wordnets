@@ -71,6 +71,8 @@ Each `[[wordnet]]` entry in `wordnets_found.toml` has:
 | `repo_url` | | Primary URL (GitHub, project page) |
 | `release_url` | | Direct download URL (preferred over `example_file`) |
 | `example_file` | | URL to a single data file |
+| `zip_entry` | | Filename (or path suffix) to extract from a zip archive (for multi-language packs) |
+| `email` | | Contact email; written into `<Lexicon email=…>` if missing from the source XML |
 | `license` | | SPDX identifier (e.g. `CC-BY-4.0`, `MIT`, `WordNet-3.0`) |
 | `license_url` | | URL to the full license text |
 | `license_raw` | | Original license string from the XML metadata (for reference) |
@@ -108,8 +110,11 @@ uv run python scripts/download.py --all --confidence medium  # include medium
 
 Pipeline per entry:
 1. **Download** — tries `release_url` → `example_file` → `repo_url`
-2. **Convert** — OMW 1.0 tab → GWA LMF (`tsv2lmf.py`); VisDic XML → GWA LMF (`visdic2lmf.py`)
-3. **Validate** — runs `wn.validate()` against the GWA LMF XML
+2. **Convert** — OMW 1.0 tab → GWA LMF (`tsv2lmf.py`, with PWN 3.0 → ILI map); VisDic XML → GWA LMF (`visdic2lmf.py`)
+3. **Normalise** — fixes XML declaration whitespace; patches missing `<Lexicon email=…>` / `license=…` from TOML
+4. **Validate** — runs `wn.validate()` against the GWA LMF XML
+
+The PWN 3.0 → ILI map (`ext/omw-data/etc/cili/ili-map-pwn30.tab`, from [omwn/omw-data](https://github.com/omwn/omw-data)) is applied automatically during tab conversion so that senses in expand-type wordnets get correct `ili=` attributes.
 
 ### `summary.py` — statistics + table
 

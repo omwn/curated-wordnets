@@ -285,7 +285,6 @@ def convert(
     # so we can capture SYNONYM's xml:lang before processing its LITERAL children
     cur: dict = {}
     syn_lang: str | None = None   # current SYNONYM's xml:lang
-    ilr_buf: list | None = None   # accumulating ILR/SR children
 
     with open(output_path, "w", encoding="utf-8") as out:
         out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -314,7 +313,7 @@ def convert(
                 elif tag == "SYNONYM":
                     syn_lang = elem.get(f"{xml_ns}lang") or elem.get("lang")
                 elif tag in ("ILR", "SR"):
-                    ilr_buf = []
+                    pass  # children accumulated via end events
 
             else:  # end event
                 if tag == "ID" and elem.text and not cur.get("ss_id"):
