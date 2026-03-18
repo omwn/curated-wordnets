@@ -37,12 +37,13 @@ Regenerate with `uv run python scripts/summary.py > SUMMARY.md`.
 ## Repository layout
 
 ```
-wordnets_found.toml   # canonical catalogue — one [[wordnet]] block per entry
+wordnets_found.toml   # canonical catalogue — one [[wordnet]] block per entry, sorted by language
 citations/            # generated BibTeX files, one per wordnet
 scripts/
   download.py         # download + validate pipeline
   summary.py          # statistics + Markdown table
   make_citations.py   # generate citations/ from TOML acl_ids / bib fields
+  sort_toml.py        # re-sort wordnets_found.toml by language after edits
   visdic2lmf.py       # VisDic/ROWN/DEBVisDic XML → GWA LMF converter
 tests/
   test_integration.py # slow network tests (pytest --run-slow)
@@ -73,7 +74,7 @@ Each `[[wordnet]]` entry in `wordnets_found.toml` has:
 | `acl_ids` | | List of ACL Anthology paper IDs for citation |
 | `bib` | | Raw BibTeX string (overrides `acl_ids`) |
 | `type` | | Construction method (see below) |
-| `supersedes` | | List of `id`s this entry replaces |
+| `superseded-by` | | List of `id`s that supersede this entry |
 
 **Format values:** `GWA LMF`, `OMW 1.0 tab`, `Princeton WNDB`, `RDF/TTL`,
 `VisDic XML`, `DanNet TAB`, `custom XML`, `YAML`, `GF`, `Lemon TTL`,

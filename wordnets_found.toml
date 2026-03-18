@@ -1,69 +1,135 @@
-# Wordnets Found on GitHub
-# Compiled from cygnet/wordnets.toml (known) + broad GitHub search
-# Fields: id, name, repo_url, language, bcp47, format, example_file,
-#         license, known_in_cygnet, notes, confidence
+# Wordnets Found
+# Compiled from cygnet/wordnets.toml (known) + broad GitHub search.
+# Entries sorted alphabetically by language, then by id.
+#
+# Fields: id, name, language, bcp47, format, confidence,
+#         repo_url, release_url, example_file, license,
+#         known_in_cygnet, notes, acl_ids, bib,
+#         type, superseded-by
 # format values: "GWA LMF", "OMW 1.0 tab", "Princeton WNDB", "RDF/TTL",
-#                "custom XML", "YAML", "GF", "Lemon TTL", "unknown"
+#                "VisDic XML", "DanNet TAB", "custom XML", "YAML", "GF",
+#                "Lemon TTL", "alignment TSV", "JSON", "unknown"
+# type values:   "expand", "standalone", "merge", "auto", "extension",
+#                "alignment"
 
-# ── ENGLISH ──────────────────────────────────────────────────────────────────
+
+# ────────────────────────────────── Abui ──────────────────────────────────
+
 
 [[wordnet]]
-id = "oewn"
-name = "Open English WordNet"
-repo_url = "https://github.com/globalwordnet/english-wordnet"
-language = "English"
-bcp47 = "en"
+id = "abuiwn"
+name = "Abui Wordnet"
+repo_url = "https://github.com/fanacek/abuiwn"
+language = "Abui"
+bcp47 = "abz"
 format = "GWA LMF"
-example_file = "https://github.com/globalwordnet/english-wordnet/blob/main/src/yaml"
-release_url = "https://en-word.net/static/english-wordnet-2025.xml.gz"
-license = "CC BY 4.0"
+example_file = "https://github.com/fanacek/abuiwn/blob/main/abwn.xml"
+release_url = "https://raw.githubusercontent.com/fanacek/abuiwn/refs/heads/main/abwn.xml"
 known_in_cygnet = true
-notes = "Primary / canonical open English wordnet. Formerly Princeton WordNet fork."
+notes = "Also has abwn_lmf.tsv. Abui is a Papuan language of eastern Indonesia."
 confidence = "high"
-acl_ids = ["2019.gwc-1.31"]
-type = "standalone"
+
+acl_ids = ["2022.fieldmatters-1.7", "2023.gwc-1.38"]
+type = "expand"
+
+
+# ─────────────────────────────── Afrikaans ───────────────────────────────
 
 
 [[wordnet]]
-id = "oewn-namenet"
-name = "Open English Namenet"
-repo_url = "https://github.com/globalwordnet/english-namenet"
-language = "English"
-bcp47 = "en"
-format = "YAML"
-license = "CC BY 4.0"
+id = "open-afrikaans-wn"
+name = "Open Afrikaans Wordnet"
+repo_url = "https://github.com/pssvlng/open-afrikaans-wordnet"
+language = "Afrikaans"
+bcp47 = "af"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/open-afrikaans-wordnet/blob/main/OAfrikaansNet.xml"
+license = "CC BY-SA 4.0"
 known_in_cygnet = false
-notes = "Extension of OEWN with proper names / named entities. Source in YAML (data/curated/, data/addendum/). No versioned release package; export_xml.py can generate GWA LMF XML. Names sourced from Wikidata."
+notes = "Confirmed GWA LMF header. Inferred from English wordnet. passivlingo.com project."
 confidence = "high"
-type = "extension"
+type = "expand"
 
-# ── ARABIC ───────────────────────────────────────────────────────────────────
 bib = '''
-% HANDMADE: Based on OEWN release notes; no separate publication
-@misc{bond-oewn-namenet-2023,
-  title     = {Open English WordNet: NameNet Extension},
-  author    = {Bond, Francis and others},
-  year      = {2023},
-  url       = {https://github.com/globalwordnet/english-namenet},
-  note      = {Named entity extension of Open English WordNet}
+% HANDMADE: Open Afrikaans WordNet
+@misc{open-afrikaans-wn,
+  title = {Open Afrikaans WordNet},
+  url   = {https://github.com/ajarmain/afrikaans-wordnet}
+}
+'''
+
+
+# ──────────────────────────────── Albanian ────────────────────────────────
+
+
+[[wordnet]]
+id = "albanet"
+name = "Albanet (Albanian WordNet)"
+repo_url = "http://fjalnet.com/"
+language = "Albanian"
+bcp47 = "sq"
+format = "unknown"
+known_in_cygnet = false
+notes = "Listed in OMW v1 as Albanet. fjalnet.com is heavily JS-rendered; no GitHub found; no public download available. Contact authors (Tupja & Domi, GWC 2014). Separate from omw-sq."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: AlbaNet (Albanian WordNet)
+@inproceedings{lloret-albanet-2014,
+  title     = {{A}lba{N}et: {A}lbanian {W}ord{N}et},
+  author    = {Tupja, Erion and Domi, Erion},
+  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
+  year      = {2014},
+  address   = {Tartu, Estonia}
 }
 '''
 
 
 [[wordnet]]
-id = "omw-arb"
-name = "OMW Arabic Wordnet"
+id = "omw-sq"
+name = "OMW Albanian Wordnet"
 repo_url = "https://github.com/omwn/omw-data"
-language = "Arabic"
-bcp47 = "arb"
+language = "Albanian"
+bcp47 = "sq"
 format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-arb-2.0.tar.xz"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sq-2.0.tar.xz"
 license = "CC BY 3.0"
 known_in_cygnet = true
-notes = "Part of OMW v2.0 release. Originally from Arabic WordNet project."
+notes = "Part of OMW v2.0."
 confidence = "high"
+
 acl_ids = ["2023.gwc-1.18"]
 type = "expand"
+
+
+# ───────────────────────────── Ancient Greek ─────────────────────────────
+
+
+[[wordnet]]
+id = "agwn"
+name = "Open Ancient Greek WordNet 0.5"
+repo_url = "https://github.com/greekwordnet/greekwordnet-archive"
+language = "Ancient Greek"
+bcp47 = "grc"
+format = "JSON"
+release_url = "https://dspace-clarin-it.ilc.cnr.it/repository/xmlui/handle/20.500.11752/ILC-56"
+license = "CC BY-SA 4.0"
+known_in_cygnet = false
+notes = "7,447 synsets, 22,420 lemmas. JSON archive on GitHub. Also at CLARIN ILC (Italy). API at greekwordnet.chs.harvard.edu. Collaboration: CHS Harvard, U Exeter, U Pavia."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Arabic-Greek Wordnet (AGWN, ILSP)
+@misc{agwn-clarin,
+  title  = {Arabic-{G}reek {W}ord{N}et},
+  author = {{ILSP/RC Athena}},
+  url    = {https://inventory.clarin.gr/}
+}
+'''
+
+
+# ───────────────────────────────── Arabic ─────────────────────────────────
 
 
 [[wordnet]]
@@ -92,6 +158,22 @@ bib = '''
 
 
 [[wordnet]]
+id = "omw-arb"
+name = "OMW Arabic Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Arabic"
+bcp47 = "arb"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-arb-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0 release. Originally from Arabic WordNet project."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
 id = "tufs-arb"
 name = "TUFS Arabic"
 repo_url = "https://github.com/omwn/tufs"
@@ -105,1103 +187,11 @@ known_in_cygnet = true
 notes = "TUFS (Tokyo University of Foreign Studies) basic vocabulary linked to OMW."
 confidence = "high"
 
-# ── BULGARIAN ────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
 type = "expand"
 
 
-[[wordnet]]
-id = "omw-bg"
-name = "OMW Bulgarian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Bulgarian"
-bcp47 = "bg"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-bg-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── CATALAN ──────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-ca"
-name = "OMW Catalan Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Catalan"
-bcp47 = "ca"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ca-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From MCR (Multilingual Central Repository)."
-confidence = "high"
-
-# ── CHINESE (MANDARIN) ───────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-cmn"
-name = "OMW Chinese (Mandarin) Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Chinese (Mandarin)"
-bcp47 = "cmn"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-cmn-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["W13-4302", "2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "cow"
-name = "Chinese Open Wordnet"
-repo_url = "https://github.com/bond-lab/cow"
-language = "Chinese (Mandarin)"
-bcp47 = "cmn"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/bond-lab/cow/blob/master/docs/data/0.9/wn-data-cmn.tab"
-known_in_cygnet = false
-notes = "Older COW data in OMW 1.0 tab format. May be superseded by omw-cmn."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Cornetto release; no ACL Anthology entry
-@inproceedings{vossen-cornetto-2013,
-  title     = {Cornetto: A Combinatorial Lexical Resource for Dutch},
-  author    = {Vossen, Piek and Maks, Isa and Segers, Roxane and van der Vliet, Hennie},
-  booktitle = {Proceedings of eLex 2013},
-  year      = {2013},
-  url       = {https://github.com/cltl/cornetto}
-}
-'''
-
-
-[[wordnet]]
-id = "tufs-cmn"
-name = "TUFS Chinese (Mandarin)"
-repo_url = "https://github.com/omwn/tufs"
-language = "Chinese (Mandarin)"
-bcp47 = "cmn"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-zh.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-zh-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── DANISH ───────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-da"
-name = "OMW Danish Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Danish"
-bcp47 = "da"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-da-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "dannet"
-name = "DanNet"
-repo_url = "https://github.com/kuhumcst/DanNet"
-language = "Danish"
-bcp47 = "da"
-format = "RDF/TTL"
-release_url = "https://github.com/kuhumcst/DanNet/releases/download/v2025-07-03/dannet-wn-lmf.xml.gz"
-license = "MIT"
-known_in_cygnet = true
-notes = "Official Danish WordNet. Also available as WN-LMF XML. Listed in cygnet as alternate."
-confidence = "high"
-
-# ── GERMAN ───────────────────────────────────────────────────────────────────
-acl_ids = ["2021.gwc-1.31"]
-type = "standalone"
-bib = '''
-@inproceedings{pedersen-dannet-2009,
-  title     = {{DanNet} -- the Challenge of Compiling a {WordNet} for Danish by Reusing a Monolingual Dictionary},
-  author    = {Pedersen, Bolette Sandford and Nimb, Sanni and Asmussen, Jørg and Sørensen, Nicolai Hartvig and Trap-Jensen, Lars and Lorentzen, Henrik},
-  booktitle = {Language Resources and Evaluation},
-  year      = {2009},
-  volume    = {43},
-  pages     = {269--299},
-  doi       = {10.1007/s10579-009-9080-1}
-}
-'''
-
-
-[[wordnet]]
-id = "odenet"
-name = "OdeNet (Open German Wordnet)"
-repo_url = "https://github.com/hdaSprachtechnologie/odenet"
-language = "German"
-bcp47 = "de"
-format = "GWA LMF"
-release_url = "https://github.com/hdaSprachtechnologie/odenet/releases/download/v1.4/odenet-1.4.tar.xz"
-license = "CC BY 4.0"
-known_in_cygnet = true
-notes = "100 stars. Active open German wordnet."
-confidence = "high"
-acl_ids = ["2021.gwc-1.22"]
-type = "merge"
-
-
-[[wordnet]]
-id = "tufs-de"
-name = "TUFS German"
-repo_url = "https://github.com/omwn/tufs"
-language = "German"
-bcp47 = "de"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-de.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-de-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── GREEK ────────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-el"
-name = "OMW Greek Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Greek"
-bcp47 = "el"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-el-2.0.tar.xz"
-license = "Apache 2.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── SPANISH ──────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-es"
-name = "OMW Spanish Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Spanish"
-bcp47 = "es"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-es-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From MCR."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-es"
-name = "TUFS Spanish"
-repo_url = "https://github.com/omwn/tufs"
-language = "Spanish"
-bcp47 = "es"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-es.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-es-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── BASQUE ───────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-eu"
-name = "OMW Basque Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Basque"
-bcp47 = "eu"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-eu-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From MCR."
-confidence = "high"
-
-# ── FINNISH ──────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-fi"
-name = "OMW Finnish Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Finnish"
-bcp47 = "fi"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fi-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── FRENCH ───────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-bib = '''
-% HANDMADE: FinnWordNet — from XML citation field
-@article{linden-carlson-2010-finnwordnet,
-  title   = {{FinnWordNet} --- {W}ord{N}et på finska via översättning},
-  author  = {Lindén, Krister and Carlson, Lauri},
-  journal = {LexicoNordica --- Nordic Journal of Lexicography},
-  volume  = {17},
-  pages   = {119--140},
-  year    = {2010},
-  note    = {Finnish WordNet built via translation}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-fr"
-name = "OMW French Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "French"
-bcp47 = "fr"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fr-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From WOLF."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-fr"
-name = "TUFS French"
-repo_url = "https://github.com/omwn/tufs"
-language = "French"
-bcp47 = "fr"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-fr.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-fr-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── GALICIAN ─────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-gl"
-name = "OMW Galician Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Galician"
-bcp47 = "gl"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-gl-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From MCR."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "galnet"
-name = "SLI GalNet"
-repo_url = "https://github.com/xavier-gz/SLI_Galnet"
-language = "Galician"
-bcp47 = "gl"
-format = "GWA LMF"
-example_file = "https://github.com/xavier-gz/SLI_Galnet/blob/main/SLI_Galnet_LMF_3.0.29.tar.gz"
-known_in_cygnet = false
-notes = "Galician wordnet from SLI group. LMF tar.gz. May supersede omw-gl."
-confidence = "high"
-
-# ── HEBREW ───────────────────────────────────────────────────────────────────
-acl_ids = ["2016.gwc-1.12"]
-type = "expand"
-bib = '''
-% HANDMADE: GalNet — from XML citation field (updated to LRE 2018 paper)
-@article{gomez-guinovart-solla-portela-2018-galnet,
-  title   = {Building the {G}alician wordnet: methods and applications},
-  author  = {Gómez Guinovart, Xavier and Solla Portela, Miguel Anxo},
-  journal = {Language Resources and Evaluation},
-  volume  = {52},
-  number  = {1},
-  pages   = {317--339},
-  year    = {2018},
-  doi     = {10.1007/s10579-017-9408-5}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-he"
-name = "OMW Hebrew Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Hebrew"
-bcp47 = "he"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-he-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── CROATIAN ─────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-hr"
-name = "OMW Croatian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Croatian"
-bcp47 = "hr"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-hr-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── ICELANDIC ────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-is"
-name = "OMW Icelandic Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Icelandic"
-bcp47 = "is"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-is-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── ITALIAN ──────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-it"
-name = "OMW Italian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Italian"
-bcp47 = "it"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-it-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. From MultiWordNet."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-iwn"
-name = "ItalWordNet (IWN) via OMW"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Italian"
-bcp47 = "it"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-iwn-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "ItalWordNet packaged via omw-data."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-bib = '''
-% HANDMADE: OMW IndoWordNet
-@inproceedings{bhattacharyya-indown-2010,
-  title     = {{IndoWordNet}},
-  author    = {Bhattacharyya, Pushpak},
-  booktitle = {Proceedings of the Seventh Language Resources and Evaluation Conference ({LREC})},
-  year      = {2010},
-  address   = {Valletta, Malta}
-}
-'''
-
-
-[[wordnet]]
-id = "iwn-omw"
-name = "Open Italian WordNet (IWN-OMW)"
-repo_url = "https://github.com/valeq/IWN-OMW"
-language = "Italian"
-bcp47 = "it"
-format = "GWA LMF"
-example_file = "https://github.com/valeq/IWN-OMW/blob/main/data/LMF-XML/IWN-OMW_LMF_v1.0.xml"
-known_in_cygnet = false
-notes = "ItalWordNet in GWA LMF format. May be same source as omw-iwn."
-confidence = "high"
-type = "expand"
-supersedes = ["omw-iwn"]
-
-# ── JAPANESE ─────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: OpenItalWordNet (OMW IWN) — from XML citation field (Zenodo release)
-@misc{toral-etal-2010-italwordnet-omw,
-  title  = {{OpenItalWordNet}},
-  author = {Toral, Antonio and Bracal, Stefania and Monachini, Monica and Soria, Claudia},
-  year   = {2024},
-  doi    = {10.5281/zenodo.13120890},
-  url    = {https://zenodo.org/records/13120890},
-  note   = {Rejuvenated and standardised Italian WordNet for OMW}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-ja"
-name = "OMW Japanese Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Japanese"
-bcp47 = "ja"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ja-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-ja"
-name = "TUFS Japanese"
-repo_url = "https://github.com/omwn/tufs"
-language = "Japanese"
-bcp47 = "ja"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ja.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ja-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "wnja"
-name = "Japanese WordNet (wnja)"
-repo_url = "https://github.com/bond-lab/wnja"
-language = "Japanese"
-bcp47 = "ja"
-format = "unknown"
-known_in_cygnet = false
-notes = "Japanese WordNet project page; data distributed externally (not in repo). Original from NII."
-confidence = "medium"
-
-# ── MALAY ────────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.22"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-zsm"
-name = "OMW Malay Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Malay"
-bcp47 = "zsm"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-zsm-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. Part of WordNet Bahasa."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-zsm"
-name = "TUFS Malay"
-repo_url = "https://github.com/omwn/tufs"
-language = "Malay"
-bcp47 = "zsm"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ms.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ms-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── INDONESIAN ───────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-id"
-name = "OMW Indonesian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Indonesian"
-bcp47 = "id"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-id-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0. Part of WordNet Bahasa."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-id"
-name = "TUFS Indonesian"
-repo_url = "https://github.com/omwn/tufs"
-language = "Indonesian"
-bcp47 = "id"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-id.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-id-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── KURDISH ──────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "kurdnet"
-name = "KurdNet (Kurdish Wordnet)"
-repo_url = "https://github.com/sinaahmadi/kurdnet"
-language = "Kurdish (Kurmanji)"
-bcp47 = "kmr"
-format = "GWA LMF"
-release_url = "https://github.com/sinaahmadi/kurdnet/releases/download/kurdnet-1.0.tar.xz/kurdnet-1.0.tar.xz"
-known_in_cygnet = true
-notes = "Kurdish WordNet project. License unclear (NOASSERTION on GitHub)."
-confidence = "high"
-
-# ── LITHUANIAN ───────────────────────────────────────────────────────────────
-acl_ids = ["W14-0101"]
-type = "expand"
-bib = '''
-% HANDMADE: KurdNet (Kurdish WordNet)
-@inproceedings{aliabadi-kurdnet-2014,
-  title     = {Semi-Automatic Building of a Kurdish WordNet},
-  author    = {Aliabadi, Purya and Mousavi, Sina and Aliabadi, Shahriar and Aliabadi, Sina},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-lt"
-name = "OMW Lithuanian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Lithuanian"
-bcp47 = "lt"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-lt-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── NORWEGIAN ────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-nb"
-name = "OMW Norwegian Bokmål Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Norwegian Bokmål"
-bcp47 = "nb"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nb-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-bib = '''
-% HANDMADE: NorNet / OMW Norwegian Bokmål — from XML citation field
-@inproceedings{fjeld-nygaard-2009-nornet,
-  title     = {{NorNet} --- a monolingual wordnet of modern {N}orwegian},
-  author    = {Fjeld, Ruth Vatvedt and Nygaard, Lars},
-  booktitle = {Proceedings of the NODALIDA 2009 workshop: WordNets and other Lexical Semantic Resources},
-  year      = {2009},
-  address   = {Tartu, Estonia},
-  pages     = {13--16}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-nn"
-name = "OMW Norwegian Nynorsk Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Norwegian Nynorsk"
-bcp47 = "nn"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nn-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-bib = '''
-% HANDMADE: NorNet / OMW Norwegian Nynorsk — from XML citation field
-@inproceedings{fjeld-nygaard-2009-nornet,
-  title     = {{NorNet} --- a monolingual wordnet of modern {N}orwegian},
-  author    = {Fjeld, Ruth Vatvedt and Nygaard, Lars},
-  booktitle = {Proceedings of the NODALIDA 2009 workshop: WordNets and other Lexical Semantic Resources},
-  year      = {2009},
-  address   = {Tartu, Estonia},
-  pages     = {13--16}
-}
-'''
-
-
-[[wordnet]]
-id = "norsk-ordvev-nb"
-name = "Norsk Ordvev – Bokmål (Norwegian Wordnet Bokmål)"
-repo_url = "https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-27/"
-language = "Norwegian Bokmål"
-bcp47 = "nb"
-format = "DanNet TAB"
-release_url = "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nob_1.1.2.zip"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "v1.1.2. Standalone Norwegian Bokmål wordnet (~305K synsets incl. 250K proper names, ~55K common concepts). DanNet-derived tabular format (synsets.tab, words.tab, relations.tab). No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nb."
-confidence = "high"
-type = "standalone"
-bib = '''
-% HANDMADE: Norsk Ordvev – Bokmål (National Library of Norway)
-@misc{nb-norsk-ordvev-nob-2024,
-  title     = {Norsk ordnett bokmål / Norsk Ordvev Bokmål 1.1.2},
-  author    = {{National Library of Norway / Nasjonalbiblioteket}},
-  year      = {2024},
-  url       = {https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-70/},
-  note      = {Norwegian Bokmål Wordnet. DanNet tabular format. CC BY 4.0. ~305K synsets including proper names.}
-}
-'''
-
-
-[[wordnet]]
-id = "norsk-ordvev-nn"
-name = "Norsk Ordvev – Nynorsk (Norwegian Wordnet Nynorsk)"
-repo_url = "https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-7/"
-language = "Norwegian Nynorsk"
-bcp47 = "nn"
-format = "DanNet TAB"
-release_url = "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nno_1.1.0.zip"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "v1.1.0. Standalone Norwegian Nynorsk wordnet (~305K synsets incl. 250K proper names). DanNet-derived tabular format. No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nn."
-confidence = "high"
-type = "standalone"
-
-# ── DUTCH ────────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Norsk Ordvev – Nynorsk (National Library of Norway)
-@misc{nb-norsk-ordvev-nno-2024,
-  title     = {Norsk ordnett nynorsk / Norsk Ordvev Nynorsk 1.1.0},
-  author    = {{National Library of Norway / Nasjonalbiblioteket}},
-  year      = {2024},
-  url       = {https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-71/},
-  note      = {Norwegian Nynorsk Wordnet. DanNet tabular format. CC BY 4.0. ~305K synsets including proper names.}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-nl"
-name = "OMW Dutch Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Dutch"
-bcp47 = "nl"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nl-2.0.tar.xz"
-license = "CC BY 4.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "odwn"
-name = "Open Dutch Wordnet (ODWN)"
-repo_url = "https://github.com/cltl/OpenDutchWordnet"
-language = "Dutch"
-bcp47 = "nl"
-format = "custom XML"
-example_file = "https://github.com/cltl/OpenDutchWordnet/blob/master/resources/odwn/odwn_orbn_gwg-LMF.xml.gz"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "69 stars. The available XML uses an old proprietary ODWN-ORBN format (not GWA LMF): missing dc namespace, uses non-standard attributes (owner, languageCoding). Needs custom conversion."
-confidence = "high"
-acl_ids = ["2016.gwc-1.43"]
-type = "merge"
-bib = '''
-% HANDMADE: ODWN main reference
-@inproceedings{postma-odwn-2016,
-  title     = {Open Dutch WordNet},
-  author    = {Postma, Marten and van Miltenburg, Emiel and Segers, Roxane and Schoen, Anneleen and Vossen, Piek},
-  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
-  year      = {2016},
-  pages     = {301--306},
-  url       = {https://github.com/cltl/OpenDutchWordnet},
-  address   = {Bucharest, Romania}
-}
-'''
-
-
-[[wordnet]]
-id = "odwn-lmf"
-name = "Open Dutch Wordnet v1.3 (ISO LMF release)"
-repo_url = "https://github.com/cltl/OpenDutchWordnet"
-language = "Dutch"
-bcp47 = "nl"
-format = "custom XML"
-release_url = "https://zenodo.org/records/10328304/files/odwn_orbn_gwg-LMF_1.3.xml"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "v1.3, 2023-12, Zenodo DOI 10.5281/zenodo.10328304. Despite the filename 'gwg-LMF_1.3', the file uses ISO LMF (not GWA LMF): <LexicalResource> with languageCoding/owner attributes, no DC namespace, no DOCTYPE. Needs conversion to GWA LMF before use with wn module."
-confidence = "high"
-
-# ── POLISH ───────────────────────────────────────────────────────────────────
-acl_ids = ["2016.gwc-1.43"]
-type = "merge"
-supersedes = ["odwn"]
-bib = '''
-% HANDMADE: ODWN v1.3 Zenodo release
-@misc{postma-odwn-lmf-2023,
-  title     = {Open Dutch Wordnet v1.3},
-  author    = {Postma, Marten and van Miltenburg, Emiel and Segers, Roxane and Schoen, Anneleen and Vossen, Piek},
-  year      = {2023},
-  doi       = {10.5281/zenodo.10328304},
-  url       = {https://zenodo.org/records/10328304},
-  note      = {GWA LMF 1.3 release}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-pl"
-name = "OMW Polish Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Polish"
-bcp47 = "pl"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-pl-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "plwordnet-gw"
-name = "plWordNet in GWA Format"
-repo_url = "https://github.com/jmccrae/plwordnet-to-gw"
-language = "Polish"
-bcp47 = "pl"
-format = "GWA LMF"
-example_file = "https://github.com/jmccrae/plwordnet-to-gw/blob/master/plwordnet.xml.gz"
-known_in_cygnet = false
-notes = "Polish WordNet converted to GWA LMF format by jmccrae. Source: plWordNet from WrocMF University."
-confidence = "high"
-
-# ── PORTUGUESE ───────────────────────────────────────────────────────────────
-acl_ids = ["2019.gwc-1.45"]
-type = "standalone"
-bib = '''
-% HANDMADE: plWordNet main reference
-@inproceedings{maziarz-plwordnet-2012,
-  title     = {plWordNet 2.0 -- The New Version of the Polish WordNet},
-  author    = {Maziarz, Marek and Piasecki, Maciej and Szpakowicz, Stan},
-  booktitle = {Proceedings of the Sixth Global Wordnet Conference},
-  year      = {2012},
-  pages     = {263--270},
-  address   = {Matsue, Japan}
-}
-'''
-
-
-[[wordnet]]
-id = "own-pt"
-name = "OpenWordNet-PT"
-repo_url = "https://github.com/own-pt/openWordnet-PT"
-language = "Portuguese"
-bcp47 = "pt"
-format = "RDF/TTL"
-release_url = "https://github.com/own-pt/openWordnet-PT/releases/download/v1.0.0/own-pt.tar.gz"
-license = "CC BY 4.0"
-known_in_cygnet = true
-notes = "160 stars. Open Portuguese wordnet. Data in RDF/TTL; also released as GWA LMF in tar.gz."
-confidence = "high"
-acl_ids = ["W14-0153"]
-type = "expand"
-bib = '''
-% HANDMADE: OpenWordNet-PT
-@inproceedings{de-paiva-own-pt-2012,
-  title     = {{OpenWordNet-PT}: An Open Brazilian Wordnet for Reasoning},
-  author    = {de Paiva, Valeria and Rademaker, Alexandre and de Melo, Gerard},
-  booktitle = {Proceedings of COLING 2012: Demonstration Papers},
-  year      = {2012},
-  pages     = {353--360},
-  url       = {https://github.com/arademaker/openWordnet-PT}
-}
-'''
-
-
-[[wordnet]]
-id = "tufs-pt"
-name = "TUFS Portuguese"
-repo_url = "https://github.com/omwn/tufs"
-language = "Portuguese"
-bcp47 = "pt"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-pt.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-pt-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── ROMANIAN ─────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-ro"
-name = "OMW Romanian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Romanian"
-bcp47 = "ro"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ro-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "rowordnet"
-name = "RoWordNet"
-repo_url = "https://github.com/racai-ai/RoWordNet"
-language = "Romanian"
-bcp47 = "ro"
-format = "VisDic XML"
-example_file = "https://raw.githubusercontent.com/racai-ai/RoWordNet/master/xml/rown.xml"
-known_in_cygnet = false
-notes = "Romanian WordNet XML (custom ROWN format). visdic2lmf.py can convert to GWA LMF. Python API at dumitrescustefan/RoWordNet."
-confidence = "high"
-type = "standalone"
-
-# ── SLOVAK ───────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Romanian WordNet
-@inproceedings{tufis-rowordnet-2004,
-  title     = {{BalkaNet}: Aims, Methods, Results and Perspectives. A General Overview},
-  author    = {Tufiş, Dan and Cristea, Dan and Stamou, Sofia},
-  journal   = {Romanian Journal of Information Science and Technology},
-  volume    = {7},
-  number    = {1--2},
-  pages     = {9--43},
-  year      = {2004}
-}
-'''
-
-
-[[wordnet]]
-id = "omw-sk"
-name = "OMW Slovak Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Slovak"
-bcp47 = "sk"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sk-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── SLOVENIAN ────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-sl"
-name = "OMW Slovenian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Slovenian"
-bcp47 = "sl"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sl-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── ALBANIAN ─────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-sq"
-name = "OMW Albanian Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Albanian"
-bcp47 = "sq"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sq-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── SWEDISH ──────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-sv"
-name = "OMW Swedish Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Swedish"
-bcp47 = "sv"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sv-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-
-# ── THAI ─────────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "omw-th"
-name = "OMW Thai Wordnet"
-repo_url = "https://github.com/omwn/omw-data"
-language = "Thai"
-bcp47 = "th"
-format = "GWA LMF"
-release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-th-2.0.tar.xz"
-license = "wordnet"
-known_in_cygnet = true
-notes = "Part of OMW v2.0."
-confidence = "high"
-acl_ids = ["2023.gwc-1.18"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-th"
-name = "TUFS Thai"
-repo_url = "https://github.com/omwn/tufs"
-language = "Thai"
-bcp47 = "th"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-th.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-th-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── LATVIAN ──────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tezaurs"
-name = "Tēzaurs (Latvian Wordnet)"
-repo_url = "https://github.com/PeterisP/tezaurs"
-language = "Latvian"
-bcp47 = "lv"
-format = "GWA LMF"
-release_url = "https://repository.clarin.lv/repository/xmlui/bitstream/handle/20.500.12574/119/tezaurs_2025_1_lmf.xml"
-license = "CC BY-SA 4.0"
-known_in_cygnet = true
-notes = "Distributed via CLARIN Latvia. License noted as incorrectly stated in file; confirmed CC BY-SA 4.0."
-confidence = "high"
-
-# ── ASSAMESE ─────────────────────────────────────────────────────────────────
-acl_ids = ["2023.gwc-1.23"]
-type = "standalone"
-bib = '''
-% HANDMADE: Tēzaurs (Latvian WordNet)
-@inproceedings{spektors-tezaurs-2014,
-  title     = {Tēzaurs.lv: A Rich Morphologically Tagged Corpus and an Open-Ended Dictionary for Latvian},
-  author    = {Spektors, Andris and Auziņa, Ilze and Deksne, Daiga and Skadiņa, Inguna},
-  booktitle = {Proceedings of the Ninth International Conference on Language Resources and Evaluation ({LREC'14})},
-  year      = {2014},
-  address   = {Reykjavik, Iceland}
-}
-'''
+# ──────────────────────────────── Assamese ────────────────────────────────
 
 
 [[wordnet]]
@@ -1218,1147 +208,11 @@ known_in_cygnet = true
 notes = "TUFS basic vocabulary."
 confidence = "high"
 
-# ── KHMER ────────────────────────────────────────────────────────────────────
 acl_ids = ["2020.lrec-1.389"]
 type = "expand"
 
 
-[[wordnet]]
-id = "tufs-km"
-name = "TUFS Khmer"
-repo_url = "https://github.com/omwn/tufs"
-language = "Khmer"
-bcp47 = "km"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-km.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-km-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── KOREAN ───────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-ko"
-name = "TUFS Korean"
-repo_url = "https://github.com/omwn/tufs"
-language = "Korean"
-bcp47 = "ko"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ko.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ko-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── LAO ──────────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-lo"
-name = "TUFS Lao"
-repo_url = "https://github.com/omwn/tufs"
-language = "Lao"
-bcp47 = "lo"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-lo.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-lo-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── MONGOLIAN ────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-mn"
-name = "TUFS Mongolian"
-repo_url = "https://github.com/omwn/tufs"
-language = "Mongolian"
-bcp47 = "mn"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-mn.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-mn-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary. Cygnet notes: newer version may exist at myanmaropenwordnet/mow (but that is Burmese)."
-confidence = "high"
-
-# ── BURMESE / MYANMAR ────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-my"
-name = "TUFS Burmese"
-repo_url = "https://github.com/omwn/tufs"
-language = "Burmese"
-bcp47 = "my"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-my.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-my-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "mow"
-name = "Myanmar Open Wordnet (MOW)"
-repo_url = "https://github.com/myanmaropenwordnet/mow"
-language = "Burmese"
-bcp47 = "my"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/myanmaropenwordnet/mow/blob/master/mow-0.1.3-mya_20171005165336.tab"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "v0.1.3 in OMW 1.0 tab format. Cygnet mentions getting newer version. Also mirrored at omwn/mow."
-confidence = "high"
-type = "expand"
-
-# ── RUSSIAN ──────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: MOW (Multilingual Open Wordnet)
-@inproceedings{vigier-mow-2014,
-  title     = {{MOW}},
-  author    = {Vigier, Denis and Mangeot, Mathieu and Gledhill, Chris},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia}
-}
-'''
-
-
-[[wordnet]]
-id = "tufs-ru"
-name = "TUFS Russian"
-repo_url = "https://github.com/omwn/tufs"
-language = "Russian"
-bcp47 = "ru"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ru.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ru-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── FILIPINO / TAGALOG ───────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-tl"
-name = "TUFS Filipino"
-repo_url = "https://github.com/omwn/tufs"
-language = "Filipino"
-bcp47 = "tl"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-tl.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-tl-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── TURKISH ──────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-tr"
-name = "TUFS Turkish"
-repo_url = "https://github.com/omwn/tufs"
-language = "Turkish"
-bcp47 = "tr"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-tr.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-tr-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "kenet"
-name = "Turkish WordNet KeNet"
-repo_url = "https://github.com/StarlangSoftware/TurkishWordNet"
-language = "Turkish"
-bcp47 = "tr"
-format = "custom XML"
-example_file = "https://raw.githubusercontent.com/StarlangSoftware/TurkishWordNet/master/src/main/resources/turkish_wordnet.xml"
-known_in_cygnet = false
-notes = "64 stars. Turkish wordnet with historical versions (1901–present). XML format; unclear if GWA LMF."
-confidence = "high"
-
-# ── URDU ─────────────────────────────────────────────────────────────────────
-acl_ids = ["2021.gwc-1.19"]
-type = "standalone"
-bib = '''
-% HANDMADE: KeNet (Turkish WordNet by Starlang)
-@inproceedings{ozdemir-kenet-2020,
-  title     = {{KeNet}: {T}urkish {W}ord{N}et},
-  author    = {Ozdemir, Cihat and Arican, Bilge Nas and Kocabalcioglu, Ahmet and Sahin, Utku and Avar, Busra and Ergelen, Oguzhan and Bakay, Ozge},
-  booktitle = {Proceedings of the 28th International Conference on Computational Linguistics},
-  year      = {2020},
-  pages     = {6349--6358},
-  doi       = {10.18653/v1/2020.coling-main.553}
-}
-'''
-
-
-[[wordnet]]
-id = "tufs-ur"
-name = "TUFS Urdu"
-repo_url = "https://github.com/omwn/tufs"
-language = "Urdu"
-bcp47 = "ur"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ur.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ur-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-
-# ── VIETNAMESE ───────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "tufs-vi"
-name = "TUFS Vietnamese"
-repo_url = "https://github.com/omwn/tufs"
-language = "Vietnamese"
-bcp47 = "vi"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-vi.tsv"
-release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-vi-2.0.tar.xz"
-license = "CC BY 3.0"
-known_in_cygnet = true
-notes = "TUFS basic vocabulary."
-confidence = "high"
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-
-
-[[wordnet]]
-id = "viwn"
-name = "Vietnamese WordNet"
-repo_url = "https://github.com/zeloru/vietnamese-wordnet"
-language = "Vietnamese"
-bcp47 = "vi"
-format = "unknown"
-example_file = "https://raw.githubusercontent.com/zeloru/vietnamese-wordnet/master/vi-wordnet.tar.xz"
-known_in_cygnet = false
-notes = "34 stars. Last updated 2018. Data in vi-wordnet.tar.xz (398 KB); format of contents unknown. Sources: viet.wordnet.vn (nouns/verbs/adj) and vi.wiktionary.org. No license specified. Separate from TUFS viwn."
-confidence = "medium"
-type = "expand"
-
-# ── CANTONESE ────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Vietnamese WordNet
-@inproceedings{nguyen-viwn-2016,
-  title     = {Building the {V}ietnamese {W}ord{N}et},
-  author    = {Nguyen, Thi Minh Huyen and Le Thanh, Huong and Nguyen, Thi Thu Huong and Nguyen, Duc Nguyen},
-  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
-  year      = {2016},
-  address   = {Bucharest, Romania}
-}
-'''
-
-
-[[wordnet]]
-id = "cantonese-wn"
-name = "Cantonese Wordnet"
-repo_url = "https://github.com/lmorgadodacosta/CantoneseWN"
-language = "Cantonese"
-bcp47 = "yue"
-format = "GWA LMF"
-example_file = "https://github.com/lmorgadodacosta/CantoneseWN/blob/master/cantown.xml"
-release_url = "https://raw.githubusercontent.com/lmorgadodacosta/CantoneseWN/refs/heads/master/cantown.xml"
-known_in_cygnet = true
-notes = "Also has cantown.tsv. Active project."
-confidence = "high"
-
-# ── ABUI ─────────────────────────────────────────────────────────────────────
-acl_ids = ["2019.gwc-1.26"]
-type = "expand"
-bib = '''
-% HANDMADE: Cantonese WordNet
-@inproceedings{lamas-cantonese-2018,
-  title     = {The {C}antonese {W}ord{N}et},
-  author    = {da Costa Lamas, Luis and Bond, Francis},
-  booktitle = {Proceedings of the Ninth Global Wordnet Conference},
-  year      = {2018},
-  address   = {Singapore}
-}
-'''
-
-
-[[wordnet]]
-id = "abuiwn"
-name = "Abui Wordnet"
-repo_url = "https://github.com/fanacek/abuiwn"
-language = "Abui"
-bcp47 = "abz"
-format = "GWA LMF"
-example_file = "https://github.com/fanacek/abuiwn/blob/main/abwn.xml"
-release_url = "https://raw.githubusercontent.com/fanacek/abuiwn/refs/heads/main/abwn.xml"
-known_in_cygnet = true
-notes = "Also has abwn_lmf.tsv. Abui is a Papuan language of eastern Indonesia."
-confidence = "high"
-
-# ── OLD JAVANESE ─────────────────────────────────────────────────────────────
-acl_ids = ["2022.fieldmatters-1.7", "2023.gwc-1.38"]
-type = "expand"
-
-
-[[wordnet]]
-id = "ojw"
-name = "Old Javanese Wordnet"
-repo_url = "https://github.com/omwn/OJW"
-language = "Old Javanese"
-bcp47 = "kaw"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/OJW/blob/master/wn-kaw.tab"
-known_in_cygnet = false
-notes = "OMW 1.0 tab format. kaw is ISO 639-3 for Old Javanese (Kawi)."
-confidence = "high"
-type = "expand"
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ADDITIONAL WORDNETS FOUND — NOT IN CYGNET
-# ══════════════════════════════════════════════════════════════════════════════
-
-# ── IRISH / GAEILGE ──────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Old Javanese Wordnet — part of OMWN project, no separate paper found
-@misc{bond-omwn-ojw,
-  title  = {Old {J}avanese {W}ord{N}et ({OJW})},
-  author = {Bond, Francis and others},
-  year   = {2022},
-  url    = {https://github.com/omwn/ojw},
-  note   = {Part of the Open Multilingual Wordnet (OMW) project. OMW 1.0 tab format.}
-}
-'''
-
-
-[[wordnet]]
-id = "wordnet-gaeilge"
-name = "Líonra Séimeantach na Gaeilge (Irish Wordnet)"
-repo_url = "https://github.com/kscanne/wordnet-gaeilge"
-language = "Irish"
-bcp47 = "ga"
-format = "GWA LMF"
-example_file = "https://github.com/kscanne/wordnet-gaeilge/blob/master/lmf-template.xml"
-license = "unknown"
-known_in_cygnet = false
-notes = "Work-in-progress Irish semantic network in LMF format. 12 stars."
-confidence = "medium"
-type = "expand"
-bib = '''
-% HANDMADE: Irish WordNet (Gramadán/Foclóir Gaeilge WordNet)
-@misc{wordnet-gaeilge,
-  title = {Irish {W}ord{N}et},
-  url   = {https://github.com/jimregan/wordnet-gaeilge}
-}
-'''
-
-
-[[wordnet]]
-id = "wn-data-gle"
-name = "Irish Wordnet (OMW 1.0 tab)"
-repo_url = "https://github.com/TommasoPetrolito/wn-data-gle.tab"
-language = "Irish"
-bcp47 = "ga"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/TommasoPetrolito/wn-data-gle.tab/blob/main/wn-data-gle.tab"
-known_in_cygnet = false
-notes = "Conversion of wordnet-gaeilge to OMW 1.0 tab format for use with OMW."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Irish WordNet data
-@misc{wn-data-gle,
-  title = {Irish WordNet data (wn-data-gle)},
-  url   = {https://github.com/omwn/omw-data}
-}
-'''
-
-
-[[wordnet]]
-id = "gawn-lemon"
-name = "WordNet Gaeilge (Lemon)"
-repo_url = "https://github.com/jimregan/lemonGAWN"
-language = "Irish"
-bcp47 = "ga"
-format = "Lemon TTL"
-example_file = "https://github.com/jimregan/lemonGAWN/blob/master/gawn-lemon.ttl"
-known_in_cygnet = false
-notes = "Irish WordNet in lemon (linked lexical data) format."
-confidence = "medium"
-type = "expand"
-
-# ── UZBEK ────────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Scottish Gaelic Wordnet Lemon
-@misc{gawn-lemon,
-  title  = {Gaelic WordNet (lemon format)},
-  author = {Lamb, William},
-  url    = {https://github.com/bilingualdictionary/GAWN}
-}
-'''
-
-
-[[wordnet]]
-id = "uzwordnet"
-name = "UzWordnet (Uzbek Wordnet)"
-repo_url = "https://github.com/LDKR-Group/UzWordnet"
-language = "Uzbek"
-bcp47 = "uz"
-format = "custom XML"
-example_file = "https://github.com/LDKR-Group/UzWordnet/blob/main/files/uzwordnet_ili.xml"
-known_in_cygnet = false
-notes = "Has uzwordnet.xml and uzwordnet_ili.xml. Also RDF version. Format compatibility with GWA LMF unclear."
-confidence = "medium"
-
-# ── AFRIKAANS ────────────────────────────────────────────────────────────────
-acl_ids = ["2021.gwc-1.2"]
-type = "expand"
-bib = '''
-% HANDMADE: Uzbek WordNet
-@inproceedings{uz-wordnet-2020,
-  title     = {Development of {U}zbek {W}ord{N}et},
-  author    = {Matlatipov, Gulsanam and Vetulani, Zygmunt},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia}
-}
-'''
-
-
-[[wordnet]]
-id = "open-afrikaans-wn"
-name = "Open Afrikaans Wordnet"
-repo_url = "https://github.com/pssvlng/open-afrikaans-wordnet"
-language = "Afrikaans"
-bcp47 = "af"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/open-afrikaans-wordnet/blob/main/OAfrikaansNet.xml"
-license = "CC BY-SA 4.0"
-known_in_cygnet = false
-notes = "Confirmed GWA LMF header. Inferred from English wordnet. passivlingo.com project."
-confidence = "high"
-type = "expand"
-
-# ── UKRAINIAN ────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Open Afrikaans WordNet
-@misc{open-afrikaans-wn,
-  title = {Open Afrikaans WordNet},
-  url   = {https://github.com/ajarmain/afrikaans-wordnet}
-}
-'''
-
-
-[[wordnet]]
-id = "ua-wordnet"
-name = "Open Ukrainian Wordnet"
-repo_url = "https://github.com/pssvlng/ua-wordnet"
-language = "Ukrainian"
-bcp47 = "uk"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/ua-wordnet/blob/main/uaWordNet.xml"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "XML file; likely GWA LMF based on sibling repo (Afrikaans confirmed LMF). Same passivlingo.com project."
-confidence = "medium"
-
-# ── XHOSA ────────────────────────────────────────────────────────────────────
-acl_ids = ["2023.unlp-1.7"]
-type = "expand"
-bib = '''
-% HANDMADE: Ukrainian WordNet
-@inproceedings{shavrina-ua-wordnet-2023,
-  title     = {Ukrainian {W}ord{N}et},
-  author    = {Starko, Vasyl and others},
-  booktitle = {Proceedings of the Second Ukrainian Natural Language Processing Workshop ({UNLP})},
-  year      = {2023},
-  url       = {https://github.com/brown-uk/dict_uk}
-}
-'''
-
-
-[[wordnet]]
-id = "open-xhosa-wn"
-name = "Open Xhosa Wordnet"
-repo_url = "https://github.com/pssvlng/open-african-wordnets"
-language = "Xhosa"
-bcp47 = "xh"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/xh_inferred_plus.zip"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "Confirmed GWA LMF XML inside zip (xh_inferred_plus.xml). Same passivlingo.com project."
-confidence = "high"
-type = "expand"
-
-# ── ZULU ─────────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Open Xhosa WordNet
-@misc{open-xhosa-wn,
-  title = {Open Xhosa WordNet},
-  url   = {https://github.com/ajarmain/xhosa-wordnet}
-}
-'''
-
-
-[[wordnet]]
-id = "open-zulu-wn"
-name = "Open Zulu Wordnet"
-repo_url = "https://github.com/pssvlng/open-african-wordnets"
-language = "Zulu"
-bcp47 = "zu"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/zu_inferred_plus.zip"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "Likely GWA LMF based on Xhosa sibling. Same passivlingo.com project."
-confidence = "medium"
-type = "expand"
-
-# ── SESOTHO ──────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Open Zulu WordNet
-@misc{open-zulu-wn,
-  title = {Open Zulu WordNet},
-  url   = {https://github.com/ajarmain/zulu-wordnet}
-}
-'''
-
-
-[[wordnet]]
-id = "open-sesotho-wn"
-name = "Open Sesotho Wordnet"
-repo_url = "https://github.com/pssvlng/open-african-wordnets"
-language = "Sesotho"
-bcp47 = "st"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/st_inferred_plus.zip"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "Likely GWA LMF. Same passivlingo.com project."
-confidence = "medium"
-type = "expand"
-
-# ── TSONGA ───────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Open Sesotho WordNet
-@misc{open-sesotho-wn,
-  title = {Open Sesotho WordNet},
-  url   = {https://github.com/ajarmain/sesotho-wordnet}
-}
-'''
-
-
-[[wordnet]]
-id = "open-tsonga-wn"
-name = "Open Tsonga Wordnet"
-repo_url = "https://github.com/pssvlng/open-african-wordnets"
-language = "Tsonga"
-bcp47 = "ts"
-format = "GWA LMF"
-example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/ts_inferred_plus.zip"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "Likely GWA LMF. Same passivlingo.com project."
-confidence = "medium"
-type = "expand"
-
-# ── HUNGARIAN ────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Open Tsonga WordNet
-@misc{open-tsonga-wn,
-  title = {Open Tsonga WordNet},
-  url   = {https://github.com/ajarmain/tsonga-wordnet}
-}
-'''
-
-
-[[wordnet]]
-id = "huwn"
-name = "Hungarian WordNet (RDF)"
-repo_url = "https://github.com/mmihaltz/huwn.rdf"
-language = "Hungarian"
-bcp47 = "hu"
-format = "RDF/TTL"
-example_file = "https://raw.githubusercontent.com/mmihaltz/huwn.rdf/master/huwn.ttl.gz"
-known_in_cygnet = false
-notes = "Hungarian WordNet in RDF/Turtle (OntoLex/Lemon). Not GWA LMF — needs conversion."
-confidence = "high"
-type = "expand"
-
-# ── TAMIL ────────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Hungarian WordNet
-@inproceedings{mihaly-huwn-2008,
-  title     = {The {H}ungarian {W}ord{N}et and the {BalkaNet}},
-  author    = {Miháltz, Márton and Hatvani, Csaba and Kuti, Judit and Szarvas, György and Csirik, János and Prószéky, Gábor and Váradi, Tamás},
-  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
-  year      = {2008},
-  pages     = {174--183},
-  address   = {Szeged, Hungary}
-}
-'''
-
-
-[[wordnet]]
-id = "twn"
-name = "Tamil WordNet"
-repo_url = "https://github.com/ThaniThamizhAkarathiKalanjiyam/twn"
-language = "Tamil"
-bcp47 = "ta"
-format = "unknown"
-license = "GPL-3.0"
-known_in_cygnet = false
-notes = "Repo exists but no data files visible in tree (only LICENSE + README). Data may be elsewhere."
-confidence = "low"
-type = "expand"
-
-# ── GF WORDNET (MULTILINGUAL) ────────────────────────────────────────────────
-bib = '''
-% HANDMADE: Chinese Taiwan WordNet
-@inproceedings{huang-cwn-2010,
-  title     = {{C}hinese {W}ord{N}et: Design and Implementation},
-  author    = {Huang, Chu-Ren and Chang, Ru-Yng and Lee, Hsiang-Bin},
-  booktitle = {Proceedings of COLING-2004},
-  year      = {2004},
-  address   = {Geneva, Switzerland}
-}
-'''
-
-
-[[wordnet]]
-id = "gf-wordnet"
-name = "GF Wordnet (Grammatical Framework)"
-repo_url = "https://github.com/GrammaticalFramework/gf-wordnet"
-language = "multilingual (100+ languages)"
-bcp47 = "mul"
-format = "GF"
-license = "unknown"
-known_in_cygnet = false
-notes = "28 stars. Multilingual WordNet in GF format covering English, Swedish, Bulgarian as primary; bootstrapped for 100+ others including major European, Asian languages. Not GWA LMF."
-confidence = "high"
-type = "auto"
-
-# ── PUNJABI ──────────────────────────────────────────────────────────────────
-bib = '''
-% HANDMADE: GF WordNet
-@inproceedings{ranta-gf-wordnet-2020,
-  title     = {Abstract Syntax as Interlingua: Scaling Up the Grammatical Framework from Research to Resource Grammars},
-  author    = {Ranta, Aarne and Kolachina, Prasanth},
-  booktitle = {Proceedings of the Eighth International Conference on Language Resources and Evaluation ({LREC'20})},
-  year      = {2020},
-  url       = {https://www.grammaticalframework.org/wordnet/}
-}
-'''
-
-
-[[wordnet]]
-id = "tufs-pb"
-name = "TUFS Punjabi"
-repo_url = "https://github.com/omwn/tufs"
-language = "Punjabi"
-bcp47 = "pa"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-pb.tsv"
-known_in_cygnet = false
-notes = "In TUFS repo (tufs-vocab-pb.tsv) but not listed in cygnet. pb = Western Panjabi?"
-confidence = "medium"
-
-# ── SINHALA ──────────────────────────────────────────────────────────────────
-acl_ids = ["2020.lrec-1.389"]
-type = "expand"
-bib = '''
-% HANDMADE: TUFS Brazilian Portuguese — part of TUFS collection
-@misc{bond-tufs-2009,
-  title = {{TUFS} Multilingual Wordnet},
-  author = {Bond, Francis and Paik, Kyonghee},
-  year   = {2009},
-  url    = {https://github.com/omwn/tufs}
-}
-'''
-
-
-[[wordnet]]
-id = "sinhala-wn"
-name = "Sinhala WordNet"
-repo_url = "https://github.com/CodeLanka/sinhala-wordnet"
-language = "Sinhala"
-bcp47 = "si"
-format = "unknown"
-known_in_cygnet = false
-notes = "Described as large lexical database for Sinhala but no data files in GitHub repo. Data may be on external site."
-confidence = "low"
-
-# ── SERBIAN ──────────────────────────────────────────────────────────────────
-acl_ids = ["W14-0114"]
-type = "expand"
-bib = '''
-% HANDMADE: Sinhala WordNet
-@inproceedings{welgama-sinhala-2007,
-  title     = {Construction of {S}inhala {W}ord{N}et},
-  author    = {Welgama, Viraj and Kumara, Budditha Hettige and Bond, Francis},
-  booktitle = {Proceedings of the International Conference on Digital Libraries},
-  year      = {2007}
-}
-'''
-
-
-[[wordnet]]
-id = "srpwn"
-name = "Serbian WordNet (SrpWN)"
-repo_url = "https://github.com/sasa5linkar/Serbian-WordNet-Sentiment-Lexicon-Analysis"
-language = "Serbian"
-bcp47 = "sr"
-format = "unknown"
-known_in_cygnet = false
-notes = "Repo focuses on sentiment analysis using Serbian WordNet; actual SrpWN data not hosted here. SrpWN exists at University of Belgrade."
-confidence = "low"
-type = "expand"
-
-# ── VIETNAMESE (additional) ──────────────────────────────────────────────────
-bib = '''
-% HANDMADE (see also ACL entry): Serbian WordNet
-@inproceedings{krstev-srpwn-2008,
-  title     = {The {S}erbian {W}ord{N}et: Current State and Further Development},
-  author    = {Krstev, Cvetana and Vitas, Duško and Erjavec, Tomaž and Ide, Nancy},
-  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
-  year      = {2008},
-  address   = {Szeged, Hungary}
-}
-'''
-
-
-[[wordnet]]
-id = "viwn-build"
-name = "Vietnamese Wordnet (build scripts)"
-repo_url = "https://github.com/hienvuhuy/wordnet"
-language = "Vietnamese"
-bcp47 = "vi"
-format = "unknown"
-known_in_cygnet = false
-notes = "Scripts for constructing Vietnamese wordnet lexicographer files. Not a data release."
-confidence = "low"
-type = "expand"
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ADDITIONAL FINDS — TOPIC:WORDNET GITHUB SEARCH
-# ══════════════════════════════════════════════════════════════════════════════
-bib = '''
-% HANDMADE: Vietnamese WordNet (bond-lab build)
-@misc{viwn-build,
-  title = {Vietnamese WordNet},
-  url   = {https://github.com/bond-lab/viwn}
-}
-'''
-
-
-[[wordnet]]
-id = "monwn"
-name = "Mongolian Wordnet (MonWN)"
-repo_url = "https://github.com/kbatsuren/monwn"
-language = "Mongolian"
-bcp47 = "mn"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/kbatsuren/monwn/blob/main/wn-data-mon.tsv"
-known_in_cygnet = false
-notes = "17 stars. wn-data-mon.tsv in repo. May supersede tufs-mn. By Khuyagbaatar Batsuren."
-confidence = "high"
-acl_ids = ["2019.gwc-1.30"]
-type = "expand"
-bib = '''
-% HANDMADE: Mongolian WordNet
-@inproceedings{garad-monwn-2020,
-  title     = {Building a {M}ongolian {W}ord{N}et},
-  author    = {Garad, Munkhbayar and others},
-  booktitle = {Proceedings of the Tenth International Conference on Language Resources and Evaluation ({LREC'20})},
-  year      = {2020}
-}
-'''
-
-
-[[wordnet]]
-id = "wncy"
-name = "WordNet Cymraeg (Welsh WordNet)"
-repo_url = "https://github.com/CorCenCC/wncy"
-language = "Welsh"
-bcp47 = "cy"
-format = "JSON"
-example_file = "https://github.com/CorCenCC/wncy/blob/master/wncy.json"
-license = "BSD-2-Clause"
-known_in_cygnet = false
-notes = "Welsh lexical database with synsets and lexico-semantic relations. JSON format; not GWA LMF."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Welsh WordNet (CorCenCC)
-@inproceedings{donnelly-wncy-2019,
-  title     = {Welsh {W}ord{N}et},
-  author    = {Donnelly, Kevin and Watkins, Andrew},
-  booktitle = {Proceedings of the Tenth Global Wordnet Conference},
-  year      = {2019},
-  pages     = {279--287},
-  address   = {Wroclaw, Poland}
-}
-'''
-
-
-[[wordnet]]
-id = "african-wn-sefara"
-name = "AfricanWordNet (South African languages)"
-repo_url = "https://github.com/JosephSefara/AfricanWordNet"
-language = "multiple South African languages"
-bcp47 = "mul"
-format = "unknown"
-example_file = "https://github.com/JosephSefara/AfricanWordNet/blob/main/data/index.xml"
-known_in_cygnet = false
-notes = "Implements WordNets for South African languages per GWC 2021 paper. Data in zip; languages unclear (likely Zulu, Xhosa, Sotho, Tswana). index.xml returned 404 when checked."
-confidence = "medium"
-type = "expand"
-bib = '''
-% HANDMADE: AfricanWordNet (South African)
-@misc{african-wn-sefara,
-  title = {African{W}ord{N}et},
-  author = {Sefara, Tshephisho Joseph},
-  url   = {https://github.com/JosephSefara/AfricanWordNet}
-}
-'''
-
-
-[[wordnet]]
-id = "latinwn-revision"
-name = "Latin WordNet Revision (LiLa)"
-repo_url = "https://github.com/CIRCSE/latinWordnet-revision"
-language = "Latin"
-bcp47 = "la"
-format = "RDF/TTL"
-example_file = "https://github.com/CIRCSE/latinWordnet-revision/blob/main/lwn31.ttl"
-known_in_cygnet = false
-notes = "Revision of Minozzi's Latin WordNet mapped to Princeton WN 3.0. Also has CSV. CIRCSE = Catholic University Milan."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Latin WordNet (revision)
-@inproceedings{minozzi-latinwn-2010,
-  title     = {The Latin {W}ord{N}et Project},
-  author    = {Minozzi, Stefano},
-  booktitle = {Workshop on Latin Linguistics and Computational Linguistics},
-  year      = {2010},
-  url       = {https://latinwordnet.exeter.ac.uk/}
-}
-'''
-
-
-[[wordnet]]
-id = "latinwn-archive"
-name = "Latin WordNet Archive"
-repo_url = "https://github.com/latinwordnet/latinwordnet-archive"
-language = "Latin"
-bcp47 = "la"
-format = "JSON"
-example_file = "https://github.com/latinwordnet/latinwordnet-archive/tree/main/json"
-known_in_cygnet = false
-notes = "Archived export of Latin WordNet in JSON format. API at greekwordnet.chs.harvard.edu. Same project as greekwordnet org."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Latin WordNet (Bizzoni et al.)
-@inproceedings{bizzoni-latinwn-2014,
-  title     = {{LatinWordNet}, Annotations and Augmentation},
-  author    = {Bizzoni, Yuri and Boschetti, Federico and Diakoff, Harry and Del Gratta, Riccardo and Monachini, Monica and Crane, Gregory},
-  booktitle = {Proceedings of the LREC 2014 Workshop on Language Resources and Technologies for Classical Languages},
-  year      = {2014},
-  address   = {Reykjavik, Iceland}
-}
-'''
-
-
-[[wordnet]]
-id = "iwn-en"
-name = "Indian Wordnet–English Links (IWN-En)"
-repo_url = "https://github.com/cfiltnlp/IWN-En"
-language = "multiple Indian languages"
-bcp47 = "mul"
-format = "alignment TSV"
-example_file = "https://github.com/cfiltnlp/IWN-En/blob/master/data/english-hindi-all-linked.tsv"
-known_in_cygnet = false
-notes = "Alignment file linking English PWN synsets to 18 Indian language WordNets (Hindi, Assamese, Bengali, Bodo, Gujarati, Kannada, Kashmiri, Konkani, Malayalam, Manipuri, Marathi, Nepali, Odia, Punjabi, Sanskrit, Tamil, Telugu, Urdu). Not an OMW 1.0 tab file. bond-lab/indown-omw is a conversion tool that converts IndoWordNet TSV → GWA LMF; could be used here. From CFILT IIT Bombay."
-confidence = "high"
-type = "alignment"
-
-# ══════════════════════════════════════════════════════════════════════════════
-# CLARIN REPOSITORIES
-# ══════════════════════════════════════════════════════════════════════════════
-bib = '''
-% HANDMADE: IndoWordNet–English Links — Bhattacharyya 2010 (LREC)
-@inproceedings{bhattacharyya-2010-indowordnet,
-  title     = {{IndoWordNet}},
-  author    = {Bhattacharyya, Pushpak},
-  booktitle = {Proceedings of the Seventh International Conference on Language Resources and Evaluation ({LREC}'10)},
-  year      = {2010},
-  address   = {Valletta, Malta},
-  url       = {http://www.cfilt.iitb.ac.in/wordnet/webwn/}
-}
-'''
-
-
-[[wordnet]]
-id = "estwn"
-name = "Estonian Wordnet (2.4.0)"
-repo_url = "https://metashare.ut.ee/repository/browse/47c3487fa0d411eebb4773db10791bcf1955e509281d4f388f484e9e600a40a3"
-language = "Estonian"
-bcp47 = "et"
-format = "GWA LMF"
-release_url = "https://doi.org/10.15155/1-00-0000-0000-0000-001B3L"
-license = "CC BY-SA"
-known_in_cygnet = false
-notes = "91,493 synsets. XML/LMF confirmed. Maintained by Tartu University. Also browsable at teksaurus.keeleressursid.ee. Multiple versions in CLARIN (2.1, kb73, 2.4.0)."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Estonian WordNet
-@inproceedings{klesment-estwn-2007,
-  title     = {Combining {P}rinceton {W}ord{N}et and Estonian {W}ord{N}et through {EuroWordNet} linking},
-  author    = {Klesment, Piia and Vider, Kadri and Kaalep, Heiki-Jaan},
-  booktitle = {Proceedings of the Third Baltic Conference on Human Language Technologies},
-  year      = {2007},
-  address   = {Kaunas, Lithuania}
-}
-'''
-
-
-[[wordnet]]
-id = "icelandic-wordweb"
-name = "The Icelandic Wordweb 21.06"
-repo_url = "https://repository.clarin.is/repository/xmlui/handle/20.500.12537/117"
-language = "Icelandic"
-bcp47 = "is"
-format = "RDF/TTL"
-release_url = "https://repository.clarin.is/repository/xmlui/bitstream/handle/20.500.12537/117/ordanet.zip?sequence=1&isAllowed=y"
-license = "CC BY 4.0"
-known_in_cygnet = false
-notes = "79.66 MB ZIP with RDF encoded using OntoLex and SKOS. Published by Árni Magnússon Institute. Separate from OMW Icelandic. Not GWA LMF."
-confidence = "high"
-type = "standalone"
-bib = '''
-% HANDMADE: Icelandic WordWeb
-@misc{icelandic-wordweb,
-  title = {Icelandic Word Web},
-  author = {{Árni Magnússon Institute for Icelandic Studies}},
-  url   = {https://clarin.is/en/resources/wordweb/}
-}
-'''
-
-
-[[wordnet]]
-id = "agwn"
-name = "Open Ancient Greek WordNet 0.5"
-repo_url = "https://github.com/greekwordnet/greekwordnet-archive"
-language = "Ancient Greek"
-bcp47 = "grc"
-format = "JSON"
-release_url = "https://dspace-clarin-it.ilc.cnr.it/repository/xmlui/handle/20.500.11752/ILC-56"
-license = "CC BY-SA 4.0"
-known_in_cygnet = false
-notes = "7,447 synsets, 22,420 lemmas. JSON archive on GitHub. Also at CLARIN ILC (Italy). API at greekwordnet.chs.harvard.edu. Collaboration: CHS Harvard, U Exeter, U Pavia."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Arabic-Greek Wordnet (AGWN, ILSP)
-@misc{agwn-clarin,
-  title  = {Arabic-{G}reek {W}ord{N}et},
-  author = {{ILSP/RC Athena}},
-  url    = {https://inventory.clarin.gr/}
-}
-'''
-
-
-[[wordnet]]
-id = "italwordnet-v2"
-name = "ItalWordNet v2"
-repo_url = "https://dspace-clarin-it.ilc.cnr.it/handle/20.500.11752/ILC-62"
-language = "Italian"
-bcp47 = "it"
-format = "custom XML"
-release_url = "https://hdl.handle.net/20.500.11752/ILC-62"
-license = "CC BY-NC-SA 4.0"
-known_in_cygnet = false
-notes = "CLARIN ILC Italy. VisDic/DEBVisDic XML format. Separate from IWN-OMW GWA LMF version."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: ItalWordNet v2 (ELRA)
-@inproceedings{roventini-italwordnet-2003,
-  title     = {{ItalWordNet}: Building a Large Semantic Database for the Automatic Treatment of {I}talian},
-  author    = {Roventini, Adriana and Alonge, Antonietta and Fellbaum, Christiane and Magnini, Bernardo and Bosco, Roberto},
-  booktitle = {Proceedings of the Workshop on Information Extraction and the Building of Lexical Semantic Resources for NLP Applications},
-  year      = {2003},
-  address   = {Budapest, Hungary}
-}
-'''
-
-
-[[wordnet]]
-id = "slownet"
-name = "sloWNet 3.1"
-repo_url = "https://www.clarin.si/repository/xmlui/handle/11356/1026"
-language = "Slovenian"
-bcp47 = "sl"
-format = "VisDic XML"
-release_url = "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1026/slownet.zip"
-license = "CC BY-SA 4.0"
-known_in_cygnet = false
-notes = "9.48 MB ZIP. DEBVisDic XML (WN root). visdic2lmf.py converts to GWA LMF with --lang sl. Contains Princeton WN 3.0 + 70,000+ Slovenian literals. Separate from omw-sl."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: sloWNet (Slovenian WordNet)
-@inproceedings{fiser-slownet-2012,
-  title     = {{sloWNet} 3.0: Development, extension and cleaning},
-  author    = {Fišer, Darja and Novak, Jernej and Erjavec, Tomaž},
-  booktitle = {Proceedings of the Sixth Global Wordnet Conference},
-  year      = {2012},
-  address   = {Matsue, Japan}
-}
-'''
-
-
-[[wordnet]]
-id = "oswn"
-name = "Open Slovene WordNet (OSWN) 1.0"
-repo_url = "https://www.clarin.si/repository/xmlui/handle/11356/1888"
-language = "Slovenian"
-bcp47 = "sl"
-format = "GWA LMF"
-release_url = "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1888/open_slovene_wordnet_1.0.zip"
-license = "CC BY-SA 4.0"
-known_in_cygnet = false
-notes = "95,262 synsets, 164,904 literals. XML in ZIP. Derived from Open English WordNet via translation. Newer than sloWNet."
-confidence = "high"
-type = "standalone"
-bib = '''
-% HANDMADE: Open Slovene WordNet
-@misc{jevsnik-oswn-2023,
-  title  = {Open Slovene WordNet {OSWN} 1.0},
-  author = {Jevšnik, Fran and Robnik-Šikonja, Marko},
-  year   = {2023},
-  doi    = {10.5281/zenodo.10251430},
-  url    = {https://www.clarin.si/repository/xmlui/handle/11356/1888}
-}
-'''
-
-
-[[wordnet]]
-id = "finnwordnet"
-name = "FinnWordNet 2.0"
-repo_url = "https://www.kielipankki.fi/corpora/finnwordnet/"
-language = "Finnish"
-bcp47 = "fi"
-format = "Princeton WNDB"
-release_url = "https://korp.csc.fi/download/FinnWordNet/v2.0/FinnWordNet-2.0.zip"
-license = "CC BY 3.0"
-known_in_cygnet = false
-notes = "CC BY 3.0 + Princeton WN license. ZIP contains Princeton WNDB (dict/) and TSV relation files; no GWA LMF or OMW 1.0 tab. Needs custom conversion. Released 2012. Finnish coverage also in omw-fi (same source data)."
-confidence = "high"
-type = "standalone"
-bib = '''
-% HANDMADE: FinnWordNet 2.0 (Princeton WNDB release from Kielipankki/Language Bank of Finland)
-@article{linden-carlson-2010-finnwordnet,
-  title   = {{FinnWordNet} --- {W}ord{N}et på finska via översättning},
-  author  = {Lindén, Krister and Carlson, Lauri},
-  journal = {LexicoNordica --- Nordic Journal of Lexicography},
-  volume  = {17},
-  pages   = {119--140},
-  year    = {2010},
-  note    = {Finnish WordNet; see also omw-fi for OMW LMF release}
-}
-'''
-
-
-[[wordnet]]
-id = "plwordnet-4"
-name = "plWordNet 4.0 (Słowosieć)"
-repo_url = "https://clarin-pl.eu/dspace/handle/11321/273"
-language = "Polish"
-bcp47 = "pl"
-format = "custom XML"
-release_url = "https://hdl.handle.net/11321/554"
-license = "plwordnet-2"
-known_in_cygnet = false
-notes = "World's largest wordnet. Custom plWordNet XML format (not GWA LMF). jmccrae/plwordnet-to-gw has a GWA LMF conversion. CLARIN-PL."
-confidence = "high"
-acl_ids = ["2025.gwc-1.19"]
-type = "standalone"
-bib = '''
-% HANDMADE: plWordNet 4.x
-@inproceedings{maziarz-plwordnet-2016,
-  title     = {plWordNet 3.0 -- Lossy Compression or Efficient Representation?},
-  author    = {Maziarz, Marek and Piasecki, Maciej and Rudnicka, Ewa and Szpakowicz, Stan and Kedzia, Pawel},
-  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
-  year      = {2016},
-  pages     = {195--202},
-  address   = {Bucharest, Romania}
-}
-'''
-
-
-[[wordnet]]
-id = "czech-wn"
-name = "Czech WordNet 1.9 PDT"
-repo_url = "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0001-4880-3"
-language = "Czech"
-bcp47 = "cs"
-format = "VisDic XML"
-release_url = "https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0001-4880-3/Czech_WordNet_1.9_PDT.zip?sequence=1&isAllowed=y"
-license = "CC BY-NC-SA 3.0"
-known_in_cygnet = false
-notes = "23,094 word senses. VisDic XML (bare SYNSET stream, ISO-8859-2). visdic2lmf.py converts to GWA LMF with --encoding iso-8859-2. LINDAT/CLARIAH-CZ."
-confidence = "high"
-type = "expand"
-bib = '''
-% HANDMADE: Czech WordNet
-@article{pala-smrz-czechwn-2004,
-  title   = {Building Czech WordNet},
-  author  = {Pala, Karel and Smrz, Pavel},
-  journal = {Romanian Journal of Information Science and Technology},
-  volume  = {7},
-  number  = {1--2},
-  pages   = {79--88},
-  year    = {2004}
-}
-'''
+# ───────────────────────────────── Basque ─────────────────────────────────
 
 
 [[wordnet]]
@@ -2383,6 +237,26 @@ bib = '''
   address   = {Montreal, Canada}
 }
 '''
+
+
+[[wordnet]]
+id = "omw-eu"
+name = "OMW Basque Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Basque"
+bcp47 = "eu"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-eu-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From MCR."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ─────────────────────────────── Bulgarian ───────────────────────────────
 
 
 [[wordnet]]
@@ -2432,53 +306,141 @@ bib = '''
 
 
 [[wordnet]]
-id = "srpwn"
-name = "SrpWN (Serbian WordNet)"
-repo_url = "http://korpus.matf.bg.ac.rs/SrpWN/"
-language = "Serbian"
-bcp47 = "sr"
-format = "custom XML"
-license = "CC BY-NC"
+id = "omw-bg"
+name = "OMW Bulgarian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Bulgarian"
+bcp47 = "bg"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-bg-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ──────────────────────────────── Burmese ────────────────────────────────
+
+
+[[wordnet]]
+id = "mow"
+name = "Myanmar Open Wordnet (MOW)"
+repo_url = "https://github.com/myanmaropenwordnet/mow"
+language = "Burmese"
+bcp47 = "my"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/myanmaropenwordnet/mow/blob/master/mow-0.1.3-mya_20171005165336.tab"
+license = "CC BY 4.0"
 known_in_cygnet = false
-notes = "CC BY-NC confirmed. XML-based WordNet format (Princeton-style). Download requires accepting license agreement and credentials from contact persons (Cvetana Krstev, Gordana Pavlović-Lažetić). U Belgrade Faculty of Mathematics."
+notes = "v0.1.3 in OMW 1.0 tab format. Cygnet mentions getting newer version. Also mirrored at omwn/mow."
 confidence = "high"
 type = "expand"
+
 bib = '''
-% HANDMADE (see also ACL entry): Serbian WordNet
-@inproceedings{krstev-srpwn-2008,
-  title     = {The {S}erbian {W}ord{N}et: Current State and Further Development},
-  author    = {Krstev, Cvetana and Vitas, Duško and Erjavec, Tomaž and Ide, Nancy},
-  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
-  year      = {2008},
-  address   = {Szeged, Hungary}
+% HANDMADE: MOW (Multilingual Open Wordnet)
+@inproceedings{vigier-mow-2014,
+  title     = {{MOW}},
+  author    = {Vigier, Denis and Mangeot, Mathieu and Gledhill, Chris},
+  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
+  year      = {2014},
+  address   = {Tartu, Estonia}
 }
 '''
 
 
 [[wordnet]]
-id = "mwnpt"
-name = "MWN.PT — WordNet of Portuguese"
-repo_url = "https://portulanclarin.net/repository/browse/mwnpt-wordnet-of-portuguese/4836bd2615d811ea86cd02420a0000057f6090d6dc65485886fd3c5749a93a10/"
-language = "Portuguese"
-bcp47 = "pt"
-format = "unknown"
-license = "MS-C-NoReD-ND"
-known_in_cygnet = false
-notes = "41,000+ concepts, 38,000 lexical units. PORTULAN CLARIN. Restrictive license (no redistribution, no derivatives). Separate from own-pt."
+id = "tufs-my"
+name = "TUFS Burmese"
+repo_url = "https://github.com/omwn/tufs"
+language = "Burmese"
+bcp47 = "my"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-my.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-my-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
 confidence = "high"
+acl_ids = ["2020.lrec-1.389"]
 type = "expand"
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ADDITIONAL FINDS — OMW v1 LIST + OTHER SOURCES
-# ══════════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────── Cantonese ───────────────────────────────
+
+
+[[wordnet]]
+id = "cantonese-wn"
+name = "Cantonese Wordnet"
+repo_url = "https://github.com/lmorgadodacosta/CantoneseWN"
+language = "Cantonese"
+bcp47 = "yue"
+format = "GWA LMF"
+example_file = "https://github.com/lmorgadodacosta/CantoneseWN/blob/master/cantown.xml"
+release_url = "https://raw.githubusercontent.com/lmorgadodacosta/CantoneseWN/refs/heads/master/cantown.xml"
+known_in_cygnet = true
+notes = "Also has cantown.tsv. Active project."
+confidence = "high"
+
+acl_ids = ["2019.gwc-1.26"]
+type = "expand"
 bib = '''
-% HANDMADE: MWN.PT (Multilingual Wordnet Portuguese)
-@inproceedings{simoes-mwnpt-2014,
-  title     = {{MWN.PT} -- The Multilingual {W}ord{N}et for {P}ortuguese},
-  author    = {Simões, Alberto Melo and Guinovart, Xavier Gómez},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia}
+% HANDMADE: Cantonese WordNet
+@inproceedings{lamas-cantonese-2018,
+  title     = {The {C}antonese {W}ord{N}et},
+  author    = {da Costa Lamas, Luis and Bond, Francis},
+  booktitle = {Proceedings of the Ninth Global Wordnet Conference},
+  year      = {2018},
+  address   = {Singapore}
+}
+'''
+
+
+# ──────────────────────────────── Catalan ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-ca"
+name = "OMW Catalan Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Catalan"
+bcp47 = "ca"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ca-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From MCR (Multilingual Central Repository)."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ─────────────────────────── Chinese (Mandarin) ───────────────────────────
+
+
+[[wordnet]]
+id = "cow"
+name = "Chinese Open Wordnet"
+repo_url = "https://github.com/bond-lab/cow"
+language = "Chinese (Mandarin)"
+bcp47 = "cmn"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/bond-lab/cow/blob/master/docs/data/0.9/wn-data-cmn.tab"
+known_in_cygnet = false
+notes = "Older COW data in OMW 1.0 tab format. May be superseded by omw-cmn."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Cornetto release; no ACL Anthology entry
+@inproceedings{vossen-cornetto-2013,
+  title     = {Cornetto: A Combinatorial Lexical Resource for Dutch},
+  author    = {Vossen, Piek and Maks, Isa and Segers, Roxane and van der Vliet, Hennie},
+  booktitle = {Proceedings of eLex 2013},
+  year      = {2013},
+  url       = {https://github.com/cltl/cornetto}
 }
 '''
 
@@ -2508,26 +470,419 @@ bib = '''
 
 
 [[wordnet]]
-id = "farsnet"
-name = "FarsNet (Persian WordNet)"
-repo_url = "http://farsnet.nlp.sbu.ac.ir/"
-language = "Persian"
-bcp47 = "fas"
-format = "unknown"
+id = "omw-cmn"
+name = "OMW Chinese (Mandarin) Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Chinese (Mandarin)"
+bcp47 = "cmn"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-cmn-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["W13-4302", "2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-cmn"
+name = "TUFS Chinese (Mandarin)"
+repo_url = "https://github.com/omwn/tufs"
+language = "Chinese (Mandarin)"
+bcp47 = "cmn"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-zh.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-zh-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Coptic ─────────────────────────────────
+
+
+[[wordnet]]
+id = "coptic-wn"
+name = "Coptic WordNet"
+repo_url = "https://github.com/coptic-wordnet/data"
+language = "Coptic"
+bcp47 = "cop"
+format = "GWA LMF"
+example_file = "https://raw.githubusercontent.com/coptic-wordnet/data/master/copwn.xml"
+license = "CC BY 4.0"
 known_in_cygnet = false
-notes = "Shahid Beheshti University NLP lab. Listed in OMW v1. Format and openness unclear. Also listed as pwn.ir. Website appears offline as of 2026."
-confidence = "medium"
+notes = "25,871 synsets (218,677 senses, v1.0, 2019). Sahidic dialect. WN-LMF-1.0 format (CILI integrated). License CC BY 4.0 confirmed in XML Lexicon header. Citation also in XML metadata. No GitHub releases — use example_file URL directly. Also provides OMW TSV (copwn.tsv). Cite: Slaughter et al. 2019 (GWC 2019)."
+confidence = "high"
+acl_ids = ["2019.gwc-1.21"]
+type = "standalone"
+
+
+# ──────────────────────────────── Croatian ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-hr"
+name = "OMW Croatian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Croatian"
+bcp47 = "hr"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-hr-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── Czech ─────────────────────────────────
+
+
+[[wordnet]]
+id = "czech-wn"
+name = "Czech WordNet 1.9 PDT"
+repo_url = "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0001-4880-3"
+language = "Czech"
+bcp47 = "cs"
+format = "VisDic XML"
+release_url = "https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0001-4880-3/Czech_WordNet_1.9_PDT.zip?sequence=1&isAllowed=y"
+license = "CC BY-NC-SA 3.0"
+known_in_cygnet = false
+notes = "23,094 word senses. VisDic XML (bare SYNSET stream, ISO-8859-2). visdic2lmf.py converts to GWA LMF with --encoding iso-8859-2. LINDAT/CLARIAH-CZ."
+confidence = "high"
 type = "expand"
 bib = '''
-% HANDMADE: FarsNet (Persian WordNet)
-@inproceedings{shamsfard-farsnet-2010,
-  title     = {Semi Automatic Development of {F}ars{N}et: The {P}ersian {W}ord{N}et},
-  author    = {Shamsfard, Mehrnoush and Hesabi, Afsaneh and Fadaei, Hakimeh and Mansoory, Noushin and Famian, Ali and Bagherbeigi, Somayeh and Fekri, Ehsan and Monshizadeh, Majid and Akhavan, S. M.},
-  booktitle = {Proceedings of the Fifth Global WordNet Conference},
-  year      = {2010},
-  address   = {Mumbai, India}
+% HANDMADE: Czech WordNet
+@article{pala-smrz-czechwn-2004,
+  title   = {Building Czech WordNet},
+  author  = {Pala, Karel and Smrz, Pavel},
+  journal = {Romanian Journal of Information Science and Technology},
+  volume  = {7},
+  number  = {1--2},
+  pages   = {79--88},
+  year    = {2004}
 }
 '''
+
+
+# ───────────────────────────────── Danish ─────────────────────────────────
+
+
+[[wordnet]]
+id = "dannet"
+name = "DanNet"
+repo_url = "https://github.com/kuhumcst/DanNet"
+language = "Danish"
+bcp47 = "da"
+format = "RDF/TTL"
+release_url = "https://github.com/kuhumcst/DanNet/releases/download/v2025-07-03/dannet-wn-lmf.xml.gz"
+license = "MIT"
+known_in_cygnet = true
+notes = "Official Danish WordNet. Also available as WN-LMF XML. Listed in cygnet as alternate."
+confidence = "high"
+
+acl_ids = ["2021.gwc-1.31"]
+type = "standalone"
+bib = '''
+@inproceedings{pedersen-dannet-2009,
+  title     = {{DanNet} -- the Challenge of Compiling a {WordNet} for Danish by Reusing a Monolingual Dictionary},
+  author    = {Pedersen, Bolette Sandford and Nimb, Sanni and Asmussen, Jørg and Sørensen, Nicolai Hartvig and Trap-Jensen, Lars and Lorentzen, Henrik},
+  booktitle = {Language Resources and Evaluation},
+  year      = {2009},
+  volume    = {43},
+  pages     = {269--299},
+  doi       = {10.1007/s10579-009-9080-1}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-da"
+name = "OMW Danish Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Danish"
+bcp47 = "da"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-da-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── Dutch ─────────────────────────────────
+
+
+[[wordnet]]
+id = "odwn"
+name = "Open Dutch Wordnet (ODWN)"
+repo_url = "https://github.com/cltl/OpenDutchWordnet"
+language = "Dutch"
+bcp47 = "nl"
+format = "custom XML"
+example_file = "https://github.com/cltl/OpenDutchWordnet/blob/master/resources/odwn/odwn_orbn_gwg-LMF.xml.gz"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "69 stars. The available XML uses an old proprietary ODWN-ORBN format (not GWA LMF): missing dc namespace, uses non-standard attributes (owner, languageCoding). Needs custom conversion."
+confidence = "high"
+acl_ids = ["2016.gwc-1.43"]
+type = "merge"
+superseded-by = ["odwn-lmf"]
+bib = '''
+% HANDMADE: ODWN main reference
+@inproceedings{postma-odwn-2016,
+  title     = {Open Dutch WordNet},
+  author    = {Postma, Marten and van Miltenburg, Emiel and Segers, Roxane and Schoen, Anneleen and Vossen, Piek},
+  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
+  year      = {2016},
+  pages     = {301--306},
+  url       = {https://github.com/cltl/OpenDutchWordnet},
+  address   = {Bucharest, Romania}
+}
+'''
+
+
+[[wordnet]]
+id = "odwn-lmf"
+name = "Open Dutch Wordnet v1.3 (ISO LMF release)"
+repo_url = "https://github.com/cltl/OpenDutchWordnet"
+language = "Dutch"
+bcp47 = "nl"
+format = "custom XML"
+release_url = "https://zenodo.org/records/10328304/files/odwn_orbn_gwg-LMF_1.3.xml"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "v1.3, 2023-12, Zenodo DOI 10.5281/zenodo.10328304. Despite the filename 'gwg-LMF_1.3', the file uses ISO LMF (not GWA LMF): <LexicalResource> with languageCoding/owner attributes, no DC namespace, no DOCTYPE. Needs conversion to GWA LMF before use with wn module."
+confidence = "high"
+
+acl_ids = ["2016.gwc-1.43"]
+type = "merge"
+bib = '''
+% HANDMADE: ODWN v1.3 Zenodo release
+@misc{postma-odwn-lmf-2023,
+  title     = {Open Dutch Wordnet v1.3},
+  author    = {Postma, Marten and van Miltenburg, Emiel and Segers, Roxane and Schoen, Anneleen and Vossen, Piek},
+  year      = {2023},
+  doi       = {10.5281/zenodo.10328304},
+  url       = {https://zenodo.org/records/10328304},
+  note      = {GWA LMF 1.3 release}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-nl"
+name = "OMW Dutch Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Dutch"
+bcp47 = "nl"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nl-2.0.tar.xz"
+license = "CC BY 4.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ──────────────────────────────── English ────────────────────────────────
+
+
+[[wordnet]]
+id = "oewn"
+name = "Open English WordNet"
+repo_url = "https://github.com/globalwordnet/english-wordnet"
+language = "English"
+bcp47 = "en"
+format = "GWA LMF"
+example_file = "https://github.com/globalwordnet/english-wordnet/blob/main/src/yaml"
+release_url = "https://en-word.net/static/english-wordnet-2025.xml.gz"
+license = "CC BY 4.0"
+known_in_cygnet = true
+notes = "Primary / canonical open English wordnet. Formerly Princeton WordNet fork."
+confidence = "high"
+acl_ids = ["2019.gwc-1.31"]
+type = "standalone"
+
+
+[[wordnet]]
+id = "oewn-namenet"
+name = "Open English Namenet"
+repo_url = "https://github.com/globalwordnet/english-namenet"
+language = "English"
+bcp47 = "en"
+format = "YAML"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "Extension of OEWN with proper names / named entities. Source in YAML (data/curated/, data/addendum/). No versioned release package; export_xml.py can generate GWA LMF XML. Names sourced from Wikidata."
+confidence = "high"
+type = "extension"
+
+bib = '''
+% HANDMADE: Based on OEWN release notes; no separate publication
+@misc{bond-oewn-namenet-2023,
+  title     = {Open English WordNet: NameNet Extension},
+  author    = {Bond, Francis and others},
+  year      = {2023},
+  url       = {https://github.com/globalwordnet/english-namenet},
+  note      = {Named entity extension of Open English WordNet}
+}
+'''
+
+
+# ──────────────────────────────── Estonian ────────────────────────────────
+
+
+[[wordnet]]
+id = "estwn"
+name = "Estonian Wordnet (2.4.0)"
+repo_url = "https://metashare.ut.ee/repository/browse/47c3487fa0d411eebb4773db10791bcf1955e509281d4f388f484e9e600a40a3"
+language = "Estonian"
+bcp47 = "et"
+format = "GWA LMF"
+release_url = "https://doi.org/10.15155/1-00-0000-0000-0000-001B3L"
+license = "CC BY-SA"
+known_in_cygnet = false
+notes = "91,493 synsets. XML/LMF confirmed. Maintained by Tartu University. Also browsable at teksaurus.keeleressursid.ee. Multiple versions in CLARIN (2.1, kb73, 2.4.0)."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Estonian WordNet
+@inproceedings{klesment-estwn-2007,
+  title     = {Combining {P}rinceton {W}ord{N}et and Estonian {W}ord{N}et through {EuroWordNet} linking},
+  author    = {Klesment, Piia and Vider, Kadri and Kaalep, Heiki-Jaan},
+  booktitle = {Proceedings of the Third Baltic Conference on Human Language Technologies},
+  year      = {2007},
+  address   = {Kaunas, Lithuania}
+}
+'''
+
+
+# ──────────────────────────────── Filipino ────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-tl"
+name = "TUFS Filipino"
+repo_url = "https://github.com/omwn/tufs"
+language = "Filipino"
+bcp47 = "tl"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-tl.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-tl-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ──────────────────────────────── Finnish ────────────────────────────────
+
+
+[[wordnet]]
+id = "finnwordnet"
+name = "FinnWordNet 2.0"
+repo_url = "https://www.kielipankki.fi/corpora/finnwordnet/"
+language = "Finnish"
+bcp47 = "fi"
+format = "Princeton WNDB"
+release_url = "https://korp.csc.fi/download/FinnWordNet/v2.0/FinnWordNet-2.0.zip"
+license = "CC BY 3.0"
+known_in_cygnet = false
+notes = "CC BY 3.0 + Princeton WN license. ZIP contains Princeton WNDB (dict/) and TSV relation files; no GWA LMF or OMW 1.0 tab. Needs custom conversion. Released 2012. Finnish coverage also in omw-fi (same source data)."
+confidence = "high"
+type = "standalone"
+bib = '''
+% HANDMADE: FinnWordNet 2.0 (Princeton WNDB release from Kielipankki/Language Bank of Finland)
+@article{linden-carlson-2010-finnwordnet,
+  title   = {{FinnWordNet} --- {W}ord{N}et på finska via översättning},
+  author  = {Lindén, Krister and Carlson, Lauri},
+  journal = {LexicoNordica --- Nordic Journal of Lexicography},
+  volume  = {17},
+  pages   = {119--140},
+  year    = {2010},
+  note    = {Finnish WordNet; see also omw-fi for OMW LMF release}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-fi"
+name = "OMW Finnish Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Finnish"
+bcp47 = "fi"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fi-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+bib = '''
+% HANDMADE: FinnWordNet — from XML citation field
+@article{linden-carlson-2010-finnwordnet,
+  title   = {{FinnWordNet} --- {W}ord{N}et på finska via översättning},
+  author  = {Lindén, Krister and Carlson, Lauri},
+  journal = {LexicoNordica --- Nordic Journal of Lexicography},
+  volume  = {17},
+  pages   = {119--140},
+  year    = {2010},
+  note    = {Finnish WordNet built via translation}
+}
+'''
+
+
+# ───────────────────────────────── French ─────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-fr"
+name = "OMW French Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "French"
+bcp47 = "fr"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fr-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From WOLF."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-fr"
+name = "TUFS French"
+repo_url = "https://github.com/omwn/tufs"
+language = "French"
+bcp47 = "fr"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-fr.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-fr-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 
 
 [[wordnet]]
@@ -2553,6 +908,94 @@ bib = '''
 '''
 
 
+# ──────────────────────────────── Galician ────────────────────────────────
+
+
+[[wordnet]]
+id = "galnet"
+name = "SLI GalNet"
+repo_url = "https://github.com/xavier-gz/SLI_Galnet"
+language = "Galician"
+bcp47 = "gl"
+format = "GWA LMF"
+example_file = "https://github.com/xavier-gz/SLI_Galnet/blob/main/SLI_Galnet_LMF_3.0.29.tar.gz"
+known_in_cygnet = false
+notes = "Galician wordnet from SLI group. LMF tar.gz. May supersede omw-gl."
+confidence = "high"
+
+acl_ids = ["2016.gwc-1.12"]
+type = "expand"
+bib = '''
+% HANDMADE: GalNet — from XML citation field (updated to LRE 2018 paper)
+@article{gomez-guinovart-solla-portela-2018-galnet,
+  title   = {Building the {G}alician wordnet: methods and applications},
+  author  = {Gómez Guinovart, Xavier and Solla Portela, Miguel Anxo},
+  journal = {Language Resources and Evaluation},
+  volume  = {52},
+  number  = {1},
+  pages   = {317--339},
+  year    = {2018},
+  doi     = {10.1007/s10579-017-9408-5}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-gl"
+name = "OMW Galician Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Galician"
+bcp47 = "gl"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-gl-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From MCR."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── German ─────────────────────────────────
+
+
+[[wordnet]]
+id = "odenet"
+name = "OdeNet (Open German Wordnet)"
+repo_url = "https://github.com/hdaSprachtechnologie/odenet"
+language = "German"
+bcp47 = "de"
+format = "GWA LMF"
+release_url = "https://github.com/hdaSprachtechnologie/odenet/releases/download/v1.4/odenet-1.4.tar.xz"
+license = "CC BY 4.0"
+known_in_cygnet = true
+notes = "100 stars. Active open German wordnet."
+confidence = "high"
+acl_ids = ["2021.gwc-1.22"]
+type = "merge"
+
+
+[[wordnet]]
+id = "tufs-de"
+name = "TUFS German"
+repo_url = "https://github.com/omwn/tufs"
+language = "German"
+bcp47 = "de"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-de.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-de-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Greek ─────────────────────────────────
+
+
 [[wordnet]]
 id = "greek-wn-okfngr"
 name = "Greek Wordnet (OKF Greece)"
@@ -2576,23 +1019,985 @@ bib = '''
 
 
 [[wordnet]]
-id = "albanet"
-name = "Albanet (Albanian WordNet)"
-repo_url = "http://fjalnet.com/"
-language = "Albanian"
-bcp47 = "sq"
-format = "unknown"
+id = "omw-el"
+name = "OMW Greek Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Greek"
+bcp47 = "el"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-el-2.0.tar.xz"
+license = "Apache 2.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── Hebrew ─────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-he"
+name = "OMW Hebrew Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Hebrew"
+bcp47 = "he"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-he-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ─────────────────────────────── Hungarian ───────────────────────────────
+
+
+[[wordnet]]
+id = "huwn"
+name = "Hungarian WordNet (RDF)"
+repo_url = "https://github.com/mmihaltz/huwn.rdf"
+language = "Hungarian"
+bcp47 = "hu"
+format = "RDF/TTL"
+example_file = "https://raw.githubusercontent.com/mmihaltz/huwn.rdf/master/huwn.ttl.gz"
 known_in_cygnet = false
-notes = "Listed in OMW v1 as Albanet. fjalnet.com is heavily JS-rendered; no GitHub found; no public download available. Contact authors (Tupja & Domi, GWC 2014). Separate from omw-sq."
+notes = "Hungarian WordNet in RDF/Turtle (OntoLex/Lemon). Not GWA LMF — needs conversion."
+confidence = "high"
+type = "expand"
+
+bib = '''
+% HANDMADE: Hungarian WordNet
+@inproceedings{mihaly-huwn-2008,
+  title     = {The {H}ungarian {W}ord{N}et and the {BalkaNet}},
+  author    = {Miháltz, Márton and Hatvani, Csaba and Kuti, Judit and Szarvas, György and Csirik, János and Prószéky, Gábor and Váradi, Tamás},
+  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
+  year      = {2008},
+  pages     = {174--183},
+  address   = {Szeged, Hungary}
+}
+'''
+
+
+# ─────────────────────────────── Icelandic ───────────────────────────────
+
+
+[[wordnet]]
+id = "icelandic-wordweb"
+name = "The Icelandic Wordweb 21.06"
+repo_url = "https://repository.clarin.is/repository/xmlui/handle/20.500.12537/117"
+language = "Icelandic"
+bcp47 = "is"
+format = "RDF/TTL"
+release_url = "https://repository.clarin.is/repository/xmlui/bitstream/handle/20.500.12537/117/ordanet.zip?sequence=1&isAllowed=y"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "79.66 MB ZIP with RDF encoded using OntoLex and SKOS. Published by Árni Magnússon Institute. Separate from OMW Icelandic. Not GWA LMF."
+confidence = "high"
+type = "standalone"
+bib = '''
+% HANDMADE: Icelandic WordWeb
+@misc{icelandic-wordweb,
+  title = {Icelandic Word Web},
+  author = {{Árni Magnússon Institute for Icelandic Studies}},
+  url   = {https://clarin.is/en/resources/wordweb/}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-is"
+name = "OMW Icelandic Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Icelandic"
+bcp47 = "is"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-is-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ─────────────────────────────── Indonesian ───────────────────────────────
+
+
+[[wordnet]]
+id = "omw-id"
+name = "OMW Indonesian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Indonesian"
+bcp47 = "id"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-id-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. Part of WordNet Bahasa."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-id"
+name = "TUFS Indonesian"
+repo_url = "https://github.com/omwn/tufs"
+language = "Indonesian"
+bcp47 = "id"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-id.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-id-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Irish ─────────────────────────────────
+
+
+[[wordnet]]
+id = "gawn-lemon"
+name = "WordNet Gaeilge (Lemon)"
+repo_url = "https://github.com/jimregan/lemonGAWN"
+language = "Irish"
+bcp47 = "ga"
+format = "Lemon TTL"
+example_file = "https://github.com/jimregan/lemonGAWN/blob/master/gawn-lemon.ttl"
+known_in_cygnet = false
+notes = "Irish WordNet in lemon (linked lexical data) format."
 confidence = "medium"
 type = "expand"
 
-# ── ARABIC (additional) ───────────────────────────────────────────────────────
 bib = '''
-% HANDMADE: AlbaNet (Albanian WordNet)
-@inproceedings{lloret-albanet-2014,
-  title     = {{A}lba{N}et: {A}lbanian {W}ord{N}et},
-  author    = {Tupja, Erion and Domi, Erion},
+% HANDMADE: Scottish Gaelic Wordnet Lemon
+@misc{gawn-lemon,
+  title  = {Gaelic WordNet (lemon format)},
+  author = {Lamb, William},
+  url    = {https://github.com/bilingualdictionary/GAWN}
+}
+'''
+
+
+[[wordnet]]
+id = "wn-data-gle"
+name = "Irish Wordnet (OMW 1.0 tab)"
+repo_url = "https://github.com/TommasoPetrolito/wn-data-gle.tab"
+language = "Irish"
+bcp47 = "ga"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/TommasoPetrolito/wn-data-gle.tab/blob/main/wn-data-gle.tab"
+known_in_cygnet = false
+notes = "Conversion of wordnet-gaeilge to OMW 1.0 tab format for use with OMW."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Irish WordNet data
+@misc{wn-data-gle,
+  title = {Irish WordNet data (wn-data-gle)},
+  url   = {https://github.com/omwn/omw-data}
+}
+'''
+
+
+[[wordnet]]
+id = "wordnet-gaeilge"
+name = "Líonra Séimeantach na Gaeilge (Irish Wordnet)"
+repo_url = "https://github.com/kscanne/wordnet-gaeilge"
+language = "Irish"
+bcp47 = "ga"
+format = "GWA LMF"
+example_file = "https://github.com/kscanne/wordnet-gaeilge/blob/master/lmf-template.xml"
+license = "unknown"
+known_in_cygnet = false
+notes = "Work-in-progress Irish semantic network in LMF format. 12 stars."
+confidence = "medium"
+type = "expand"
+bib = '''
+% HANDMADE: Irish WordNet (Gramadán/Foclóir Gaeilge WordNet)
+@misc{wordnet-gaeilge,
+  title = {Irish {W}ord{N}et},
+  url   = {https://github.com/jimregan/wordnet-gaeilge}
+}
+'''
+
+
+# ──────────────────────────────── Italian ────────────────────────────────
+
+
+[[wordnet]]
+id = "italwordnet-v2"
+name = "ItalWordNet v2"
+repo_url = "https://dspace-clarin-it.ilc.cnr.it/handle/20.500.11752/ILC-62"
+language = "Italian"
+bcp47 = "it"
+format = "custom XML"
+release_url = "https://hdl.handle.net/20.500.11752/ILC-62"
+license = "CC BY-NC-SA 4.0"
+known_in_cygnet = false
+notes = "CLARIN ILC Italy. VisDic/DEBVisDic XML format. Separate from IWN-OMW GWA LMF version."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: ItalWordNet v2 (ELRA)
+@inproceedings{roventini-italwordnet-2003,
+  title     = {{ItalWordNet}: Building a Large Semantic Database for the Automatic Treatment of {I}talian},
+  author    = {Roventini, Adriana and Alonge, Antonietta and Fellbaum, Christiane and Magnini, Bernardo and Bosco, Roberto},
+  booktitle = {Proceedings of the Workshop on Information Extraction and the Building of Lexical Semantic Resources for NLP Applications},
+  year      = {2003},
+  address   = {Budapest, Hungary}
+}
+'''
+
+
+[[wordnet]]
+id = "iwn-omw"
+name = "Open Italian WordNet (IWN-OMW)"
+repo_url = "https://github.com/valeq/IWN-OMW"
+language = "Italian"
+bcp47 = "it"
+format = "GWA LMF"
+example_file = "https://github.com/valeq/IWN-OMW/blob/main/data/LMF-XML/IWN-OMW_LMF_v1.0.xml"
+known_in_cygnet = false
+notes = "ItalWordNet in GWA LMF format. May be same source as omw-iwn."
+confidence = "high"
+type = "expand"
+
+bib = '''
+% HANDMADE: OpenItalWordNet (OMW IWN) — from XML citation field (Zenodo release)
+@misc{toral-etal-2010-italwordnet-omw,
+  title  = {{OpenItalWordNet}},
+  author = {Toral, Antonio and Bracal, Stefania and Monachini, Monica and Soria, Claudia},
+  year   = {2024},
+  doi    = {10.5281/zenodo.13120890},
+  url    = {https://zenodo.org/records/13120890},
+  note   = {Rejuvenated and standardised Italian WordNet for OMW}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-it"
+name = "OMW Italian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Italian"
+bcp47 = "it"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-it-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From MultiWordNet."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "omw-iwn"
+name = "ItalWordNet (IWN) via OMW"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Italian"
+bcp47 = "it"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-iwn-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "ItalWordNet packaged via omw-data."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+superseded-by = ["iwn-omw"]
+bib = '''
+% HANDMADE: OMW IndoWordNet
+@inproceedings{bhattacharyya-indown-2010,
+  title     = {{IndoWordNet}},
+  author    = {Bhattacharyya, Pushpak},
+  booktitle = {Proceedings of the Seventh Language Resources and Evaluation Conference ({LREC})},
+  year      = {2010},
+  address   = {Valletta, Malta}
+}
+'''
+
+
+# ──────────────────────────────── Japanese ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-ja"
+name = "OMW Japanese Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Japanese"
+bcp47 = "ja"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ja-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-ja"
+name = "TUFS Japanese"
+repo_url = "https://github.com/omwn/tufs"
+language = "Japanese"
+bcp47 = "ja"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ja.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ja-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+[[wordnet]]
+id = "wnja"
+name = "Japanese WordNet (wnja)"
+repo_url = "https://github.com/bond-lab/wnja"
+language = "Japanese"
+bcp47 = "ja"
+format = "unknown"
+known_in_cygnet = false
+notes = "Japanese WordNet project page; data distributed externally (not in repo). Original from NII."
+confidence = "medium"
+
+acl_ids = ["2023.gwc-1.22"]
+type = "expand"
+
+
+# ───────────────────────────────── Khmer ─────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-km"
+name = "TUFS Khmer"
+repo_url = "https://github.com/omwn/tufs"
+language = "Khmer"
+bcp47 = "km"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-km.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-km-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Korean ─────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-ko"
+name = "TUFS Korean"
+repo_url = "https://github.com/omwn/tufs"
+language = "Korean"
+bcp47 = "ko"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ko.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ko-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ─────────────────────────── Kurdish (Kurmanji) ───────────────────────────
+
+
+[[wordnet]]
+id = "kurdnet"
+name = "KurdNet (Kurdish Wordnet)"
+repo_url = "https://github.com/sinaahmadi/kurdnet"
+language = "Kurdish (Kurmanji)"
+bcp47 = "kmr"
+format = "GWA LMF"
+release_url = "https://github.com/sinaahmadi/kurdnet/releases/download/kurdnet-1.0.tar.xz/kurdnet-1.0.tar.xz"
+known_in_cygnet = true
+notes = "Kurdish WordNet project. License unclear (NOASSERTION on GitHub)."
+confidence = "high"
+
+acl_ids = ["W14-0101"]
+type = "expand"
+bib = '''
+% HANDMADE: KurdNet (Kurdish WordNet)
+@inproceedings{aliabadi-kurdnet-2014,
+  title     = {Semi-Automatic Building of a Kurdish WordNet},
+  author    = {Aliabadi, Purya and Mousavi, Sina and Aliabadi, Shahriar and Aliabadi, Sina},
+  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
+  year      = {2014},
+  address   = {Tartu, Estonia}
+}
+'''
+
+
+# ────────────────────────────────── Lao ──────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-lo"
+name = "TUFS Lao"
+repo_url = "https://github.com/omwn/tufs"
+language = "Lao"
+bcp47 = "lo"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-lo.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-lo-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Latin ─────────────────────────────────
+
+
+[[wordnet]]
+id = "latinwn-archive"
+name = "Latin WordNet Archive"
+repo_url = "https://github.com/latinwordnet/latinwordnet-archive"
+language = "Latin"
+bcp47 = "la"
+format = "JSON"
+example_file = "https://github.com/latinwordnet/latinwordnet-archive/tree/main/json"
+known_in_cygnet = false
+notes = "Archived export of Latin WordNet in JSON format. API at greekwordnet.chs.harvard.edu. Same project as greekwordnet org."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Latin WordNet (Bizzoni et al.)
+@inproceedings{bizzoni-latinwn-2014,
+  title     = {{LatinWordNet}, Annotations and Augmentation},
+  author    = {Bizzoni, Yuri and Boschetti, Federico and Diakoff, Harry and Del Gratta, Riccardo and Monachini, Monica and Crane, Gregory},
+  booktitle = {Proceedings of the LREC 2014 Workshop on Language Resources and Technologies for Classical Languages},
+  year      = {2014},
+  address   = {Reykjavik, Iceland}
+}
+'''
+
+
+[[wordnet]]
+id = "latinwn-revision"
+name = "Latin WordNet Revision (LiLa)"
+repo_url = "https://github.com/CIRCSE/latinWordnet-revision"
+language = "Latin"
+bcp47 = "la"
+format = "RDF/TTL"
+example_file = "https://github.com/CIRCSE/latinWordnet-revision/blob/main/lwn31.ttl"
+known_in_cygnet = false
+notes = "Revision of Minozzi's Latin WordNet mapped to Princeton WN 3.0. Also has CSV. CIRCSE = Catholic University Milan."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Latin WordNet (revision)
+@inproceedings{minozzi-latinwn-2010,
+  title     = {The Latin {W}ord{N}et Project},
+  author    = {Minozzi, Stefano},
+  booktitle = {Workshop on Latin Linguistics and Computational Linguistics},
+  year      = {2010},
+  url       = {https://latinwordnet.exeter.ac.uk/}
+}
+'''
+
+
+# ──────────────────────────────── Latvian ────────────────────────────────
+
+
+[[wordnet]]
+id = "tezaurs"
+name = "Tēzaurs (Latvian Wordnet)"
+repo_url = "https://github.com/PeterisP/tezaurs"
+language = "Latvian"
+bcp47 = "lv"
+format = "GWA LMF"
+release_url = "https://repository.clarin.lv/repository/xmlui/bitstream/handle/20.500.12574/119/tezaurs_2025_1_lmf.xml"
+license = "CC BY-SA 4.0"
+known_in_cygnet = true
+notes = "Distributed via CLARIN Latvia. License noted as incorrectly stated in file; confirmed CC BY-SA 4.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.23"]
+type = "standalone"
+bib = '''
+% HANDMADE: Tēzaurs (Latvian WordNet)
+@inproceedings{spektors-tezaurs-2014,
+  title     = {Tēzaurs.lv: A Rich Morphologically Tagged Corpus and an Open-Ended Dictionary for Latvian},
+  author    = {Spektors, Andris and Auziņa, Ilze and Deksne, Daiga and Skadiņa, Inguna},
+  booktitle = {Proceedings of the Ninth International Conference on Language Resources and Evaluation ({LREC'14})},
+  year      = {2014},
+  address   = {Reykjavik, Iceland}
+}
+'''
+
+
+# ─────────────────────────────── Lithuanian ───────────────────────────────
+
+
+[[wordnet]]
+id = "omw-lt"
+name = "OMW Lithuanian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Lithuanian"
+bcp47 = "lt"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-lt-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── Malay ─────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-zsm"
+name = "OMW Malay Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Malay"
+bcp47 = "zsm"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-zsm-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. Part of WordNet Bahasa."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-zsm"
+name = "TUFS Malay"
+repo_url = "https://github.com/omwn/tufs"
+language = "Malay"
+bcp47 = "zsm"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ms.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ms-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ─────────────────────────────── Mongolian ───────────────────────────────
+
+
+[[wordnet]]
+id = "monwn"
+name = "Mongolian Wordnet (MonWN)"
+repo_url = "https://github.com/kbatsuren/monwn"
+language = "Mongolian"
+bcp47 = "mn"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/kbatsuren/monwn/blob/main/wn-data-mon.tsv"
+known_in_cygnet = false
+notes = "17 stars. wn-data-mon.tsv in repo. May supersede tufs-mn. By Khuyagbaatar Batsuren."
+confidence = "high"
+acl_ids = ["2019.gwc-1.30"]
+type = "expand"
+bib = '''
+% HANDMADE: Mongolian WordNet
+@inproceedings{garad-monwn-2020,
+  title     = {Building a {M}ongolian {W}ord{N}et},
+  author    = {Garad, Munkhbayar and others},
+  booktitle = {Proceedings of the Tenth International Conference on Language Resources and Evaluation ({LREC'20})},
+  year      = {2020}
+}
+'''
+
+
+[[wordnet]]
+id = "tufs-mn"
+name = "TUFS Mongolian"
+repo_url = "https://github.com/omwn/tufs"
+language = "Mongolian"
+bcp47 = "mn"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-mn.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-mn-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary. Cygnet notes: newer version may exist at myanmaropenwordnet/mow (but that is Burmese)."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────── multilingual (100+ languages) ─────────────────────
+
+
+[[wordnet]]
+id = "gf-wordnet"
+name = "GF Wordnet (Grammatical Framework)"
+repo_url = "https://github.com/GrammaticalFramework/gf-wordnet"
+language = "multilingual (100+ languages)"
+bcp47 = "mul"
+format = "GF"
+license = "unknown"
+known_in_cygnet = false
+notes = "28 stars. Multilingual WordNet in GF format covering English, Swedish, Bulgarian as primary; bootstrapped for 100+ others including major European, Asian languages. Not GWA LMF."
+confidence = "high"
+type = "auto"
+
+bib = '''
+% HANDMADE: GF WordNet
+@inproceedings{ranta-gf-wordnet-2020,
+  title     = {Abstract Syntax as Interlingua: Scaling Up the Grammatical Framework from Research to Resource Grammars},
+  author    = {Ranta, Aarne and Kolachina, Prasanth},
+  booktitle = {Proceedings of the Eighth International Conference on Language Resources and Evaluation ({LREC'20})},
+  year      = {2020},
+  url       = {https://www.grammaticalframework.org/wordnet/}
+}
+'''
+
+
+# ─────────────────────── multiple Indian languages ───────────────────────
+
+
+[[wordnet]]
+id = "iwn-en"
+name = "Indian Wordnet–English Links (IWN-En)"
+repo_url = "https://github.com/cfiltnlp/IWN-En"
+language = "multiple Indian languages"
+bcp47 = "mul"
+format = "alignment TSV"
+example_file = "https://github.com/cfiltnlp/IWN-En/blob/master/data/english-hindi-all-linked.tsv"
+known_in_cygnet = false
+notes = "Alignment file linking English PWN synsets to 18 Indian language WordNets (Hindi, Assamese, Bengali, Bodo, Gujarati, Kannada, Kashmiri, Konkani, Malayalam, Manipuri, Marathi, Nepali, Odia, Punjabi, Sanskrit, Tamil, Telugu, Urdu). Not an OMW 1.0 tab file. bond-lab/indown-omw is a conversion tool that converts IndoWordNet TSV → GWA LMF; could be used here. From CFILT IIT Bombay."
+confidence = "high"
+type = "alignment"
+
+bib = '''
+% HANDMADE: IndoWordNet–English Links — Bhattacharyya 2010 (LREC)
+@inproceedings{bhattacharyya-2010-indowordnet,
+  title     = {{IndoWordNet}},
+  author    = {Bhattacharyya, Pushpak},
+  booktitle = {Proceedings of the Seventh International Conference on Language Resources and Evaluation ({LREC}'10)},
+  year      = {2010},
+  address   = {Valletta, Malta},
+  url       = {http://www.cfilt.iitb.ac.in/wordnet/webwn/}
+}
+'''
+
+
+# ──────────────────── multiple South African languages ────────────────────
+
+
+[[wordnet]]
+id = "african-wn-sefara"
+name = "AfricanWordNet (South African languages)"
+repo_url = "https://github.com/JosephSefara/AfricanWordNet"
+language = "multiple South African languages"
+bcp47 = "mul"
+format = "unknown"
+example_file = "https://github.com/JosephSefara/AfricanWordNet/blob/main/data/index.xml"
+known_in_cygnet = false
+notes = "Implements WordNets for South African languages per GWC 2021 paper. Data in zip; languages unclear (likely Zulu, Xhosa, Sotho, Tswana). index.xml returned 404 when checked."
+confidence = "medium"
+type = "expand"
+bib = '''
+% HANDMADE: AfricanWordNet (South African)
+@misc{african-wn-sefara,
+  title = {African{W}ord{N}et},
+  author = {Sefara, Tshephisho Joseph},
+  url   = {https://github.com/JosephSefara/AfricanWordNet}
+}
+'''
+
+
+# ──────────────────────────── Norwegian Bokmål ────────────────────────────
+
+
+[[wordnet]]
+id = "norsk-ordvev-nb"
+name = "Norsk Ordvev – Bokmål (Norwegian Wordnet Bokmål)"
+repo_url = "https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-27/"
+language = "Norwegian Bokmål"
+bcp47 = "nb"
+format = "DanNet TAB"
+release_url = "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nob_1.1.2.zip"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "v1.1.2. Standalone Norwegian Bokmål wordnet (~305K synsets incl. 250K proper names, ~55K common concepts). DanNet-derived tabular format (synsets.tab, words.tab, relations.tab). No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nb."
+confidence = "high"
+type = "standalone"
+bib = '''
+% HANDMADE: Norsk Ordvev – Bokmål (National Library of Norway)
+@misc{nb-norsk-ordvev-nob-2024,
+  title     = {Norsk ordnett bokmål / Norsk Ordvev Bokmål 1.1.2},
+  author    = {{National Library of Norway / Nasjonalbiblioteket}},
+  year      = {2024},
+  url       = {https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-70/},
+  note      = {Norwegian Bokmål Wordnet. DanNet tabular format. CC BY 4.0. ~305K synsets including proper names.}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-nb"
+name = "OMW Norwegian Bokmål Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Norwegian Bokmål"
+bcp47 = "nb"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nb-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+bib = '''
+% HANDMADE: NorNet / OMW Norwegian Bokmål — from XML citation field
+@inproceedings{fjeld-nygaard-2009-nornet,
+  title     = {{NorNet} --- a monolingual wordnet of modern {N}orwegian},
+  author    = {Fjeld, Ruth Vatvedt and Nygaard, Lars},
+  booktitle = {Proceedings of the NODALIDA 2009 workshop: WordNets and other Lexical Semantic Resources},
+  year      = {2009},
+  address   = {Tartu, Estonia},
+  pages     = {13--16}
+}
+'''
+
+
+# ─────────────────────────── Norwegian Nynorsk ───────────────────────────
+
+
+[[wordnet]]
+id = "norsk-ordvev-nn"
+name = "Norsk Ordvev – Nynorsk (Norwegian Wordnet Nynorsk)"
+repo_url = "https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-7/"
+language = "Norwegian Nynorsk"
+bcp47 = "nn"
+format = "DanNet TAB"
+release_url = "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nno_1.1.0.zip"
+license = "CC BY 4.0"
+known_in_cygnet = false
+notes = "v1.1.0. Standalone Norwegian Nynorsk wordnet (~305K synsets incl. 250K proper names). DanNet-derived tabular format. No ILI/PWN offsets — standalone. From National Library of Norway (Språkbanken). Separate from omw-nn."
+confidence = "high"
+type = "standalone"
+
+bib = '''
+% HANDMADE: Norsk Ordvev – Nynorsk (National Library of Norway)
+@misc{nb-norsk-ordvev-nno-2024,
+  title     = {Norsk ordnett nynorsk / Norsk Ordvev Nynorsk 1.1.0},
+  author    = {{National Library of Norway / Nasjonalbiblioteket}},
+  year      = {2024},
+  url       = {https://www.nb.no/sprakbanken/ressurskatalog/oai-nb-no-sbr-71/},
+  note      = {Norwegian Nynorsk Wordnet. DanNet tabular format. CC BY 4.0. ~305K synsets including proper names.}
+}
+'''
+
+
+[[wordnet]]
+id = "omw-nn"
+name = "OMW Norwegian Nynorsk Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Norwegian Nynorsk"
+bcp47 = "nn"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nn-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+bib = '''
+% HANDMADE: NorNet / OMW Norwegian Nynorsk — from XML citation field
+@inproceedings{fjeld-nygaard-2009-nornet,
+  title     = {{NorNet} --- a monolingual wordnet of modern {N}orwegian},
+  author    = {Fjeld, Ruth Vatvedt and Nygaard, Lars},
+  booktitle = {Proceedings of the NODALIDA 2009 workshop: WordNets and other Lexical Semantic Resources},
+  year      = {2009},
+  address   = {Tartu, Estonia},
+  pages     = {13--16}
+}
+'''
+
+
+# ────────────────────────────── Old Javanese ──────────────────────────────
+
+
+[[wordnet]]
+id = "ojw"
+name = "Old Javanese Wordnet"
+repo_url = "https://github.com/omwn/OJW"
+language = "Old Javanese"
+bcp47 = "kaw"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/OJW/blob/master/wn-kaw.tab"
+known_in_cygnet = false
+notes = "OMW 1.0 tab format. kaw is ISO 639-3 for Old Javanese (Kawi)."
+confidence = "high"
+type = "expand"
+
+bib = '''
+% HANDMADE: Old Javanese Wordnet — part of OMWN project, no separate paper found
+@misc{bond-omwn-ojw,
+  title  = {Old {J}avanese {W}ord{N}et ({OJW})},
+  author = {Bond, Francis and others},
+  year   = {2022},
+  url    = {https://github.com/omwn/ojw},
+  note   = {Part of the Open Multilingual Wordnet (OMW) project. OMW 1.0 tab format.}
+}
+'''
+
+
+# ──────────────────────────────── Persian ────────────────────────────────
+
+
+[[wordnet]]
+id = "farsnet"
+name = "FarsNet (Persian WordNet)"
+repo_url = "http://farsnet.nlp.sbu.ac.ir/"
+language = "Persian"
+bcp47 = "fas"
+format = "unknown"
+known_in_cygnet = false
+notes = "Shahid Beheshti University NLP lab. Listed in OMW v1. Format and openness unclear. Also listed as pwn.ir. Website appears offline as of 2026."
+confidence = "medium"
+type = "expand"
+bib = '''
+% HANDMADE: FarsNet (Persian WordNet)
+@inproceedings{shamsfard-farsnet-2010,
+  title     = {Semi Automatic Development of {F}ars{N}et: The {P}ersian {W}ord{N}et},
+  author    = {Shamsfard, Mehrnoush and Hesabi, Afsaneh and Fadaei, Hakimeh and Mansoory, Noushin and Famian, Ali and Bagherbeigi, Somayeh and Fekri, Ehsan and Monshizadeh, Majid and Akhavan, S. M.},
+  booktitle = {Proceedings of the Fifth Global WordNet Conference},
+  year      = {2010},
+  address   = {Mumbai, India}
+}
+'''
+
+
+# ───────────────────────────────── Polish ─────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-pl"
+name = "OMW Polish Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Polish"
+bcp47 = "pl"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-pl-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "plwordnet-4"
+name = "plWordNet 4.0 (Słowosieć)"
+repo_url = "https://clarin-pl.eu/dspace/handle/11321/273"
+language = "Polish"
+bcp47 = "pl"
+format = "custom XML"
+release_url = "https://hdl.handle.net/11321/554"
+license = "plwordnet-2"
+known_in_cygnet = false
+notes = "World's largest wordnet. Custom plWordNet XML format (not GWA LMF). jmccrae/plwordnet-to-gw has a GWA LMF conversion. CLARIN-PL."
+confidence = "high"
+acl_ids = ["2025.gwc-1.19"]
+type = "standalone"
+bib = '''
+% HANDMADE: plWordNet 4.x
+@inproceedings{maziarz-plwordnet-2016,
+  title     = {plWordNet 3.0 -- Lossy Compression or Efficient Representation?},
+  author    = {Maziarz, Marek and Piasecki, Maciej and Rudnicka, Ewa and Szpakowicz, Stan and Kedzia, Pawel},
+  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
+  year      = {2016},
+  pages     = {195--202},
+  address   = {Bucharest, Romania}
+}
+'''
+
+
+[[wordnet]]
+id = "plwordnet-gw"
+name = "plWordNet in GWA Format"
+repo_url = "https://github.com/jmccrae/plwordnet-to-gw"
+language = "Polish"
+bcp47 = "pl"
+format = "GWA LMF"
+example_file = "https://github.com/jmccrae/plwordnet-to-gw/blob/master/plwordnet.xml.gz"
+known_in_cygnet = false
+notes = "Polish WordNet converted to GWA LMF format by jmccrae. Source: plWordNet from WrocMF University."
+confidence = "high"
+
+acl_ids = ["2019.gwc-1.45"]
+type = "standalone"
+bib = '''
+% HANDMADE: plWordNet main reference
+@inproceedings{maziarz-plwordnet-2012,
+  title     = {plWordNet 2.0 -- The New Version of the Polish WordNet},
+  author    = {Maziarz, Marek and Piasecki, Maciej and Szpakowicz, Stan},
+  booktitle = {Proceedings of the Sixth Global Wordnet Conference},
+  year      = {2012},
+  pages     = {263--270},
+  address   = {Matsue, Japan}
+}
+'''
+
+
+# ─────────────────────────────── Portuguese ───────────────────────────────
+
+
+[[wordnet]]
+id = "mwnpt"
+name = "MWN.PT — WordNet of Portuguese"
+repo_url = "https://portulanclarin.net/repository/browse/mwnpt-wordnet-of-portuguese/4836bd2615d811ea86cd02420a0000057f6090d6dc65485886fd3c5749a93a10/"
+language = "Portuguese"
+bcp47 = "pt"
+format = "unknown"
+license = "MS-C-NoReD-ND"
+known_in_cygnet = false
+notes = "41,000+ concepts, 38,000 lexical units. PORTULAN CLARIN. Restrictive license (no redistribution, no derivatives). Separate from own-pt."
+confidence = "high"
+type = "expand"
+
+# ADDITIONAL FINDS — OMW v1 LIST + OTHER SOURCES
+bib = '''
+% HANDMADE: MWN.PT (Multilingual Wordnet Portuguese)
+@inproceedings{simoes-mwnpt-2014,
+  title     = {{MWN.PT} -- The Multilingual {W}ord{N}et for {P}ortuguese},
+  author    = {Simões, Alberto Melo and Guinovart, Xavier Gómez},
   booktitle = {Proceedings of the Seventh Global Wordnet Conference},
   year      = {2014},
   address   = {Tartu, Estonia}
@@ -2601,57 +2006,146 @@ bib = '''
 
 
 [[wordnet]]
-id = "aeb-wn"
-name = "Tunisian Arabic WordNet (aeb)"
-repo_url = "https://aclanthology.org/W14-0110"
-language = "Tunisian Arabic"
-bcp47 = "aeb"
-format = "GWA LMF"
-known_in_cygnet = false
-notes = "Paper: Karmani et al. 2014 (GWC 2014). Built in ISO LMF format. No public repository found; contact authors (REGIM Lab, Univ. of Sfax, Tunisia). Citation: W14-0110."
-confidence = "medium"
+id = "own-pt"
+name = "OpenWordNet-PT"
+repo_url = "https://github.com/own-pt/openWordnet-PT"
+language = "Portuguese"
+bcp47 = "pt"
+format = "RDF/TTL"
+release_url = "https://github.com/own-pt/openWordnet-PT/releases/download/v1.0.0/own-pt.tar.gz"
+license = "CC BY 4.0"
+known_in_cygnet = true
+notes = "160 stars. Open Portuguese wordnet. Data in RDF/TTL; also released as GWA LMF in tar.gz."
+confidence = "high"
+acl_ids = ["W14-0153"]
 type = "expand"
-
-# ── SARDINIAN ─────────────────────────────────────────────────────────────────
 bib = '''
-% HANDMADE: Tunisian Arabic WordNet — Karmani et al. 2014 (GWC 2014)
-@inproceedings{karmani-etal-2014-aeb,
-  title     = {Building a standardized {W}ordnet in the {ISO LMF} for {aeb} language},
-  author    = {Karmani, Nadia B. M. and Soussou, Hsan and Alimi, Adel M.},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia},
-  pages     = {71--77},
-  url       = {https://aclanthology.org/W14-0110}
+% HANDMADE: OpenWordNet-PT
+@inproceedings{de-paiva-own-pt-2012,
+  title     = {{OpenWordNet-PT}: An Open Brazilian Wordnet for Reasoning},
+  author    = {de Paiva, Valeria and Rademaker, Alexandre and de Melo, Gerard},
+  booktitle = {Proceedings of COLING 2012: Demonstration Papers},
+  year      = {2012},
+  pages     = {353--360},
+  url       = {https://github.com/arademaker/openWordnet-PT}
 }
 '''
 
 
 [[wordnet]]
-id = "sardanet"
-name = "SardaNet (Sardinian WordNet)"
-repo_url = "https://aclanthology.org/2018.gwc-1.53"
-language = "Sardinian"
-bcp47 = "srd"
-format = "unknown"
-known_in_cygnet = false
-notes = "Paper: Angioni et al. 2018 (GWC 2018). University of Cagliari. Work in progress as of 2018. No public data release found. Citation: 2018.gwc-1.53."
-confidence = "low"
-type = "standalone"
+id = "tufs-pt"
+name = "TUFS Portuguese"
+repo_url = "https://github.com/omwn/tufs"
+language = "Portuguese"
+bcp47 = "pt"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-pt.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-pt-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
 
-# ── SANSKRIT ──────────────────────────────────────────────────────────────────
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ──────────────────────────────── Punjabi ────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-pb"
+name = "TUFS Punjabi"
+repo_url = "https://github.com/omwn/tufs"
+language = "Punjabi"
+bcp47 = "pa"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-pb.tsv"
+known_in_cygnet = false
+notes = "In TUFS repo (tufs-vocab-pb.tsv) but not listed in cygnet. pb = Western Panjabi?"
+confidence = "medium"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
 bib = '''
-% ACL: SardaNet — Angioni et al. 2018 (GWC 2018); fetched from aclanthology.org/2018.gwc-1.53
-@inproceedings{angioni-etal-2018-sardanet,
-  title     = {{SardaNet}: a Linguistic Resource for {Sardinian} Language},
-  author    = {Angioni, Manuela and Tuveri, Franco and Virdis, Maurizio and Lai, Laura Lucia and Maltesi, Micol Elisa},
-  booktitle = {Proceedings of the 9th Global Wordnet Conference},
-  year      = {2018},
-  address   = {Nanyang Technological University (NTU), Singapore},
-  publisher = {Global Wordnet Association},
-  url       = {https://aclanthology.org/2018.gwc-1.53}
+% HANDMADE: TUFS Brazilian Portuguese — part of TUFS collection
+@misc{bond-tufs-2009,
+  title = {{TUFS} Multilingual Wordnet},
+  author = {Bond, Francis and Paik, Kyonghee},
+  year   = {2009},
+  url    = {https://github.com/omwn/tufs}
 }
 '''
+
+
+# ──────────────────────────────── Romanian ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-ro"
+name = "OMW Romanian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Romanian"
+bcp47 = "ro"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ro-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "rowordnet"
+name = "RoWordNet"
+repo_url = "https://github.com/racai-ai/RoWordNet"
+language = "Romanian"
+bcp47 = "ro"
+format = "VisDic XML"
+example_file = "https://raw.githubusercontent.com/racai-ai/RoWordNet/master/xml/rown.xml"
+known_in_cygnet = false
+notes = "Romanian WordNet XML (custom ROWN format). visdic2lmf.py can convert to GWA LMF. Python API at dumitrescustefan/RoWordNet."
+confidence = "high"
+type = "standalone"
+
+bib = '''
+% HANDMADE: Romanian WordNet
+@inproceedings{tufis-rowordnet-2004,
+  title     = {{BalkaNet}: Aims, Methods, Results and Perspectives. A General Overview},
+  author    = {Tufiş, Dan and Cristea, Dan and Stamou, Sofia},
+  journal   = {Romanian Journal of Information Science and Technology},
+  volume    = {7},
+  number    = {1--2},
+  pages     = {9--43},
+  year      = {2004}
+}
+'''
+
+
+# ──────────────────────────────── Russian ────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-ru"
+name = "TUFS Russian"
+repo_url = "https://github.com/omwn/tufs"
+language = "Russian"
+bcp47 = "ru"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ru.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ru-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ──────────────────────────────── Sanskrit ────────────────────────────────
 
 
 [[wordnet]]
@@ -2668,7 +2162,6 @@ notes = "Archived data (April 2020): CSV and JSON files. REST API at sanskritwor
 confidence = "medium"
 type = "standalone"
 
-# ── COPTIC ────────────────────────────────────────────────────────────────────
 bib = '''
 % HANDMADE: Sanskrit WordNet (Univ. Pavia / Exeter) — no separate paper; cite the repository
 @misc{short-luraghi-2020-sanskrit-wn,
@@ -2681,18 +2174,675 @@ bib = '''
 '''
 
 
+# ─────────────────────────────── Sardinian ───────────────────────────────
+
+
 [[wordnet]]
-id = "coptic-wn"
-name = "Coptic WordNet"
-repo_url = "https://github.com/coptic-wordnet/data"
-language = "Coptic"
-bcp47 = "cop"
-format = "GWA LMF"
-example_file = "https://raw.githubusercontent.com/coptic-wordnet/data/master/copwn.xml"
-license = "CC BY 4.0"
+id = "sardanet"
+name = "SardaNet (Sardinian WordNet)"
+repo_url = "https://aclanthology.org/2018.gwc-1.53"
+language = "Sardinian"
+bcp47 = "srd"
+format = "unknown"
 known_in_cygnet = false
-notes = "25,871 synsets (218,677 senses, v1.0, 2019). Sahidic dialect. WN-LMF-1.0 format (CILI integrated). License CC BY 4.0 confirmed in XML Lexicon header. Citation also in XML metadata. No GitHub releases — use example_file URL directly. Also provides OMW TSV (copwn.tsv). Cite: Slaughter et al. 2019 (GWC 2019)."
-confidence = "high"
-acl_ids = ["2019.gwc-1.21"]
+notes = "Paper: Angioni et al. 2018 (GWC 2018). University of Cagliari. Work in progress as of 2018. No public data release found. Citation: 2018.gwc-1.53."
+confidence = "low"
 type = "standalone"
 
+bib = '''
+% ACL: SardaNet — Angioni et al. 2018 (GWC 2018); fetched from aclanthology.org/2018.gwc-1.53
+@inproceedings{angioni-etal-2018-sardanet,
+  title     = {{SardaNet}: a Linguistic Resource for {Sardinian} Language},
+  author    = {Angioni, Manuela and Tuveri, Franco and Virdis, Maurizio and Lai, Laura Lucia and Maltesi, Micol Elisa},
+  booktitle = {Proceedings of the 9th Global Wordnet Conference},
+  year      = {2018},
+  address   = {Nanyang Technological University (NTU), Singapore},
+  publisher = {Global Wordnet Association},
+  url       = {https://aclanthology.org/2018.gwc-1.53}
+}
+'''
+
+
+# ──────────────────────────────── Serbian ────────────────────────────────
+
+
+[[wordnet]]
+id = "srpwn"
+name = "Serbian WordNet (SrpWN)"
+repo_url = "https://github.com/sasa5linkar/Serbian-WordNet-Sentiment-Lexicon-Analysis"
+language = "Serbian"
+bcp47 = "sr"
+format = "unknown"
+known_in_cygnet = false
+notes = "Repo focuses on sentiment analysis using Serbian WordNet; actual SrpWN data not hosted here. SrpWN exists at University of Belgrade."
+confidence = "low"
+type = "expand"
+
+bib = '''
+% HANDMADE (see also ACL entry): Serbian WordNet
+@inproceedings{krstev-srpwn-2008,
+  title     = {The {S}erbian {W}ord{N}et: Current State and Further Development},
+  author    = {Krstev, Cvetana and Vitas, Duško and Erjavec, Tomaž and Ide, Nancy},
+  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
+  year      = {2008},
+  address   = {Szeged, Hungary}
+}
+'''
+
+
+[[wordnet]]
+id = "srpwn"
+name = "SrpWN (Serbian WordNet)"
+repo_url = "http://korpus.matf.bg.ac.rs/SrpWN/"
+language = "Serbian"
+bcp47 = "sr"
+format = "custom XML"
+license = "CC BY-NC"
+known_in_cygnet = false
+notes = "CC BY-NC confirmed. XML-based WordNet format (Princeton-style). Download requires accepting license agreement and credentials from contact persons (Cvetana Krstev, Gordana Pavlović-Lažetić). U Belgrade Faculty of Mathematics."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE (see also ACL entry): Serbian WordNet
+@inproceedings{krstev-srpwn-2008,
+  title     = {The {S}erbian {W}ord{N}et: Current State and Further Development},
+  author    = {Krstev, Cvetana and Vitas, Duško and Erjavec, Tomaž and Ide, Nancy},
+  booktitle = {Proceedings of the Fourth Global Wordnet Conference},
+  year      = {2008},
+  address   = {Szeged, Hungary}
+}
+'''
+
+
+# ──────────────────────────────── Sesotho ────────────────────────────────
+
+
+[[wordnet]]
+id = "open-sesotho-wn"
+name = "Open Sesotho Wordnet"
+repo_url = "https://github.com/pssvlng/open-african-wordnets"
+language = "Sesotho"
+bcp47 = "st"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/st_inferred_plus.zip"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "Likely GWA LMF. Same passivlingo.com project."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: Open Sesotho WordNet
+@misc{open-sesotho-wn,
+  title = {Open Sesotho WordNet},
+  url   = {https://github.com/ajarmain/sesotho-wordnet}
+}
+'''
+
+
+# ──────────────────────────────── Sinhala ────────────────────────────────
+
+
+[[wordnet]]
+id = "sinhala-wn"
+name = "Sinhala WordNet"
+repo_url = "https://github.com/CodeLanka/sinhala-wordnet"
+language = "Sinhala"
+bcp47 = "si"
+format = "unknown"
+known_in_cygnet = false
+notes = "Described as large lexical database for Sinhala but no data files in GitHub repo. Data may be on external site."
+confidence = "low"
+
+acl_ids = ["W14-0114"]
+type = "expand"
+bib = '''
+% HANDMADE: Sinhala WordNet
+@inproceedings{welgama-sinhala-2007,
+  title     = {Construction of {S}inhala {W}ord{N}et},
+  author    = {Welgama, Viraj and Kumara, Budditha Hettige and Bond, Francis},
+  booktitle = {Proceedings of the International Conference on Digital Libraries},
+  year      = {2007}
+}
+'''
+
+
+# ───────────────────────────────── Slovak ─────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-sk"
+name = "OMW Slovak Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Slovak"
+bcp47 = "sk"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sk-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ─────────────────────────────── Slovenian ───────────────────────────────
+
+
+[[wordnet]]
+id = "omw-sl"
+name = "OMW Slovenian Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Slovenian"
+bcp47 = "sl"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sl-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "oswn"
+name = "Open Slovene WordNet (OSWN) 1.0"
+repo_url = "https://www.clarin.si/repository/xmlui/handle/11356/1888"
+language = "Slovenian"
+bcp47 = "sl"
+format = "GWA LMF"
+release_url = "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1888/open_slovene_wordnet_1.0.zip"
+license = "CC BY-SA 4.0"
+known_in_cygnet = false
+notes = "95,262 synsets, 164,904 literals. XML in ZIP. Derived from Open English WordNet via translation. Newer than sloWNet."
+confidence = "high"
+type = "standalone"
+bib = '''
+% HANDMADE: Open Slovene WordNet
+@misc{jevsnik-oswn-2023,
+  title  = {Open Slovene WordNet {OSWN} 1.0},
+  author = {Jevšnik, Fran and Robnik-Šikonja, Marko},
+  year   = {2023},
+  doi    = {10.5281/zenodo.10251430},
+  url    = {https://www.clarin.si/repository/xmlui/handle/11356/1888}
+}
+'''
+
+
+[[wordnet]]
+id = "slownet"
+name = "sloWNet 3.1"
+repo_url = "https://www.clarin.si/repository/xmlui/handle/11356/1026"
+language = "Slovenian"
+bcp47 = "sl"
+format = "VisDic XML"
+release_url = "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1026/slownet.zip"
+license = "CC BY-SA 4.0"
+known_in_cygnet = false
+notes = "9.48 MB ZIP. DEBVisDic XML (WN root). visdic2lmf.py converts to GWA LMF with --lang sl. Contains Princeton WN 3.0 + 70,000+ Slovenian literals. Separate from omw-sl."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: sloWNet (Slovenian WordNet)
+@inproceedings{fiser-slownet-2012,
+  title     = {{sloWNet} 3.0: Development, extension and cleaning},
+  author    = {Fišer, Darja and Novak, Jernej and Erjavec, Tomaž},
+  booktitle = {Proceedings of the Sixth Global Wordnet Conference},
+  year      = {2012},
+  address   = {Matsue, Japan}
+}
+'''
+
+
+# ──────────────────────────────── Spanish ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-es"
+name = "OMW Spanish Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Spanish"
+bcp47 = "es"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-es-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "Part of OMW v2.0. From MCR."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-es"
+name = "TUFS Spanish"
+repo_url = "https://github.com/omwn/tufs"
+language = "Spanish"
+bcp47 = "es"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-es.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-es-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ──────────────────────────────── Swedish ────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-sv"
+name = "OMW Swedish Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Swedish"
+bcp47 = "sv"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sv-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+# ───────────────────────────────── Tamil ─────────────────────────────────
+
+
+[[wordnet]]
+id = "twn"
+name = "Tamil WordNet"
+repo_url = "https://github.com/ThaniThamizhAkarathiKalanjiyam/twn"
+language = "Tamil"
+bcp47 = "ta"
+format = "unknown"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "Repo exists but no data files visible in tree (only LICENSE + README). Data may be elsewhere."
+confidence = "low"
+type = "expand"
+
+bib = '''
+% HANDMADE: Chinese Taiwan WordNet
+@inproceedings{huang-cwn-2010,
+  title     = {{C}hinese {W}ord{N}et: Design and Implementation},
+  author    = {Huang, Chu-Ren and Chang, Ru-Yng and Lee, Hsiang-Bin},
+  booktitle = {Proceedings of COLING-2004},
+  year      = {2004},
+  address   = {Geneva, Switzerland}
+}
+'''
+
+
+# ────────────────────────────────── Thai ──────────────────────────────────
+
+
+[[wordnet]]
+id = "omw-th"
+name = "OMW Thai Wordnet"
+repo_url = "https://github.com/omwn/omw-data"
+language = "Thai"
+bcp47 = "th"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/omw-data/releases/download/v2.0/omw-th-2.0.tar.xz"
+license = "wordnet"
+known_in_cygnet = true
+notes = "Part of OMW v2.0."
+confidence = "high"
+acl_ids = ["2023.gwc-1.18"]
+type = "expand"
+
+
+[[wordnet]]
+id = "tufs-th"
+name = "TUFS Thai"
+repo_url = "https://github.com/omwn/tufs"
+language = "Thai"
+bcp47 = "th"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-th.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-th-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Tsonga ─────────────────────────────────
+
+
+[[wordnet]]
+id = "open-tsonga-wn"
+name = "Open Tsonga Wordnet"
+repo_url = "https://github.com/pssvlng/open-african-wordnets"
+language = "Tsonga"
+bcp47 = "ts"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/ts_inferred_plus.zip"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "Likely GWA LMF. Same passivlingo.com project."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: Open Tsonga WordNet
+@misc{open-tsonga-wn,
+  title = {Open Tsonga WordNet},
+  url   = {https://github.com/ajarmain/tsonga-wordnet}
+}
+'''
+
+
+# ──────────────────────────── Tunisian Arabic ────────────────────────────
+
+
+[[wordnet]]
+id = "aeb-wn"
+name = "Tunisian Arabic WordNet (aeb)"
+repo_url = "https://aclanthology.org/W14-0110"
+language = "Tunisian Arabic"
+bcp47 = "aeb"
+format = "GWA LMF"
+known_in_cygnet = false
+notes = "Paper: Karmani et al. 2014 (GWC 2014). Built in ISO LMF format. No public repository found; contact authors (REGIM Lab, Univ. of Sfax, Tunisia). Citation: W14-0110."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: Tunisian Arabic WordNet — Karmani et al. 2014 (GWC 2014)
+@inproceedings{karmani-etal-2014-aeb,
+  title     = {Building a standardized {W}ordnet in the {ISO LMF} for {aeb} language},
+  author    = {Karmani, Nadia B. M. and Soussou, Hsan and Alimi, Adel M.},
+  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
+  year      = {2014},
+  address   = {Tartu, Estonia},
+  pages     = {71--77},
+  url       = {https://aclanthology.org/W14-0110}
+}
+'''
+
+
+# ──────────────────────────────── Turkish ────────────────────────────────
+
+
+[[wordnet]]
+id = "kenet"
+name = "Turkish WordNet KeNet"
+repo_url = "https://github.com/StarlangSoftware/TurkishWordNet"
+language = "Turkish"
+bcp47 = "tr"
+format = "custom XML"
+example_file = "https://raw.githubusercontent.com/StarlangSoftware/TurkishWordNet/master/src/main/resources/turkish_wordnet.xml"
+known_in_cygnet = false
+notes = "64 stars. Turkish wordnet with historical versions (1901–present). XML format; unclear if GWA LMF."
+confidence = "high"
+
+acl_ids = ["2021.gwc-1.19"]
+type = "standalone"
+bib = '''
+% HANDMADE: KeNet (Turkish WordNet by Starlang)
+@inproceedings{ozdemir-kenet-2020,
+  title     = {{KeNet}: {T}urkish {W}ord{N}et},
+  author    = {Ozdemir, Cihat and Arican, Bilge Nas and Kocabalcioglu, Ahmet and Sahin, Utku and Avar, Busra and Ergelen, Oguzhan and Bakay, Ozge},
+  booktitle = {Proceedings of the 28th International Conference on Computational Linguistics},
+  year      = {2020},
+  pages     = {6349--6358},
+  doi       = {10.18653/v1/2020.coling-main.553}
+}
+'''
+
+
+[[wordnet]]
+id = "tufs-tr"
+name = "TUFS Turkish"
+repo_url = "https://github.com/omwn/tufs"
+language = "Turkish"
+bcp47 = "tr"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-tr.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-tr-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ─────────────────────────────── Ukrainian ───────────────────────────────
+
+
+[[wordnet]]
+id = "ua-wordnet"
+name = "Open Ukrainian Wordnet"
+repo_url = "https://github.com/pssvlng/ua-wordnet"
+language = "Ukrainian"
+bcp47 = "uk"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/ua-wordnet/blob/main/uaWordNet.xml"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "XML file; likely GWA LMF based on sibling repo (Afrikaans confirmed LMF). Same passivlingo.com project."
+confidence = "medium"
+
+acl_ids = ["2023.unlp-1.7"]
+type = "expand"
+bib = '''
+% HANDMADE: Ukrainian WordNet
+@inproceedings{shavrina-ua-wordnet-2023,
+  title     = {Ukrainian {W}ord{N}et},
+  author    = {Starko, Vasyl and others},
+  booktitle = {Proceedings of the Second Ukrainian Natural Language Processing Workshop ({UNLP})},
+  year      = {2023},
+  url       = {https://github.com/brown-uk/dict_uk}
+}
+'''
+
+
+# ────────────────────────────────── Urdu ──────────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-ur"
+name = "TUFS Urdu"
+repo_url = "https://github.com/omwn/tufs"
+language = "Urdu"
+bcp47 = "ur"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-ur.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-ur-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Uzbek ─────────────────────────────────
+
+
+[[wordnet]]
+id = "uzwordnet"
+name = "UzWordnet (Uzbek Wordnet)"
+repo_url = "https://github.com/LDKR-Group/UzWordnet"
+language = "Uzbek"
+bcp47 = "uz"
+format = "custom XML"
+example_file = "https://github.com/LDKR-Group/UzWordnet/blob/main/files/uzwordnet_ili.xml"
+known_in_cygnet = false
+notes = "Has uzwordnet.xml and uzwordnet_ili.xml. Also RDF version. Format compatibility with GWA LMF unclear."
+confidence = "medium"
+
+acl_ids = ["2021.gwc-1.2"]
+type = "expand"
+bib = '''
+% HANDMADE: Uzbek WordNet
+@inproceedings{uz-wordnet-2020,
+  title     = {Development of {U}zbek {W}ord{N}et},
+  author    = {Matlatipov, Gulsanam and Vetulani, Zygmunt},
+  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
+  year      = {2014},
+  address   = {Tartu, Estonia}
+}
+'''
+
+
+# ─────────────────────────────── Vietnamese ───────────────────────────────
+
+
+[[wordnet]]
+id = "tufs-vi"
+name = "TUFS Vietnamese"
+repo_url = "https://github.com/omwn/tufs"
+language = "Vietnamese"
+bcp47 = "vi"
+format = "OMW 1.0 tab"
+example_file = "https://github.com/omwn/tufs/blob/main/omw_format/tufs-vocab-vi.tsv"
+release_url = "https://github.com/omwn/tufs/releases/download/2.0/tufs-vi-2.0.tar.xz"
+license = "CC BY 3.0"
+known_in_cygnet = true
+notes = "TUFS basic vocabulary."
+confidence = "high"
+acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+[[wordnet]]
+id = "viwn"
+name = "Vietnamese WordNet"
+repo_url = "https://github.com/zeloru/vietnamese-wordnet"
+language = "Vietnamese"
+bcp47 = "vi"
+format = "unknown"
+example_file = "https://raw.githubusercontent.com/zeloru/vietnamese-wordnet/master/vi-wordnet.tar.xz"
+known_in_cygnet = false
+notes = "34 stars. Last updated 2018. Data in vi-wordnet.tar.xz (398 KB); format of contents unknown. Sources: viet.wordnet.vn (nouns/verbs/adj) and vi.wiktionary.org. No license specified. Separate from TUFS viwn."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: Vietnamese WordNet
+@inproceedings{nguyen-viwn-2016,
+  title     = {Building the {V}ietnamese {W}ord{N}et},
+  author    = {Nguyen, Thi Minh Huyen and Le Thanh, Huong and Nguyen, Thi Thu Huong and Nguyen, Duc Nguyen},
+  booktitle = {Proceedings of the Eighth Global Wordnet Conference},
+  year      = {2016},
+  address   = {Bucharest, Romania}
+}
+'''
+
+
+[[wordnet]]
+id = "viwn-build"
+name = "Vietnamese Wordnet (build scripts)"
+repo_url = "https://github.com/hienvuhuy/wordnet"
+language = "Vietnamese"
+bcp47 = "vi"
+format = "unknown"
+known_in_cygnet = false
+notes = "Scripts for constructing Vietnamese wordnet lexicographer files. Not a data release."
+confidence = "low"
+type = "expand"
+
+bib = '''
+% HANDMADE: Vietnamese WordNet (bond-lab build)
+@misc{viwn-build,
+  title = {Vietnamese WordNet},
+  url   = {https://github.com/bond-lab/viwn}
+}
+'''
+
+
+# ───────────────────────────────── Welsh ─────────────────────────────────
+
+
+[[wordnet]]
+id = "wncy"
+name = "WordNet Cymraeg (Welsh WordNet)"
+repo_url = "https://github.com/CorCenCC/wncy"
+language = "Welsh"
+bcp47 = "cy"
+format = "JSON"
+example_file = "https://github.com/CorCenCC/wncy/blob/master/wncy.json"
+license = "BSD-2-Clause"
+known_in_cygnet = false
+notes = "Welsh lexical database with synsets and lexico-semantic relations. JSON format; not GWA LMF."
+confidence = "high"
+type = "expand"
+bib = '''
+% HANDMADE: Welsh WordNet (CorCenCC)
+@inproceedings{donnelly-wncy-2019,
+  title     = {Welsh {W}ord{N}et},
+  author    = {Donnelly, Kevin and Watkins, Andrew},
+  booktitle = {Proceedings of the Tenth Global Wordnet Conference},
+  year      = {2019},
+  pages     = {279--287},
+  address   = {Wroclaw, Poland}
+}
+'''
+
+
+# ───────────────────────────────── Xhosa ─────────────────────────────────
+
+
+[[wordnet]]
+id = "open-xhosa-wn"
+name = "Open Xhosa Wordnet"
+repo_url = "https://github.com/pssvlng/open-african-wordnets"
+language = "Xhosa"
+bcp47 = "xh"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/xh_inferred_plus.zip"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "Confirmed GWA LMF XML inside zip (xh_inferred_plus.xml). Same passivlingo.com project."
+confidence = "high"
+type = "expand"
+
+bib = '''
+% HANDMADE: Open Xhosa WordNet
+@misc{open-xhosa-wn,
+  title = {Open Xhosa WordNet},
+  url   = {https://github.com/ajarmain/xhosa-wordnet}
+}
+'''
+
+
+# ────────────────────────────────── Zulu ──────────────────────────────────
+
+
+[[wordnet]]
+id = "open-zulu-wn"
+name = "Open Zulu Wordnet"
+repo_url = "https://github.com/pssvlng/open-african-wordnets"
+language = "Zulu"
+bcp47 = "zu"
+format = "GWA LMF"
+example_file = "https://github.com/pssvlng/open-african-wordnets/blob/main/zu_inferred_plus.zip"
+license = "GPL-3.0"
+known_in_cygnet = false
+notes = "Likely GWA LMF based on Xhosa sibling. Same passivlingo.com project."
+confidence = "medium"
+type = "expand"
+
+bib = '''
+% HANDMADE: Open Zulu WordNet
+@misc{open-zulu-wn,
+  title = {Open Zulu WordNet},
+  url   = {https://github.com/ajarmain/zulu-wordnet}
+}
+'''
