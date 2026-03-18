@@ -23,12 +23,13 @@ For each wordnet we aim to record:
 
 | Metric | Count |
 |--------|-------|
-| Total catalogued | 121 |
+| Total catalogued | 139 |
 | **Validated OK** | **74** |
 | — fully clean | 44 |
 | — with warnings only | 30 |
-| XML parse errors | 4 |
-| Download OK | 80 |
+| Validation errors | 9 |
+| XML parse errors | 5 |
+| Download OK | 90 |
 | Download failed / restricted | 18 |
 
 See [SUMMARY.md](SUMMARY.md) for the full per-wordnet table.
@@ -46,6 +47,7 @@ scripts/
   sort_toml.py        # re-sort wordnets_found.toml by language after edits
   update_licenses.py  # populate license/license_url/license_raw from XML metadata
   visdic2lmf.py       # VisDic/ROWN/DEBVisDic XML → GWA LMF converter
+  compare_wns.py      # pairwise sense-overlap comparison (subset / superseded / complementary)
 tests/
   test_integration.py # slow network tests (pytest --run-slow)
 build/                # generated — gitignored
@@ -129,6 +131,28 @@ Citation sources (priority order):
 2. `acl_ids` field in TOML → fetches from [ACL Anthology](https://aclanthology.org/)
 3. `citation=` attribute in the downloaded GWA LMF XML
 4. Minimal stub
+
+### `compare_wns.py` — pairwise sense overlap
+
+```bash
+uv run python scripts/compare_wns.py oewn wolf          # compare two specific wordnets
+uv run python scripts/compare_wns.py --language French  # all French wordnets pairwise
+uv run python scripts/compare_wns.py --bcp47 pt         # by BCP-47 tag
+uv run python scripts/compare_wns.py omw-gl galnet wolf --tsv   # TSV output
+```
+
+Requires both wordnets to be downloaded (GWA LMF format only).
+
+Sense identity: `(ILI, lemma)` when an ILI is present; `(synset_id, lemma)` otherwise
+(senses without ILI will never match across wordnets).
+
+Output per pair:
+- senses in A only / B only / both (as % of union)
+- Jaccard similarity
+- heuristic suggestion: *B ⊆ A*, *near-identical*, *large overlap*, *complementary*, etc.
+
+The suggestion is a guide for human review — use it to decide whether to add
+`superseded-by`, keep both as complementary resources, or pick one.
 
 ### `visdic2lmf.py` — VisDic/DEBVisDic/ROWN → GWA LMF
 

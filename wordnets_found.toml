@@ -276,6 +276,23 @@ acl_ids = ["2023.gwc-1.18"]
 type = "expand"
 
 
+# ──────────────────────────────── Bengali ────────────────────────────────
+
+
+[[wordnet]]
+id = "indown-bn"
+name = "IndoWordNet — Bengali"
+repo_url = "http://www.isical.ac.in/~lru/wordnetnew/"
+language = "Bengali"
+bcp47 = "bn"
+format = "unknown"
+license = "CC-BY-3.0"
+known_in_cygnet = false
+notes = "Browse-only at ISI Kolkata. No downloadable GWA LMF release found. Listed in GWA registry."
+confidence = "low"
+type = "expand"
+
+
 # ─────────────────────────────── Bulgarian ───────────────────────────────
 
 
@@ -973,6 +990,32 @@ bib = '''
 '''
 
 
+[[wordnet]]
+id = "wonef"
+name = "WoNeF (WordNet du Français)"
+repo_url = "https://github.com/cea-list-lasti/wonef"
+release_url = "https://wonef.pradet.me/data/wonef-fscore-0.1.xml.bz2"
+language = "French"
+bcp47 = "fr"
+format = "VisDic XML"
+license = "CC-BY-SA-3.0"
+license_url = "https://creativecommons.org/licenses/by-sa/3.0/"
+known_in_cygnet = false
+notes = "Auto-expanded French WN, version 0.1 (covers WN 3.0). DEBVisDic XML format; needs visdic2lmf conversion. Three variants: fscore (default), precision, coverage. Last updated ~2014."
+confidence = "medium"
+type = "auto"
+bib = '''
+% HANDMADE: WoNeF
+@inproceedings{pradet-wonef-2013,
+  title     = {{WoNeF}: Amélioration, extension et évaluation d'une traduction française automatique de {WordNet}},
+  author    = {Pradet, Quentin and Desormeaux, Johann and de Chalendar, Gaël and Baguenier-Desormeaux, Laurence},
+  booktitle = {Actes de la conférence TALN 2013},
+  year      = {2013},
+  url       = {https://wonef.pradet.me/}
+}
+'''
+
+
 # ──────────────────────────────── Galician ────────────────────────────────
 
 
@@ -1133,6 +1176,23 @@ confidence = "high"
 
 acl_ids = ["2023.gwc-1.18"]
 type = "expand"
+
+
+# ───────────────────────────────── Hindi ─────────────────────────────────
+
+
+[[wordnet]]
+id = "indown-hi"
+name = "IndoWordNet — Hindi"
+repo_url = "http://www.cfilt.iitb.ac.in/wordnet/webhwn/"
+language = "Hindi"
+bcp47 = "hi"
+format = "unknown"
+license = "LicenseRef-GNUFDL"
+known_in_cygnet = false
+notes = "Browse-only at IIT Bombay CFILT. No downloadable GWA LMF release found. Listed in GWA registry."
+confidence = "low"
+type = "standalone"
 
 
 # ─────────────────────────────── Hungarian ───────────────────────────────
@@ -1691,6 +1751,23 @@ acl_ids = ["2023.gwc-1.18"]
 type = "expand"
 
 
+# ─────────────────────────────── Macedonian ───────────────────────────────
+
+
+[[wordnet]]
+id = "mkwn"
+name = "Macedonian WordNet"
+language = "Macedonian"
+bcp47 = "mk"
+format = "unknown"
+license = "CC-BY-NC-3.0"
+license_url = "https://creativecommons.org/licenses/by-nc/3.0/"
+known_in_cygnet = false
+notes = "Ss. Cyril and Methodius University. No URL or download in GWA registry entry. Needs further investigation."
+confidence = "low"
+type = "expand"
+
+
 # ───────────────────────────────── Malay ─────────────────────────────────
 
 
@@ -1730,6 +1807,53 @@ confidence = "high"
 
 acl_ids = ["2020.lrec-1.389"]
 type = "expand"
+
+
+# ─────────────────────────────── Malayalam ───────────────────────────────
+
+
+[[wordnet]]
+id = "indown-ml"
+name = "IndoWordNet — Malayalam"
+repo_url = "http://malayalamwordnet.cusat.ac.in/"
+language = "Malayalam"
+bcp47 = "ml"
+format = "unknown"
+known_in_cygnet = false
+notes = "Browse-only at CUSAT, Kerala. No downloadable GWA LMF release found. Listed in GWA registry."
+confidence = "low"
+type = "expand"
+
+
+# ──────────────────────────────── Maltese ────────────────────────────────
+
+
+[[wordnet]]
+id = "mtwn"
+name = "Maltese WordNet"
+language = "Maltese"
+bcp47 = "mt"
+format = "unknown"
+known_in_cygnet = false
+notes = "University of Malta. Bare entry in GWA registry — no name, URL, license, or download. Needs further investigation."
+confidence = "low"
+type = "expand"
+
+
+# ──────────────────────────────── Marathi ────────────────────────────────
+
+
+[[wordnet]]
+id = "indown-mr"
+name = "IndoWordNet — Marathi"
+repo_url = "http://www.cfilt.iitb.ac.in/wordnet/webmwn/"
+language = "Marathi"
+bcp47 = "mr"
+format = "unknown"
+known_in_cygnet = false
+notes = "Browse-only at IIT Bombay CFILT. No downloadable GWA LMF release found. Listed in GWA registry."
+confidence = "low"
+type = "standalone"
 
 
 # ─────────────────────────────── Mongolian ───────────────────────────────
@@ -1869,14 +1993,14 @@ bib = '''
 id = "afwn"
 name = "African Wordnet (AfWN)"
 repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
-release_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
 language = "multiple South African languages"
 bcp47 = "mul"
-format = "unknown"
+format = "GWA LMF"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 known_in_cygnet = false
-notes = "Version 1.0 (2022-09-20), 9.62 MB zip from SADiLaR. Covers 9 languages: Setswana, isiXhosa, isiZulu, Sesotho sa Leboa, Tshivenda (~10,000 synsets each) plus Sesotho, Xitsonga, isiNdebele, Siswati (~1,000 synsets). XML format; GWA LMF conformance unconfirmed. Handle: https://hdl.handle.net/20.500.12185/684"
+notes = "Version 1.0 (2022-09-20), 9.62 MB zip from SADiLaR. Confirmed GWA LMF (WN-LMF-1.0). Covers 9 languages: Setswana, isiXhosa, isiZulu, Sepedi, Tshivenda (~10,000 synsets each) plus Sesotho, Xitsonga, isiNdebele, Siswati (~1,000 synsets). Individual per-language entries: afwn-nso, afwn-st, afwn-tn, afwn-ss, afwn-ve, afwn-ts, afwn-nd, afwn-xh, afwn-zu. Handle: https://hdl.handle.net/20.500.12185/684"
 confidence = "high"
 type = "expand"
 bib = '''
@@ -1891,6 +2015,29 @@ bib = '''
   url     = {https://africanwordnet.wordpress.com/}
 }
 '''
+
+# Per-language entries — all from the same SADiLaR zip (AfWN version 1.0)
+
+
+# ───────────────────────────── Northern Sotho ─────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-nso"
+name = "African Wordnet — Sepedi (Sesotho sa Leboa)"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Sepedi.xml"
+email = "griesel@unisa.ac.za"
+language = "Northern Sotho"
+bcp47 = "nso"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
 
 
 # ──────────────────────────── Norwegian Bokmål ────────────────────────────
@@ -2168,6 +2315,32 @@ bib = '''
   booktitle = {Proceedings of the Seventh Global Wordnet Conference},
   year      = {2014},
   address   = {Tartu, Estonia}
+}
+'''
+
+
+[[wordnet]]
+id = "onto-pt"
+name = "Onto.PT"
+repo_url = "http://ontopt.dei.uc.pt/"
+release_url = "http://ontopt.dei.uc.pt/recursos/OntoPTv0.6_rdf.zip"
+language = "Portuguese"
+bcp47 = "pt"
+format = "RDF/TTL"
+license = "CC-BY-3.0"
+license_url = "https://creativecommons.org/licenses/by/3.0/"
+known_in_cygnet = false
+notes = "European Portuguese wordnet, v0.6 (2013). University of Coimbra. RDF/XML and N3 formats; no GWA LMF converter available. Distinct from own-pt (Brazilian PT)."
+confidence = "medium"
+type = "standalone"
+bib = '''
+% HANDMADE: Onto.PT
+@inproceedings{goncalo-oliveira-ontopt-2010,
+  title     = {Onto.{PT}: Towards the Automatic Construction of a Lexical Ontology for {P}ortuguese},
+  author    = {Gonçalo Oliveira, Hugo and Gomes, Paulo},
+  booktitle = {Proceedings of the 2nd Workshop on Cognitive Aspects of the Lexicon (CogALex)},
+  year      = {2010},
+  url       = {http://ontopt.dei.uc.pt/}
 }
 '''
 
@@ -2590,6 +2763,48 @@ bib = '''
 '''
 
 
+# ───────────────────────────── South Ndebele ─────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-nd"
+name = "African Wordnet — isiNdebele"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-isiNdebele.xml"
+email = "griesel@unisa.ac.za"
+language = "South Ndebele"
+bcp47 = "nd"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
+
+
+# ───────────────────────────── Southern Sotho ─────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-st"
+name = "African Wordnet — Sesotho"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Sesotho.xml"
+email = "griesel@unisa.ac.za"
+language = "Southern Sotho"
+bcp47 = "st"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
+
+
 # ──────────────────────────────── Spanish ────────────────────────────────
 
 
@@ -2628,6 +2843,27 @@ notes = "TUFS basic vocabulary."
 confidence = "high"
 
 acl_ids = ["2020.lrec-1.389"]
+type = "expand"
+
+
+# ───────────────────────────────── Swati ─────────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-ss"
+name = "African Wordnet — Siswati"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Siswati.xml"
+email = "griesel@unisa.ac.za"
+language = "Swati"
+bcp47 = "ss"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
 type = "expand"
 
 
@@ -2727,6 +2963,24 @@ type = "expand"
 
 
 [[wordnet]]
+id = "afwn-ts"
+name = "African Wordnet — Xitsonga"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Xitsonga.xml"
+email = "griesel@unisa.ac.za"
+language = "Tsonga"
+bcp47 = "ts"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~1,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
+
+
+[[wordnet]]
 id = "open-tsonga-wn"
 name = "Open Tsonga Wordnet"
 repo_url = "https://github.com/pssvlng/open-african-wordnets"
@@ -2748,6 +3002,27 @@ bib = '''
   url   = {https://github.com/ajarmain/tsonga-wordnet}
 }
 '''
+
+
+# ───────────────────────────────── Tswana ─────────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-tn"
+name = "African Wordnet — Setswana"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Setswana.xml"
+email = "griesel@unisa.ac.za"
+language = "Tswana"
+bcp47 = "tn"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
 
 
 # ──────────────────────────── Tunisian Arabic ────────────────────────────
@@ -2913,6 +3188,27 @@ bib = '''
 '''
 
 
+# ───────────────────────────────── Venda ─────────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-ve"
+name = "African Wordnet — Tshivenda"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-Tshivenda .xml"
+email = "griesel@unisa.ac.za"
+language = "Venda"
+bcp47 = "ve"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch). Note: filename has trailing space."
+confidence = "high"
+type = "expand"
+
+
 # ─────────────────────────────── Vietnamese ───────────────────────────────
 
 
@@ -3015,6 +3311,24 @@ bib = '''
 
 
 [[wordnet]]
+id = "afwn-xh"
+name = "African Wordnet — isiXhosa"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-isiXhosa.xml"
+email = "griesel@unisa.ac.za"
+language = "Xhosa"
+bcp47 = "xh"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
+
+
+[[wordnet]]
 id = "open-xhosa-wn"
 name = "Open Xhosa Wordnet"
 repo_url = "https://github.com/pssvlng/open-african-wordnets"
@@ -3040,6 +3354,24 @@ bib = '''
 
 
 # ────────────────────────────────── Zulu ──────────────────────────────────
+
+
+[[wordnet]]
+id = "afwn-zu"
+name = "African Wordnet — isiZulu"
+repo_url = "https://repo.sadilar.org/items/7ce27e8c-601e-4dc7-87f1-3f45c97fe8f8"
+release_url = "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip"
+zip_entry = "lexicon-isiZulu.xml"
+email = "griesel@unisa.ac.za"
+language = "Zulu"
+bcp47 = "zu"
+format = "GWA LMF"
+license = "CC-BY-4.0"
+license_url = "https://creativecommons.org/licenses/by/4.0/"
+known_in_cygnet = false
+notes = "~10,000 synsets. Part of AfWN v1.0 (Griesel & Bosch)."
+confidence = "high"
+type = "expand"
 
 
 [[wordnet]]

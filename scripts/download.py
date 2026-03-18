@@ -354,8 +354,14 @@ def _extract_archive(entry: dict, archive: Path, raw_dir: Path, pkg_dir: Path,
             shutil.rmtree(extract_to, ignore_errors=True)
             return None
 
-        # Find the main XML
-        xml = find_xml_in_dir(extract_to)
+        # Find the main XML — honour zip_entry if specified
+        zip_entry = entry.get("zip_entry")
+        if zip_entry:
+            matches = [x for x in extract_to.rglob("*.xml")
+                       if x.name == zip_entry or str(x).endswith(zip_entry)]
+            xml = matches[0] if matches else None
+        else:
+            xml = find_xml_in_dir(extract_to)
         if xml is None:
             # Maybe it's a tab/tsv inside an archive
             tabs = list(extract_to.rglob("*.tab")) + list(extract_to.rglob("*.tsv"))
@@ -403,10 +409,40 @@ def _install_xml(entry: dict, src: Path, raw_dir: Path, pkg_dir: Path,
         # Source is in the extraction temp dir — copy to raw_dir too
         shutil.copy2(src, raw_target)
 
-    # Install to pkg as {id}.xml
+    # Install to pkg as {id}.xml, normalising the XML declaration if needed
+    # (wn.lmf requires exactly: <?xml version="1.0" encoding="UTF-8"?>)
     pkg_target = pkg_dir / (entry["id"] + ".xml")
-    shutil.copy2(raw_target, pkg_target)
-    log_lines.append(f"  installed: {pkg_target.name}")
+    raw_bytes = raw_target.read_bytes()
+    normalised = re.sub(
+        rb'<\?xml\s+version="1\.0"\s+encoding="UTF-8"\s*\?>',
+        b'<?xml version="1.0" encoding="UTF-8"?>',
+        raw_bytes, count=1,
+    )
+    # Also normalise DOCTYPE (remove stray spaces before closing >)
+    normalised = re.sub(
+        rb'(<!DOCTYPE LexicalResource SYSTEM "[^"]+")(\s+)>',
+        rb'\1>',
+        normalised, count=1,
+    )
+    # Patch missing required Lexicon attributes (email, license) from TOML entry
+    lic   = entry.get("license_url") or entry.get("license", "")
+    email = entry.get("email", "")
+    if lic or email:
+        def _patch_lexicon(m: re.Match) -> bytes:
+            tag = m.group(0)
+            # Strip trailing whitespace/> to rebuild cleanly
+            inner = tag[len(b"<Lexicon"):].rstrip(b" \t\r\n>")
+            if lic and b"license=" not in tag:
+                inner += f' license="{lic}"'.encode()
+            if email and b"email=" not in tag:
+                inner += f' email="{email}"'.encode()
+            return b"<Lexicon" + inner + b">"
+        normalised = re.sub(rb'<Lexicon\b[^>]*>', _patch_lexicon, normalised)
+    pkg_target.write_bytes(normalised)
+    if normalised != raw_bytes:
+        log_lines.append(f"  normalised XML declaration in {pkg_target.name}")
+    else:
+        log_lines.append(f"  installed: {pkg_target.name}")
     return {"xml": str(pkg_target.relative_to(ROOT)), "format": "GWA LMF"}
 
 
