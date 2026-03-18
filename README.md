@@ -44,6 +44,7 @@ scripts/
   summary.py          # statistics + Markdown table
   make_citations.py   # generate citations/ from TOML acl_ids / bib fields
   sort_toml.py        # re-sort wordnets_found.toml by language after edits
+  update_licenses.py  # populate license/license_url/license_raw from XML metadata
   visdic2lmf.py       # VisDic/ROWN/DEBVisDic XML → GWA LMF converter
 tests/
   test_integration.py # slow network tests (pytest --run-slow)
@@ -68,7 +69,9 @@ Each `[[wordnet]]` entry in `wordnets_found.toml` has:
 | `repo_url` | | Primary URL (GitHub, project page) |
 | `release_url` | | Direct download URL (preferred over `example_file`) |
 | `example_file` | | URL to a single data file |
-| `license` | | SPDX expression or common name |
+| `license` | | SPDX identifier (e.g. `CC-BY-4.0`, `MIT`, `WordNet-3.0`) |
+| `license_url` | | URL to the full license text |
+| `license_raw` | | Original license string from the XML metadata (for reference) |
 | `known_in_cygnet` | | `true` if already in [cygnet](https://github.com/omwn/cygnet) |
 | `notes` | | Free-text notes |
 | `acl_ids` | | List of ACL Anthology paper IDs for citation |
