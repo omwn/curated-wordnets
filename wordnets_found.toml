@@ -370,24 +370,24 @@ name = "Myanmar Open Wordnet (MOW)"
 repo_url = "https://github.com/myanmaropenwordnet/mow"
 language = "Burmese"
 bcp47 = "my"
-format = "OMW 1.0 tab"
-example_file = "https://github.com/myanmaropenwordnet/mow/blob/master/mow-0.1.3-mya_20171005165336.tab"
+format = "GWA LMF"
+release_url = "https://github.com/omwn/mow/releases/download/v0.1.3/wnmow-0.1.3.tar.xz"
 license = "CC-BY-4.0"
 license_url = "https://creativecommons.org/licenses/by/4.0/"
 license_raw = "CC BY 4.0"
-known_in_cygnet = false
-notes = "v0.1.3 in OMW 1.0 tab format. Cygnet mentions getting newer version. Also mirrored at omwn/mow."
+known_in_cygnet = true
+notes = "v0.1.3 now in GWA LMF."
 confidence = "high"
 type = "expand"
 
 bib = '''
-% HANDMADE: MOW (Multilingual Open Wordnet)
-@inproceedings{vigier-mow-2014,
-  title     = {{MOW}},
-  author    = {Vigier, Denis and Mangeot, Mathieu and Gledhill, Chris},
-  booktitle = {Proceedings of the Seventh Global Wordnet Conference},
-  year      = {2014},
-  address   = {Tartu, Estonia}
+@misc{wang-mow,
+  author       = {Wang, Wenjie},
+  title        = {Myanmar Open Wordnet (MOW)},
+  howpublished = {\url{https://wordnet.burmese.sg/}},
+  note         = {Accessed: 2026-04-01},
+  year         = {n.d.},
+  url          = {https://wordnet.burmese.sg}
 }
 '''
 
@@ -433,14 +433,6 @@ confidence = "high"
 acl_ids = ["2019.gwc-1.26"]
 type = "expand"
 bib = '''
-% HANDMADE: Cantonese WordNet
-@inproceedings{lamas-cantonese-2018,
-  title     = {The {C}antonese {W}ord{N}et},
-  author    = {da Costa Lamas, Luis and Bond, Francis},
-  booktitle = {Proceedings of the Ninth Global Wordnet Conference},
-  year      = {2018},
-  address   = {Singapore}
-}
 '''
 
 
