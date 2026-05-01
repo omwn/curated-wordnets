@@ -2160,21 +2160,42 @@ language = "Old Javanese"
 bcp47 = "kaw"
 format = "OMW 1.0 tab"
 example_file = "https://github.com/omwn/OJW/blob/master/wn-kaw.tab"
+release_url = "https://github.com/omwn/OJW/releases/download/v2026.03.14/wnkaw-2026.03.14.tar.xz"
 known_in_cygnet = false
-notes = "OMW 1.0 tab format. kaw is ISO 639-3 for Old Javanese (Kawi)."
+notes = "kaw is ISO 639-3 for Old Javanese (Kawi)."
 confidence = "high"
 type = "expand"
 
 bib = '''
-% HANDMADE: Old Javanese Wordnet — part of OMWN project, no separate paper found
-@misc{bond-omwn-ojw,
-  title  = {Old {J}avanese {W}ord{N}et ({OJW})},
-  author = {Bond, Francis and others},
-  year   = {2022},
-  url    = {https://github.com/omwn/ojw},
-  note   = {Part of the Open Multilingual Wordnet (OMW) project. OMW 1.0 tab format.}
-}
-'''
+@inproceedings{moeljadi-aminullah-2020-building,
+    title = "Building the Old {J}avanese {W}ordnet",
+    author = "Moeljadi, David  and
+      Aminullah, Zakariya Pamuji",
+    editor = "Calzolari, Nicoletta  and
+      B{\'e}chet, Fr{\'e}d{\'e}ric  and
+      Blache, Philippe  and
+      Choukri, Khalid  and
+      Cieri, Christopher  and
+      Declerck, Thierry  and
+      Goggi, Sara  and
+      Isahara, Hitoshi  and
+      Maegaard, Bente  and
+      Mariani, Joseph  and
+      Mazo, H{\'e}l{\`e}ne  and
+      Moreno, Asuncion  and
+      Odijk, Jan  and
+      Piperidis, Stelios",
+    booktitle = "Proceedings of the Twelfth Language Resources and Evaluation Conference",
+    month = may,
+    year = "2020",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2020.lrec-1.359/",
+    pages = "2940--2946",
+    language = "eng",
+    ISBN = "979-10-95546-34-4",
+    abstract = "This paper discusses the construction and the ongoing development of the Old Javanese Wordnet. The words were extracted from the digitized version of the Old Javanese{--}English Dictionary (Zoetmulder, 1982). The wordnet is built using the `expansion' approach (Vossen, 1998), leveraging on the Princeton Wordnet{'}s core synsets and semantic hierarchy, as well as scientific names. The main goal of our project was to produce a high quality, human-curated resource. As of December 2019, the Old Javanese Wordnet contains 2,054 concepts or synsets and 5,911 senses. It is released under a Creative Commons Attribution 4.0 International License (CC BY 4.0). We are still developing it and adding more synsets and senses. We believe that the lexical data made available by this wordnet will be useful for a variety of future uses such as the development of Modern Javanese Wordnet and many language processing tasks and linguistic research on Javanese."
+}'''
 
 
 # ──────────────────────────────── Persian ────────────────────────────────
