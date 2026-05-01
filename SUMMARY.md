@@ -179,3 +179,94 @@
 | afwn-zu           | African Wordnet — isiZulu                          | Zulu                             | zu     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (8287W)                                       |
 | open-zulu-wn      | Open Zulu Wordnet                                  | Zulu                             | zu     | GWA LMF        | GPL                      | medium     | not tried                                          |
 
+### Content Statistics (readable XML)
+
+| ID                | Name                                        | Lang | Synsets | Words  | Definitions | Examples | ILI%   |
+|-------------------|---------------------------------------------|------|---------|--------|-------------|----------|--------|
+| abuiwn            | Abui Wordnet                                | abz  | 1475    | 1476   | 0           | 0        | 99.9%  |
+| open-afrikaans-wn | Open Afrikaans Wordnet                      | af   | 120053  | 141772 | 120058      | 0        | 100.0% |
+| omw-sq            | OMW Albanian Wordnet                        | sq   | 4679    | 6489   | 4686        | 3324     | 100.0% |
+| omw-arb           | OMW Arabic Wordnet                          | arb  | 9916    | 18000  | 0           | 0        | 100.0% |
+| tufs-arb          | TUFS Arabic                                 | arb  | 642     | 589    | 0           | 7479     | 93.9%  |
+| tufs-as           | TUFS Assamese                               | as   | 526     | 403    | 0           | 2013     | 95.2%  |
+| omw-eu            | OMW Basque Wordnet                          | eu   | 29420   | 26388  | 2088        | 2375     | 100.0% |
+| omw-bg            | OMW Bulgarian Wordnet                       | bg   | 4959    | 6737   | 4969        | 14473    | 100.0% |
+| mow               | Myanmar Open Wordnet (MOW)                  | my   | 1198    | 1071   | 0           | 0        | 100.0% |
+| tufs-my           | TUFS Burmese                                | my   | 620     | 684    | 0           | 1206     | 93.2%  |
+| cantonese-wn      | Cantonese Wordnet                           | yue  | 5182    | 11667  | 0           | 0        | 98.6%  |
+| omw-ca            | OMW Catalan Wordnet                         | ca   | 60765   | 69301  | 7673        | 2991     | 100.0% |
+| cow               | Chinese Open Wordnet                        | cmn  | 42316   | 63351  | 0           | 0        | 100.0% |
+| omw-cmn           | OMW Chinese (Mandarin) Wordnet              | cmn  | 42300   | 63339  | 0           | 0        | 100.0% |
+| tufs-cmn          | TUFS Chinese (Mandarin)                     | cmn  | 658     | 480    | 0           | 848      | 93.5%  |
+| coptic-wn         | Coptic WordNet                              | cop  | 25871   | 22560  | 0           | 0        | 98.3%  |
+| omw-hr            | OMW Croatian Wordnet                        | hr   | 23115   | 29081  | 0           | 0        | 100.0% |
+| czech-wn          | Czech WordNet 1.9 PDT                       | cs   | 23179   | 34159  | 782         | 339      | 0.5%   |
+| dannet            | DanNet                                      | da   | 70445   | 61977  | 60645       | 44178    | 9.2%   |
+| omw-da            | OMW Danish Wordnet                          | da   | 4476    | 4521   | 0           | 0        | 100.0% |
+| odwn              | Open Dutch Wordnet (ODWN)                   | nl   | 116992  | 102567 | 0           | 0        | 81.5%  |
+| odwn-lmf          | Open Dutch Wordnet v1.3 (ISO LMF release)   | nl   | 117914  | 99349  | 0           | 0        | 81.8%  |
+| omw-nl            | OMW Dutch Wordnet                           | nl   | 30177   | 43667  | 0           | 0        | 100.0% |
+| oewn              | Open English WordNet                        | en   | 107519  | 135969 | 107524      | 49596    | 97.0%  |
+| tufs-tl           | TUFS Filipino                               | tl   | 685     | 475    | 0           | 778      | 93.7%  |
+| omw-fi            | OMW Finnish Wordnet                         | fi   | 116763  | 130741 | 0           | 0        | 100.0% |
+| omw-fr            | OMW French Wordnet                          | fr   | 59091   | 59612  | 0           | 0        | 100.0% |
+| tufs-fr           | TUFS French                                 | fr   | 682     | 587    | 0           | 1707     | 93.5%  |
+| wolf              | WOLF (Wordnet Libre du Français)            | fr   | 117659  | 156974 | 117658      | 48019    | 100.0% |
+| galnet            | SLI GalNet                                  | gl   | 44004   | 52382  | 8724        | 0        | 100.0% |
+| omw-gl            | OMW Galician Wordnet                        | gl   | 34776   | 40873  | 8703        | 4496     | 100.0% |
+| odenet            | OdeNet (Open German Wordnet)                | de   | 36268   | 120107 | 19717       | 722      | 53.7%  |
+| tufs-de           | TUFS German                                 | de   | 666     | 467    | 0           | 1184     | 93.7%  |
+| omw-el            | OMW Greek Wordnet                           | el   | 18113   | 18263  | 18136       | 0        | 100.0% |
+| omw-he            | OMW Hebrew Wordnet                          | he   | 5448    | 5374   | 6609        | 0        | 100.0% |
+| omw-is            | OMW Icelandic Wordnet                       | is   | 4951    | 11573  | 0           | 0        | 100.0% |
+| omw-id            | OMW Indonesian Wordnet                      | id   | 46774   | 41478  | 12862       | 0        | 100.0% |
+| tufs-id           | TUFS Indonesian                             | id   | 681     | 542    | 0           | 1014     | 93.5%  |
+| wn-data-gle       | Irish Wordnet (OMW 1.0 tab)                 | ga   | 33472   | 37988  | 372         | 0        | 81.6%  |
+| iwn-omw           | Open Italian WordNet (IWN-OMW)              | it   | 49350   | 48432  | 36080       | 3239     | 33.0%  |
+| omw-it            | OMW Italian Wordnet                         | it   | 35001   | 43004  | 2169        | 1955     | 100.0% |
+| omw-iwn           | ItalWordNet (IWN) via OMW                   | it   | 15563   | 19680  | 13356       | 0        | 100.0% |
+| omw-ja            | OMW Japanese Wordnet                        | ja   | 117659  | 94002  | 135692      | 48276    | 100.0% |
+| tufs-ja           | TUFS Japanese                               | ja   | 620     | 440    | 0           | 1206     | 93.2%  |
+| tufs-km           | TUFS Khmer                                  | km   | 686     | 464    | 0           | 1015     | 93.6%  |
+| tufs-ko           | TUFS Korean                                 | ko   | 686     | 494    | 0           | 1698     | 93.6%  |
+| kurdnet           | KurdNet (Kurdish Wordnet)                   | kmr  | 2144    | 3885   | 2149        | 0        | 100.0% |
+| tufs-lo           | TUFS Lao                                    | lo   | 680     | 469    | 0           | 1221     | 93.5%  |
+| tezaurs           | Tēzaurs (Latvian Wordnet)                   | lv   | 8623    | 12320  | 13872       | 72598    | 24.4%  |
+| omw-lt            | OMW Lithuanian Wordnet                      | lt   | 9462    | 11428  | 0           | 0        | 100.0% |
+| omw-zsm           | OMW Malay Wordnet                           | zsm  | 36911   | 38755  | 0           | 0        | 100.0% |
+| tufs-zsm          | TUFS Malay                                  | zsm  | 620     | 438    | 0           | 1206     | 93.2%  |
+| monwn             | Mongolian Wordnet (MonWN)                   | mn   | 23382   | 24643  | 0           | 0        | 100.0% |
+| tufs-mn           | TUFS Mongolian                              | mn   | 664     | 448    | 0           | 795      | 93.4%  |
+| afwn              | African Wordnet (AfWN)                      | mul  | 117620  | 156613 | 0           | 0        | 0.0%   |
+| afwn-nso          | African Wordnet — Sepedi (Sesotho sa Leboa) | nso  | 8020    | 7933   | 0           | 0        | 0.0%   |
+| omw-nb            | OMW Norwegian Bokmål Wordnet                | nb   | 4455    | 4244   | 0           | 0        | 100.0% |
+| omw-nn            | OMW Norwegian Nynorsk Wordnet               | nn   | 3671    | 3436   | 0           | 0        | 100.0% |
+| ojw               | Old Javanese Wordnet                        | kaw  | 2032    | 3739   | 0           | 0        | 100.0% |
+| omw-pl            | OMW Polish Wordnet                          | pl   | 33826   | 45458  | 0           | 0        | 100.0% |
+| own-pt            | OpenWordNet-PT                              | pt   | 52670   | 59211  | 7993        | 2821     | 100.0% |
+| tufs-pt           | TUFS Portuguese                             | pt   | 688     | 478    | 0           | 743      | 93.6%  |
+| omw-ro            | OMW Romanian Wordnet                        | ro   | 58754   | 52600  | 58754       | 0        | 100.0% |
+| rowordnet         | RoWordNet                                   | ro   | 59348   | 85277  | 59348       | 0        | 99.1%  |
+| tufs-ru           | TUFS Russian                                | ru   | 680     | 465    | 0           | 795      | 93.7%  |
+| omw-sk            | OMW Slovak Wordnet                          | sk   | 18507   | 29228  | 0           | 0        | 100.0% |
+| omw-sl            | OMW Slovenian Wordnet                       | sl   | 42590   | 40340  | 3177        | 4162     | 100.0% |
+| oswn              | Open Slovene WordNet (OSWN) 1.0             | sl   | 95262   | 107699 | 190524      | 0        | 97.8%  |
+| slownet           | sloWNet 3.1                                 | sl   | 117658  | 71803  | 120835      | 52154    | 100.0% |
+| afwn-nd           | African Wordnet — isiNdebele                | nd   | 967     | 1079   | 0           | 0        | 0.0%   |
+| afwn-st           | African Wordnet — Sesotho                   | st   | 969     | 929    | 0           | 0        | 0.0%   |
+| omw-es            | OMW Spanish Wordnet                         | es   | 78948   | 93834  | 19444       | 1196     | 100.0% |
+| tufs-es           | TUFS Spanish                                | es   | 676     | 466    | 0           | 1550     | 93.9%  |
+| afwn-ss           | African Wordnet — Siswati                   | ss   | 967     | 964    | 0           | 0        | 0.0%   |
+| omw-sv            | OMW Swedish Wordnet                         | sv   | 6796    | 5872   | 0           | 0        | 100.0% |
+| omw-th            | OMW Thai Wordnet                            | th   | 73350   | 83481  | 0           | 0        | 100.0% |
+| tufs-th           | TUFS Thai                                   | th   | 688     | 477    | 0           | 745      | 93.6%  |
+| afwn-ts           | African Wordnet — Xitsonga                  | ts   | 298     | 336    | 0           | 0        | 0.0%   |
+| afwn-tn           | African Wordnet — Setswana                  | tn   | 14179   | 12752  | 0           | 0        | 0.0%   |
+| tufs-tr           | TUFS Turkish                                | tr   | 673     | 471    | 0           | 1717     | 93.5%  |
+| tufs-ur           | TUFS Urdu                                   | ur   | 685     | 470    | 0           | 718      | 93.7%  |
+| afwn-ve           | African Wordnet — Tshivenda                 | ve   | 3611    | 3462   | 0           | 0        | 0.0%   |
+| tufs-vi           | TUFS Vietnamese                             | vi   | 685     | 510    | 0           | 1236     | 93.6%  |
+| afwn-xh           | African Wordnet — isiXhosa                  | xh   | 14188   | 12288  | 0           | 0        | 0.0%   |
+| open-xhosa-wn     | Open Xhosa Wordnet                          | xh   | 120053  | 155103 | 120058      | 0        | 100.0% |
+| afwn-zu           | African Wordnet — isiZulu                   | zu   | 10005   | 8038   | 0           | 0        | 0.0%   |
+

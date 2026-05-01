@@ -11,6 +11,7 @@ Usage:
 import argparse
 import json
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 try:
@@ -63,6 +64,40 @@ def licence_short(lic: str | None) -> str:
         if tok.lower() in lic.lower():
             return tok
     return lic[:30]
+
+
+# ── xml stats ──────────────────────────────────────────────────────────────
+
+def parse_xml_stats(xml_path: Path) -> dict | None:
+    """Return synset/word/def/example/ILI counts, or None on parse failure."""
+    try:
+        tree = ET.parse(xml_path)
+    except ET.ParseError:
+        return None
+    root = tree.getroot()
+    lexicon = root.find("Lexicon")
+    if lexicon is None:
+        return None
+    synsets = lexicon.findall("Synset")
+    n_synsets = len(synsets)
+    n_words = len(lexicon.findall("LexicalEntry"))
+    n_defs = n_examples = n_ili = 0
+    for ss in synsets:
+        ili = ss.get("ili", "")
+        if ili and ili != "in":
+            n_ili += 1
+        for ch in ss:
+            if ch.tag == "Definition":
+                n_defs += 1
+            elif ch.tag == "Example":
+                n_examples += 1
+    return {
+        "synsets": n_synsets,
+        "words": n_words,
+        "definitions": n_defs,
+        "examples": n_examples,
+        "ili_linked": n_ili,
+    }
 
 
 # ── main ───────────────────────────────────────────────────────────────────
@@ -158,6 +193,49 @@ def main(argv=None):
     for r in rows:
         print(fmt_row(r))
     print()
+
+    # ── content stats table (readable XML only) ────────────────────────────
+    stat_cols = ["ID", "Name", "Lang", "Synsets", "Words", "Definitions", "Examples", "ILI%"]
+    stat_rows = []
+    for e in entries:
+        wn_id = e["id"]
+        xml_rel = results.get(wn_id, {}).get("xml")
+        if not xml_rel:
+            continue
+        xml_path = ROOT / xml_rel
+        if not xml_path.exists():
+            continue
+        stats = parse_xml_stats(xml_path)
+        if stats is None:
+            continue
+        n_ss = stats["synsets"]
+        ili_pct = f"{100 * stats['ili_linked'] / n_ss:.1f}%" if n_ss else "—"
+        stat_rows.append([
+            wn_id,
+            e.get("name", wn_id),
+            e.get("bcp47", e.get("language", "")),
+            str(n_ss),
+            str(stats["words"]),
+            str(stats["definitions"]),
+            str(stats["examples"]),
+            ili_pct,
+        ])
+
+    if stat_rows:
+        stat_widths = [
+            max(len(stat_cols[i]), max(len(r[i]) for r in stat_rows))
+            for i in range(len(stat_cols))
+        ]
+
+        def fmt_stat_row(r):
+            return "| " + " | ".join(str(r[i]).ljust(stat_widths[i]) for i in range(len(stat_cols))) + " |"
+
+        print("### Content Statistics (readable XML)\n")
+        print(fmt_stat_row(stat_cols))
+        print("|" + "|".join("-" * (w + 2) for w in stat_widths) + "|")
+        for r in stat_rows:
+            print(fmt_stat_row(r))
+        print()
 
     return 0
 
