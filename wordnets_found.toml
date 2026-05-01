@@ -53,15 +53,8 @@ license_raw = "https://creativecommons.org/licenses/by-sa/4.0/"
 known_in_cygnet = false
 notes = "Confirmed GWA LMF header. Inferred from English wordnet. passivlingo.com project."
 confidence = "high"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Afrikaans WordNet
-@misc{open-afrikaans-wn,
-  title = {Open Afrikaans WordNet},
-  url   = {https://github.com/ajarmain/afrikaans-wordnet}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]
 
 
 # ──────────────────────────────── Albanian ────────────────────────────────
@@ -2639,15 +2632,8 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Sesotho WordNet
-@misc{open-sesotho-wn,
-  title = {Open Sesotho WordNet},
-  url   = {https://github.com/ajarmain/sesotho-wordnet}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]
 
 
 # ──────────────────────────────── Sinhala ────────────────────────────────
@@ -3007,15 +2993,8 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Tsonga WordNet
-@misc{open-tsonga-wn,
-  title = {Open Tsonga WordNet},
-  url   = {https://github.com/ajarmain/tsonga-wordnet}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]
 
 
 # ───────────────────────────────── Tswana ─────────────────────────────────
@@ -3133,19 +3112,8 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "XML file; likely GWA LMF based on sibling repo (Afrikaans confirmed LMF). Same passivlingo.com project."
 confidence = "medium"
-
-acl_ids = ["2023.unlp-1.7"]
-type = "expand"
-bib = '''
-% HANDMADE: Ukrainian WordNet
-@inproceedings{shavrina-ua-wordnet-2023,
-  title     = {Ukrainian {W}ord{N}et},
-  author    = {Starko, Vasyl and others},
-  booktitle = {Proceedings of the Second Ukrainian Natural Language Processing Workshop ({UNLP})},
-  year      = {2023},
-  url       = {https://github.com/brown-uk/dict_uk}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]
 
 
 # ────────────────────────────────── Urdu ──────────────────────────────────
@@ -3356,15 +3324,8 @@ license_raw = "https://creativecommons.org/licenses/by-sa/4.0/"
 known_in_cygnet = false
 notes = "Confirmed GWA LMF XML inside zip (xh_inferred_plus.xml). Same passivlingo.com project."
 confidence = "high"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Xhosa WordNet
-@misc{open-xhosa-wn,
-  title = {Open Xhosa WordNet},
-  url   = {https://github.com/ajarmain/xhosa-wordnet}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]
 
 
 # ────────────────────────────────── Zulu ──────────────────────────────────
@@ -3401,12 +3362,5 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "Likely GWA LMF based on Xhosa sibling. Same passivlingo.com project."
 confidence = "medium"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Zulu WordNet
-@misc{open-zulu-wn,
-  title = {Open Zulu WordNet},
-  url   = {https://github.com/ajarmain/zulu-wordnet}
-}
-'''
+type = "auto"
+acl_ids = ["2025.gwc-1.24"]

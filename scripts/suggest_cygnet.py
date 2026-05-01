@@ -189,7 +189,10 @@ def is_cygnet_eligible(entry: dict, result: dict) -> bool:
     - Source format was already GWA LMF (no format conversion required)
     - XML parses (validation errors are OK; parse_error means wn can't load it at all)
     - Has a usable URL
+    - Not an auto-generated wordnet (type != "auto")
     """
+    if entry.get("type") == "auto":
+        return False
     if result.get("download") != "ok":
         return False
     if not result.get("xml"):
@@ -495,6 +498,8 @@ def main(argv=None):
         url = best_url(entry)
 
         if not url:
+            continue
+        if entry.get("type") == "auto":
             continue
 
         fp = url_fingerprint(url)
