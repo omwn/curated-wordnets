@@ -1,5 +1,6 @@
 # build artefacts (downloaded + converted wordnets, results)
 build/
+!build/results.json
 
 # Python
 .venv/
