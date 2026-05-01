@@ -529,23 +529,50 @@ def _install_xml(entry: dict, src: Path, raw_dir: Path, pkg_dir: Path,
             f"(source data bug — to be reported upstream)"
         )
 
+    transforms: list[str] = []
+
+    # Track Lexicon attribute patching
+    lic_present = b"license=" in raw_bytes
+    email_present = b"email=" in raw_bytes
+    # Re-check after normalisation to see if attrs were added
+    if (lic or email) and (
+        (lic and not lic_present) or (email and not email_present)
+    ):
+        transforms.append("Lexicon attrs patched")
+
+    # Track DTD upgrade
+    if b"WN-LMF-1.1.dtd" in normalised and b"WN-LMF-1.1.dtd" not in raw_bytes:
+        transforms.append("DTD upgraded 1.0→1.1")
+
+    # Track Requires insertion
+    if b'ref="omw-en"' in normalised and b'ref="omw-en"' not in raw_bytes:
+        transforms.append("Requires added")
+
+    # Track stub synsets
+    if missing:
+        transforms.append(f"stub synsets ({len(missing)})")
+
     pkg_target.write_bytes(normalised)
     if normalised != raw_bytes:
         log_lines.append(f"  normalised XML in {pkg_target.name}")
     else:
         log_lines.append(f"  installed: {pkg_target.name}")
-    return {"xml": str(pkg_target.relative_to(ROOT)), "format": "GWA LMF"}
+    result: dict[str, object] = {"xml": str(pkg_target.relative_to(ROOT)), "format": "GWA LMF"}
+    if transforms:
+        result["transformations"] = transforms
+    return result
 
 
-def _fix_tab_header(tab: Path, entry: dict, log_lines: list):
+def _fix_tab_header(tab: Path, entry: dict, log_lines: list) -> bool:
     """Ensure the OMW 1.0 tab header has 4 tab-separated fields.
-    Some files ship with only 3 (missing url); insert the entry's repo_url."""
+    Some files ship with only 3 (missing url); insert the entry's repo_url.
+    Returns True if the header was modified."""
     try:
         lines = tab.read_text(encoding="utf-8").splitlines(keepends=True)
     except Exception:
-        return
+        return False
     if not lines or not lines[0].startswith("#"):
-        return
+        return False
     header = lines[0].rstrip("\n")
     body = header.lstrip("# ")
     parts = body.split("\t")
@@ -554,6 +581,8 @@ def _fix_tab_header(tab: Path, entry: dict, log_lines: list):
         lines[0] = f"## {parts[0]}\t{parts[1]}\t{url}\t{parts[2]}\n"
         tab.write_text("".join(lines), encoding="utf-8")
         log_lines.append(f"  fixed 3-field tab header: added url={url!r}")
+        return True
+    return False
 
 
 def _convert_tab(entry: dict, tab: Path, raw_dir: Path, pkg_dir: Path,
@@ -567,7 +596,7 @@ def _convert_tab(entry: dict, tab: Path, raw_dir: Path, pkg_dir: Path,
 
     # tsv2lmf expects a 4-field header: ## label\tlanguage\turl\tlicense
     # Some files have only 3 fields (missing url). Fix in-place before converting.
-    _fix_tab_header(raw_tab, entry, log_lines)
+    header_fixed = _fix_tab_header(raw_tab, entry, log_lines)
 
     try:
         tsv2lmf = ensure_omw_data()
@@ -601,15 +630,22 @@ def _convert_tab(entry: dict, tab: Path, raw_dir: Path, pkg_dir: Path,
         log_lines.append(f"  tsv2lmf error: {result.stderr[:300]}")
         # Try online converter as fallback
         if convert_tab_online(raw_tab, xml_out, log_lines):
-            return {"xml": str(xml_out.relative_to(ROOT)), "format": "GWA LMF",
-                    "converted_from": "OMW 1.0 tab (online converter)"}
+            transforms = ["tab header fixed"] if header_fixed else []
+            r: dict = {"xml": str(xml_out.relative_to(ROOT)), "format": "GWA LMF",
+                       "converted_from": "OMW 1.0 tab (online converter)"}
+            if transforms:
+                r["transformations"] = transforms
+            return r
         log_lines.append(f"  kept raw tab: {raw_tab.name}")
         return {"tab": str(raw_tab.relative_to(ROOT)), "format": "OMW 1.0 tab",
                 "note": f"conversion failed: {result.stderr[:200]}"}
 
     log_lines.append(f"  converted → {xml_out.name}")
-    return {"xml": str(xml_out.relative_to(ROOT)), "format": "GWA LMF",
-            "converted_from": "OMW 1.0 tab"}
+    r: dict[str, object] = {"xml": str(xml_out.relative_to(ROOT)), "format": "GWA LMF",
+                            "converted_from": "OMW 1.0 tab"}
+    if header_fixed:
+        r["transformations"] = ["tab header fixed"]
+    return r
 
 
 def _convert_visdic(entry: dict, xml_in: Path, raw_dir: Path, pkg_dir: Path,

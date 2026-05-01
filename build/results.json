@@ -1,0 +1,3997 @@
+{
+  "abuiwn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://raw.githubusercontent.com/fanacek/abuiwn/refs/heads/main/abwn.xml",
+    "xml": "build/pkg/abuiwn/abuiwn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added"
+    ],
+    "name": "Abui Wordnet",
+    "bcp47": "abz",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "open-afrikaans-wn": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/pssvlng/open-afrikaans-wordnet/blob/main/OAfrikaansNet.xml",
+    "xml": "build/pkg/open-afrikaans-wn/open-afrikaans-wn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added"
+    ],
+    "name": "Open Afrikaans Wordnet",
+    "bcp47": "af",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W305",
+      "W307",
+      "W403",
+      "W404",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 8961,
+    "details": {
+      "W305": {
+        "level": "W",
+        "count": 2,
+        "message": "synset has a blank definition",
+        "items": [
+          "inaf-01617678-v",
+          "inaf-01699038-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 1263,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "inaf-05825869-n",
+          "inaf-11703574-n",
+          "inaf-11703800-n",
+          "inaf-11943130-n",
+          "inaf-11943224-n",
+          "inaf-12144165-n",
+          "inaf-12348758-n",
+          "inaf-12485612-n",
+          "inaf-12491655-n",
+          "inaf-12714005-n"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 1819,
+        "message": "redundant relation between source and target",
+        "items": [
+          "inaf-depth-n-05621745-04",
+          "inaf-profoundness-n-05102125-02",
+          "inaf-profundity-n-05142145-02",
+          "inaf-perspicuity-n-04828846-01",
+          "inaf-grandness-n-14458147-02",
+          "inaf-largeness-n-05626076-03",
+          "inaf-precociousness-n-05628077-01",
+          "inaf-sharpness-n-04712672-01",
+          "inaf-clarity-n-04827489-01",
+          "inaf-clarity-n-04708808-02"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 5875,
+        "message": "reverse relation is missing",
+        "items": [
+          "inaf-begin-v-00349400-01",
+          "inaf-fall-v-01974840-02",
+          "inaf-vaporisation-n-13593639-02",
+          "inaf-blend-n-00381504-01",
+          "inaf-senescent-s-01649151-03",
+          "inaf-document-n-13424504-01",
+          "inaf-confuse-v-00623406-01",
+          "inaf-clumsy-s-02237069-02",
+          "inaf-large-n-05103453-01",
+          "inaf-blend-n-07390005-01"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 2,
+        "message": "relation is a self-loop",
+        "items": [
+          "inaf-thralldom-n-14020738-04",
+          "inaf-interrelation-n-13866409-01"
+        ]
+      }
+    }
+  },
+  "omw-sq": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sq-2.0.tar.xz",
+    "xml": "build/pkg/omw-sq/omw-sq.xml",
+    "format": "GWA LMF",
+    "name": "OMW Albanian Wordnet",
+    "bcp47": "sq",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 108,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 4,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-sq-00162688-v",
+          "omw-sq-07765073-n",
+          "omw-sq-07992450-n",
+          "omw-sq-08006094-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 104,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-sq-02679415-n",
+          "omw-sq-02685951-v",
+          "omw-sq-02687916-v",
+          "omw-sq-02703275-n",
+          "omw-sq-02693691-v",
+          "omw-sq-02756098-n",
+          "omw-sq-02756558-v",
+          "omw-sq-02756821-v",
+          "omw-sq-02954938-n",
+          "omw-sq-03015254-n"
+        ]
+      }
+    }
+  },
+  "agwn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Open Ancient Greek WordNet 0.5",
+    "bcp47": "grc",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-arb": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-arb-2.0.tar.xz",
+    "xml": "build/pkg/omw-arb/omw-arb.xml",
+    "format": "GWA LMF",
+    "name": "OMW Arabic Wordnet",
+    "bcp47": "arb",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-arb": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ar-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-arb/tufs-arb.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Arabic",
+    "bcp47": "arb",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 7,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 7,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ar-77000061-a",
+          "tufs-ar-80001619-a",
+          "tufs-ar-77000075-a",
+          "tufs-ar-77000090-n",
+          "tufs-ar-80001331-x",
+          "tufs-ar-77000012-n",
+          "tufs-ar-77000015-n"
+        ]
+      }
+    }
+  },
+  "tufs-as": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-as-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-as/tufs-as.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Assamese",
+    "bcp47": "as",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 11,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 11,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-as-77000061-a",
+          "tufs-as-80001619-a",
+          "tufs-as-77000075-a",
+          "tufs-as-77000012-n",
+          "tufs-as-77000015-n",
+          "tufs-as-94373-a",
+          "tufs-as-86697-v",
+          "tufs-as-99848-a",
+          "tufs-as-99845-a",
+          "tufs-as-94344-a"
+        ]
+      }
+    }
+  },
+  "euswn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Basque WordNet EusWN 3.0",
+    "bcp47": "eu",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-eu": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-eu-2.0.tar.xz",
+    "xml": "build/pkg/omw-eu/omw-eu.xml",
+    "format": "GWA LMF",
+    "name": "OMW Basque Wordnet",
+    "bcp47": "eu",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 212,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 6,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-eu-00694866-n",
+          "omw-eu-06738162-n",
+          "omw-eu-07069747-n",
+          "omw-eu-09294984-n",
+          "omw-eu-09898892-n",
+          "omw-eu-10645223-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 206,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-eu-00033615-n",
+          "omw-eu-00063652-n",
+          "omw-eu-00066636-n",
+          "omw-eu-00153809-n",
+          "omw-eu-00157081-n",
+          "omw-eu-00162632-n",
+          "omw-eu-00260622-n",
+          "omw-eu-00333829-n",
+          "omw-eu-00410247-n",
+          "omw-eu-00456199-n"
+        ]
+      }
+    }
+  },
+  "btb-wordnet": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "BTB-WordNet (Bulgarian)",
+    "bcp47": "bg",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "bulnet": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "BulNet (Bulgarian WordNet)",
+    "bcp47": "bg",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-bg": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-bg-2.0.tar.xz",
+    "xml": "build/pkg/omw-bg/omw-bg.xml",
+    "format": "GWA LMF",
+    "name": "OMW Bulgarian Wordnet",
+    "bcp47": "bg",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 118,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 118,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-bg-00510050-a",
+          "omw-bg-02821071-a",
+          "omw-bg-02894591-a",
+          "omw-bg-00950272-a",
+          "omw-bg-01911053-a",
+          "omw-bg-01692786-a",
+          "omw-bg-02840478-a",
+          "omw-bg-01801029-a",
+          "omw-bg-02697329-a",
+          "omw-bg-01800349-a"
+        ]
+      }
+    }
+  },
+  "mow": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/mow/releases/download/v0.1.3/wnmow-0.1.3.tar.xz",
+    "xml": "build/pkg/mow/mow.xml",
+    "format": "GWA LMF",
+    "name": "Myanmar Open Wordnet (MOW)",
+    "bcp47": "my",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-my": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-my-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-my/tufs-my.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Burmese",
+    "bcp47": "my",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 71,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 71,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-my-77000072-n",
+          "tufs-my-80001230-x",
+          "tufs-my-77000061-a",
+          "tufs-my-80001619-a",
+          "tufs-my-77000075-a",
+          "tufs-my-77000099-n",
+          "tufs-my-77000090-n",
+          "tufs-my-80001331-x",
+          "tufs-my-77000079-a",
+          "tufs-my-77000084-n"
+        ]
+      }
+    }
+  },
+  "cantonese-wn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://raw.githubusercontent.com/lmorgadodacosta/CantoneseWN/refs/heads/master/cantown.xml",
+    "xml": "build/pkg/cantonese-wn/cantonese-wn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added"
+    ],
+    "name": "Cantonese Wordnet",
+    "bcp47": "yue",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W203"
+    ],
+    "error_count": 0,
+    "warning_count": 6,
+    "details": {
+      "W203": {
+        "level": "W",
+        "count": 6,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "\u9d28",
+          "\u8774\u8776",
+          "\u5976\u6a3d",
+          "\u5c3f\u7247",
+          "\u63d2\u5ea7",
+          "\u5976\u7c89"
+        ]
+      }
+    }
+  },
+  "omw-ca": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ca-2.0.tar.xz",
+    "xml": "build/pkg/omw-ca/omw-ca.xml",
+    "format": "GWA LMF",
+    "name": "OMW Catalan Wordnet",
+    "bcp47": "ca",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 570,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 303,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-ca-00043609-n",
+          "omw-ca-00084895-n",
+          "omw-ca-00157463-n",
+          "omw-ca-00175435-a",
+          "omw-ca-00176994-n",
+          "omw-ca-00186634-n",
+          "omw-ca-00200026-a",
+          "omw-ca-00204659-n",
+          "omw-ca-00229371-a",
+          "omw-ca-00232620-a"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 267,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-ca-00005205-a",
+          "omw-ca-00034322-a",
+          "omw-ca-00034710-a",
+          "omw-ca-00034924-a",
+          "omw-ca-00035465-a",
+          "omw-ca-00037457-a",
+          "omw-ca-00038750-a",
+          "omw-ca-00040325-a",
+          "omw-ca-00041202-a",
+          "omw-ca-00042457-a"
+        ]
+      }
+    }
+  },
+  "cow": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/bond-lab/cow/blob/master/docs/data/0.9/wn-data-cmn.tab",
+    "xml": "build/pkg/cow/cow.xml",
+    "format": "GWA LMF",
+    "converted_from": "OMW 1.0 tab",
+    "name": "Chinese Open Wordnet",
+    "bcp47": "cmn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "cwn-taiwan": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Chinese Wordnet (Taiwan, CWN)",
+    "bcp47": "cmn",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-cmn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-cmn-2.0.tar.xz",
+    "xml": "build/pkg/omw-cmn/omw-cmn.xml",
+    "format": "GWA LMF",
+    "name": "OMW Chinese (Mandarin) Wordnet",
+    "bcp47": "cmn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-cmn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-zh-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-cmn/tufs-cmn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Chinese (Mandarin)",
+    "bcp47": "cmn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-zh-77000061-a",
+          "tufs-zh-80001619-a",
+          "tufs-zh-77000075-a",
+          "tufs-zh-77000090-n",
+          "tufs-zh-80001331-x",
+          "tufs-zh-77000012-n",
+          "tufs-zh-77000015-n",
+          "tufs-zh-94373-a",
+          "tufs-zh-99848-a"
+        ]
+      }
+    }
+  },
+  "coptic-wn": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://raw.githubusercontent.com/coptic-wordnet/data/master/copwn.xml",
+    "xml": "build/pkg/coptic-wn/coptic-wn.xml",
+    "format": "GWA LMF",
+    "name": "Coptic WordNet",
+    "bcp47": "cop",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-hr": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-hr-2.0.tar.xz",
+    "xml": "build/pkg/omw-hr/omw-hr.xml",
+    "format": "GWA LMF",
+    "name": "OMW Croatian Wordnet",
+    "bcp47": "hr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "czech-wn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Czech WordNet 1.9 PDT",
+    "bcp47": "cs",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "dannet": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/kuhumcst/DanNet/releases/download/v2025-07-03/dannet-wn-lmf.xml.gz",
+    "xml": "build/pkg/dannet/dannet.xml",
+    "format": "GWA LMF",
+    "name": "DanNet",
+    "bcp47": "da",
+    "validation": "errors",
+    "error_codes": [
+      "E101"
+    ],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 79,
+    "warning_count": 4653,
+    "details": {
+      "E101": {
+        "level": "E",
+        "count": 79,
+        "message": "ID is not unique within the lexicon",
+        "items": [
+          "sense-22032621",
+          "sense-22035137",
+          "sense-53003619",
+          "sense-51003913",
+          "sense-91007448",
+          "sense-51003942",
+          "sense-22010963",
+          "sense-21067386",
+          "sense-22023004",
+          "sense-91001811"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 4653,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "synset-16705",
+          "synset-12140",
+          "synset-35186",
+          "synset-41111",
+          "synset-66467",
+          "synset-s28069509-d2",
+          "synset-10800",
+          "synset-77952",
+          "synset-3902",
+          "synset-19452"
+        ]
+      }
+    }
+  },
+  "omw-da": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-da-2.0.tar.xz",
+    "xml": "build/pkg/omw-da/omw-da.xml",
+    "format": "GWA LMF",
+    "name": "OMW Danish Wordnet",
+    "bcp47": "da",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "odwn": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/cltl/OpenDutchWordnet/blob/master/resources/odwn/odwn_orbn_gwg-LMF.xml.gz",
+    "xml": "build/pkg/odwn/odwn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "stub synsets (1)"
+    ],
+    "name": "Open Dutch Wordnet (ODWN)",
+    "bcp47": "nl",
+    "validation": "parse_error",
+    "validation_note": "invalid or missing DOCTYPE declaration"
+  },
+  "odwn-lmf": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://zenodo.org/records/10328304/files/odwn_orbn_gwg-LMF_1.3.xml",
+    "xml": "build/pkg/odwn-lmf/odwn-lmf.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "stub synsets (73)"
+    ],
+    "name": "Open Dutch Wordnet v1.3 (ISO LMF release)",
+    "bcp47": "nl",
+    "validation": "parse_error",
+    "validation_note": "invalid or missing DOCTYPE declaration"
+  },
+  "omw-nl": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nl-2.0.tar.xz",
+    "xml": "build/pkg/omw-nl/omw-nl.xml",
+    "format": "GWA LMF",
+    "name": "OMW Dutch Wordnet",
+    "bcp47": "nl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "oewn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://en-word.net/static/english-wordnet-2025.xml.gz",
+    "xml": "build/pkg/oewn/oewn.xml",
+    "format": "GWA LMF",
+    "name": "Open English WordNet",
+    "bcp47": "en",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "oewn-namenet": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Open English Namenet",
+    "bcp47": "en",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "estwn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Estonian Wordnet (2.4.0)",
+    "bcp47": "et",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "tufs-tl": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-tl-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-tl/tufs-tl.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Filipino",
+    "bcp47": "tl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-tl-77000061-a",
+          "tufs-tl-80001619-a",
+          "tufs-tl-77000075-a",
+          "tufs-tl-77000090-n",
+          "tufs-tl-80001331-x",
+          "tufs-tl-77000012-n",
+          "tufs-tl-77000015-n",
+          "tufs-tl-94373-a",
+          "tufs-tl-99848-a"
+        ]
+      }
+    }
+  },
+  "finnwordnet": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://korp.csc.fi/download/FinnWordNet/v2.0/FinnWordNet-2.0.zip",
+    "tab": "build/raw/finnwordnet/finnwordnet.tsv",
+    "format": "OMW 1.0 tab",
+    "note": "conversion failed: INFO:tsv2lmf:Converting finnwordnet:1.0 [fi]: /Users/bond/git/curated-wordnets/build/raw/finnwordnet/finnwordnet.tsv\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-wordnets/ext/omw",
+    "name": "FinnWordNet 2.0",
+    "bcp47": "fi",
+    "validation": "skipped",
+    "validation_note": "conversion failed: INFO:tsv2lmf:Converting finnwordnet:1.0 [fi]: /Users/bond/git/curated-wordnets/build/raw/finnwordnet/finnwordnet.tsv\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-wordnets/ext/omw"
+  },
+  "omw-fi": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fi-2.0.tar.xz",
+    "xml": "build/pkg/omw-fi/omw-fi.xml",
+    "format": "GWA LMF",
+    "name": "OMW Finnish Wordnet",
+    "bcp47": "fi",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-fr": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-fr-2.0.tar.xz",
+    "xml": "build/pkg/omw-fr/omw-fr.xml",
+    "format": "GWA LMF",
+    "name": "OMW French Wordnet",
+    "bcp47": "fr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-fr": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-fr-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-fr/tufs-fr.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS French",
+    "bcp47": "fr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 53,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 53,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-fr-77000072-n",
+          "tufs-fr-80001230-x",
+          "tufs-fr-77000061-a",
+          "tufs-fr-80001619-a",
+          "tufs-fr-77000075-a",
+          "tufs-fr-77000099-n",
+          "tufs-fr-77000090-n",
+          "tufs-fr-80001331-x",
+          "tufs-fr-77000079-a",
+          "tufs-fr-77000012-n"
+        ]
+      }
+    }
+  },
+  "wolf": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://raw.githubusercontent.com/sufianj/WolfApi/master/wolf-1.0b4.xml",
+    "xml": "build/pkg/wolf/wolf.xml",
+    "format": "GWA LMF",
+    "converted_from": "VisDic XML",
+    "name": "WOLF (Wordnet Libre du Fran\u00e7ais)",
+    "bcp47": "fr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W203",
+      "W301",
+      "W307",
+      "W402",
+      "W403",
+      "W404",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 76170,
+    "details": {
+      "W203": {
+        "level": "W",
+        "count": 20,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "petit-duc scops",
+          "bufo marinus",
+          "canard colvert",
+          "canard noir",
+          "sarcelle d'hiver",
+          "sarcelle d'\u00e9t\u00e9",
+          "canard siffleur",
+          "canard souchet",
+          "canard pilet",
+          "fuligule milouin"
+        ]
+      },
+      "W301": {
+        "level": "W",
+        "count": 1,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "wolf-06842452-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 2352,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "wolf-00003846-r",
+          "wolf-00005107-a",
+          "wolf-00005567-r",
+          "wolf-00005674-r",
+          "wolf-00006858-r",
+          "wolf-00007549-v",
+          "wolf-00009541-r",
+          "wolf-00019900-r",
+          "wolf-00020142-r",
+          "wolf-00020280-r"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 39899,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "wolf-00001740-a",
+          "wolf-00001740-v",
+          "wolf-00002137-n",
+          "wolf-00002325-v",
+          "wolf-00002573-v",
+          "wolf-00002684-n",
+          "wolf-00002724-v",
+          "wolf-00002942-v",
+          "wolf-00003093-r",
+          "wolf-00003131-a"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 2021,
+        "message": "redundant relation between source and target",
+        "items": [
+          "wolf-00428572-r",
+          "wolf-02598608-a",
+          "wolf-02598768-a",
+          "wolf-02599114-a",
+          "wolf-02599509-a",
+          "wolf-02599689-a",
+          "wolf-02599837-a",
+          "wolf-02599939-a",
+          "wolf-02600131-a",
+          "wolf-02600244-a"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 31868,
+        "message": "reverse relation is missing",
+        "items": [
+          "wolf-06427387-n",
+          "wolf-08574314-n",
+          "wolf-03854998-n",
+          "wolf-00208497-v",
+          "wolf-05638987-n",
+          "wolf-03093792-n",
+          "wolf-00280853-n",
+          "wolf-01253060-n",
+          "wolf-00789534-n",
+          "wolf-05640729-n"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 9,
+        "message": "relation is a self-loop",
+        "items": [
+          "wolf-01606177-n",
+          "wolf-04509417-n",
+          "wolf-08672199-n",
+          "wolf-09319456-n",
+          "wolf-10246511-n",
+          "wolf-10246703-n",
+          "wolf-10664340-n",
+          "wolf-13844212-n",
+          "wolf-13997253-n"
+        ]
+      }
+    }
+  },
+  "galnet": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/xavier-gz/SLI_Galnet/blob/main/SLI_Galnet_LMF_3.0.29.tar.gz",
+    "xml": "build/pkg/galnet/galnet.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added"
+    ],
+    "name": "SLI GalNet",
+    "bcp47": "gl",
+    "validation": "parse_error",
+    "validation_note": "invalid or missing DOCTYPE declaration"
+  },
+  "omw-gl": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-gl-2.0.tar.xz",
+    "xml": "build/pkg/omw-gl/omw-gl.xml",
+    "format": "GWA LMF",
+    "name": "OMW Galician Wordnet",
+    "bcp47": "gl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 41,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 7,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-gl-05312040-n",
+          "omw-gl-13848784-n",
+          "omw-gl-14802167-n",
+          "omw-gl-14835817-n",
+          "omw-gl-14904956-n",
+          "omw-gl-15065584-n",
+          "omw-gl-15079184-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 34,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-gl-00230335-a",
+          "omw-gl-00231252-a",
+          "omw-gl-00231761-a",
+          "omw-gl-00232068-a",
+          "omw-gl-02320751-a",
+          "omw-gl-02320886-a",
+          "omw-gl-02537743-a",
+          "omw-gl-02538050-a",
+          "omw-gl-14631757-n",
+          "omw-gl-14636523-n"
+        ]
+      }
+    }
+  },
+  "odenet": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/hdaSprachtechnologie/odenet/releases/download/v1.4/odenet-1.4.tar.xz",
+    "xml": "build/pkg/odenet/odenet.xml",
+    "format": "GWA LMF",
+    "name": "OdeNet (Open German Wordnet)",
+    "bcp47": "de",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W203",
+      "W307",
+      "W402",
+      "W404",
+      "W501"
+    ],
+    "error_count": 0,
+    "warning_count": 5777,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 1,
+        "message": "lexical entry has no senses",
+        "items": [
+          "w36879"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 45,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "neu",
+          "voll",
+          "Mittelpunkt",
+          "typisch",
+          "kaum glauben wollen",
+          "anb\u00e4ndeln",
+          "eventuell",
+          "eingearbeitet",
+          "Getratsche",
+          "ohne Partner"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 90,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "odenet-10110-v",
+          "odenet-10249-v",
+          "odenet-10360-v",
+          "odenet-10379-a",
+          "odenet-10543-v",
+          "odenet-10688-n",
+          "odenet-1139-a",
+          "odenet-11967-v",
+          "odenet-12673-a",
+          "odenet-12792-v"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 3471,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "w7_3-v",
+          "w8_3-v",
+          "w8_9527-v",
+          "w9_3-v",
+          "w10_3-v",
+          "w11_3-v",
+          "w13_3-v",
+          "w14_3-v",
+          "w96_9744-a",
+          "w98_3713-a"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 907,
+        "message": "reverse relation is missing",
+        "items": [
+          "odenet-11000-n",
+          "odenet-34243-n",
+          "odenet-10190-n",
+          "odenet-29936-n",
+          "odenet-14139-n",
+          "odenet-15896-n",
+          "odenet-6814-n",
+          "odenet-6598-n",
+          "odenet-1370-n",
+          "odenet-15877-n"
+        ]
+      },
+      "W501": {
+        "level": "W",
+        "count": 1263,
+        "message": "synset's part-of-speech is different from its hypernym's",
+        "items": [
+          "odenet-10026-n",
+          "odenet-10030-a",
+          "odenet-10046-n",
+          "odenet-10058-v",
+          "odenet-10069-n",
+          "odenet-10075-a",
+          "odenet-10088-n",
+          "odenet-10089-v",
+          "odenet-10093-v",
+          "odenet-10107-n"
+        ]
+      }
+    }
+  },
+  "tufs-de": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-de-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-de/tufs-de.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS German",
+    "bcp47": "de",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-de-77000061-a",
+          "tufs-de-80001619-a",
+          "tufs-de-77000075-a",
+          "tufs-de-77000090-n",
+          "tufs-de-80001331-x",
+          "tufs-de-77000012-n",
+          "tufs-de-77000015-n",
+          "tufs-de-94373-a",
+          "tufs-de-99848-a"
+        ]
+      }
+    }
+  },
+  "omw-el": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-el-2.0.tar.xz",
+    "xml": "build/pkg/omw-el/omw-el.xml",
+    "format": "GWA LMF",
+    "name": "OMW Greek Wordnet",
+    "bcp47": "el",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 283,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 64,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-el-07930864-n",
+          "omw-el-07991868-n",
+          "omw-el-07995164-n",
+          "omw-el-07995365-n",
+          "omw-el-00782241-n",
+          "omw-el-00451866-n",
+          "omw-el-07739035-n",
+          "omw-el-07739506-n",
+          "omw-el-01446420-v",
+          "omw-el-13522744-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 219,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-el-00217956-v",
+          "omw-el-00224901-v",
+          "omw-el-00377002-v",
+          "omw-el-00135857-v",
+          "omw-el-00164444-v",
+          "omw-el-00184117-v",
+          "omw-el-00192051-v",
+          "omw-el-00214951-v",
+          "omw-el-07184391-n",
+          "omw-el-00761713-v"
+        ]
+      }
+    }
+  },
+  "omw-he": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-he-2.0.tar.xz",
+    "xml": "build/pkg/omw-he/omw-he.xml",
+    "format": "GWA LMF",
+    "name": "OMW Hebrew Wordnet",
+    "bcp47": "he",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 333,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 325,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-he-00025034-v",
+          "omw-he-00059127-n",
+          "omw-he-00065184-r",
+          "omw-he-00068755-n",
+          "omw-he-00099341-r",
+          "omw-he-00128091-n",
+          "omw-he-00173391-a",
+          "omw-he-00196122-a",
+          "omw-he-00238189-a",
+          "omw-he-00268165-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 8,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-he-01125154-a",
+          "omw-he-01676517-a",
+          "omw-he-06106502-n",
+          "omw-he-08570634-n",
+          "omw-he-08616050-n",
+          "omw-he-10107303-n",
+          "omw-he-14628920-n",
+          "omw-he-14639921-n"
+        ]
+      }
+    }
+  },
+  "huwn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Hungarian WordNet (RDF)",
+    "bcp47": "hu",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "icelandic-wordweb": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "The Icelandic Wordweb 21.06",
+    "bcp47": "is",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-is": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-is-2.0.tar.xz",
+    "xml": "build/pkg/omw-is/omw-is.xml",
+    "format": "GWA LMF",
+    "name": "OMW Icelandic Wordnet",
+    "bcp47": "is",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-id": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-id-2.0.tar.xz",
+    "xml": "build/pkg/omw-id/omw-id.xml",
+    "format": "GWA LMF",
+    "name": "OMW Indonesian Wordnet",
+    "bcp47": "id",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9132,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 8689,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-id-00001837-r",
+          "omw-id-00002098-a",
+          "omw-id-00002296-r",
+          "omw-id-00002527-a",
+          "omw-id-00002730-a",
+          "omw-id-00002950-r",
+          "omw-id-00003700-a",
+          "omw-id-00003939-a",
+          "omw-id-00003993-n",
+          "omw-id-00004171-a"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 443,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-id-00007846-n",
+          "omw-id-00022316-v",
+          "omw-id-00034479-n",
+          "omw-id-00042479-v",
+          "omw-id-00053097-n",
+          "omw-id-00090708-v",
+          "omw-id-00094460-v",
+          "omw-id-00117985-v",
+          "omw-id-00151755-r",
+          "omw-id-00152018-n"
+        ]
+      }
+    }
+  },
+  "tufs-id": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-id-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-id/tufs-id.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Indonesian",
+    "bcp47": "id",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-id-77000061-a",
+          "tufs-id-80001619-a",
+          "tufs-id-77000075-a",
+          "tufs-id-77000090-n",
+          "tufs-id-80001331-x",
+          "tufs-id-77000012-n",
+          "tufs-id-77000015-n",
+          "tufs-id-94373-a",
+          "tufs-id-99848-a"
+        ]
+      }
+    }
+  },
+  "wn-data-gle": {
+    "download": "ok",
+    "source": "repo_url",
+    "url": "https://github.com/TommasoPetrolito/wn-data-gle.tab",
+    "xml": "build/pkg/wn-data-gle/wn-data-gle.xml",
+    "format": "GWA LMF",
+    "converted_from": "OMW 1.0 tab",
+    "name": "Irish Wordnet (OMW 1.0 tab)",
+    "bcp47": "ga",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 11,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 11,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "wn-data-gle-00043902-n",
+          "wn-data-gle-00080743-n",
+          "wn-data-gle-00080968-n",
+          "wn-data-gle-00105271-n",
+          "wn-data-gle-00105479-n",
+          "wn-data-gle-00105820-n",
+          "wn-data-gle-00106104-n",
+          "wn-data-gle-00117810-n",
+          "wn-data-gle-00117959-n",
+          "wn-data-gle-00120010-n"
+        ]
+      }
+    }
+  },
+  "italwordnet-v2": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "ItalWordNet v2",
+    "bcp47": "it",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "iwn-omw": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/valeq/IWN-OMW/blob/main/data/LMF-XML/IWN-OMW_LMF_v1.0.xml",
+    "xml": "build/pkg/iwn-omw/iwn-omw.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "Open Italian WordNet (IWN-OMW)",
+    "bcp47": "it",
+    "validation": "parse_error",
+    "validation_note": "invalid or ill-formed XML"
+  },
+  "omw-it": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-it-2.0.tar.xz",
+    "xml": "build/pkg/omw-it/omw-it.xml",
+    "format": "GWA LMF",
+    "name": "OMW Italian Wordnet",
+    "bcp47": "it",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 273,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 245,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-it-00006100-v",
+          "omw-it-00029343-a",
+          "omw-it-00060053-a",
+          "omw-it-00215363-v",
+          "omw-it-00221964-v",
+          "omw-it-00225821-a",
+          "omw-it-00246077-r",
+          "omw-it-00249303-a",
+          "omw-it-00375690-v",
+          "omw-it-00296061-a"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 28,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-it-10216403-n",
+          "omw-it-10478960-n",
+          "omw-it-02206856-n",
+          "omw-it-10391653-n",
+          "omw-it-04961331-n",
+          "omw-it-07575984-n",
+          "omw-it-07757132-n",
+          "omw-it-14635290-n",
+          "omw-it-07765073-n",
+          "omw-it-07575726-n"
+        ]
+      }
+    }
+  },
+  "omw-iwn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-iwn-2.0.tar.xz",
+    "xml": "build/pkg/omw-iwn/omw-iwn.xml",
+    "format": "GWA LMF",
+    "name": "ItalWordNet (IWN) via OMW",
+    "bcp47": "it",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 716,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 716,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-iwn-13863771-n",
+          "omw-iwn-01608432-n",
+          "omw-iwn-00994567-a",
+          "omw-iwn-01586752-a",
+          "omw-iwn-01670221-a",
+          "omw-iwn-02713715-a",
+          "omw-iwn-15124713-n",
+          "omw-iwn-02667379-n",
+          "omw-iwn-11725015-n",
+          "omw-iwn-13747469-n"
+        ]
+      }
+    }
+  },
+  "omw-ja": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ja-2.0.tar.xz",
+    "xml": "build/pkg/omw-ja/omw-ja.xml",
+    "format": "GWA LMF",
+    "name": "OMW Japanese Wordnet",
+    "bcp47": "ja",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 63586,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 60475,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-ja-11820323-n",
+          "omw-ja-00102786-a",
+          "omw-ja-00307333-r",
+          "omw-ja-10242328-n",
+          "omw-ja-12285369-n",
+          "omw-ja-14908297-n",
+          "omw-ja-02136285-n",
+          "omw-ja-14523669-n",
+          "omw-ja-02587300-n",
+          "omw-ja-02393726-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 3111,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-ja-00002956-a",
+          "omw-ja-00003093-r",
+          "omw-ja-00004967-r",
+          "omw-ja-00005674-r",
+          "omw-ja-00007488-r",
+          "omw-ja-00009373-r",
+          "omw-ja-00012779-r",
+          "omw-ja-00016240-r",
+          "omw-ja-00018405-v",
+          "omw-ja-00019339-r"
+        ]
+      }
+    }
+  },
+  "tufs-ja": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ja-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-ja/tufs-ja.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Japanese",
+    "bcp47": "ja",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 71,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 71,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ja-77000072-n",
+          "tufs-ja-80001230-x",
+          "tufs-ja-77000061-a",
+          "tufs-ja-80001619-a",
+          "tufs-ja-77000075-a",
+          "tufs-ja-77000099-n",
+          "tufs-ja-77000090-n",
+          "tufs-ja-80001331-x",
+          "tufs-ja-77000079-a",
+          "tufs-ja-77000084-n"
+        ]
+      }
+    }
+  },
+  "tufs-km": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-km-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-km/tufs-km.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Khmer",
+    "bcp47": "km",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-km-77000061-a",
+          "tufs-km-80001619-a",
+          "tufs-km-77000075-a",
+          "tufs-km-77000090-n",
+          "tufs-km-80001331-x",
+          "tufs-km-77000012-n",
+          "tufs-km-77000015-n",
+          "tufs-km-94373-a",
+          "tufs-km-99848-a"
+        ]
+      }
+    }
+  },
+  "tufs-ko": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ko-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-ko/tufs-ko.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Korean",
+    "bcp47": "ko",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ko-77000061-a",
+          "tufs-ko-80001619-a",
+          "tufs-ko-77000075-a",
+          "tufs-ko-77000090-n",
+          "tufs-ko-80001331-x",
+          "tufs-ko-77000012-n",
+          "tufs-ko-77000015-n",
+          "tufs-ko-94373-a",
+          "tufs-ko-99848-a"
+        ]
+      }
+    }
+  },
+  "kurdnet": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/sinaahmadi/kurdnet/releases/download/kurdnet-1.0.tar.xz/kurdnet-1.0.tar.xz",
+    "xml": "build/pkg/kurdnet/kurdnet.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "KurdNet (Kurdish Wordnet)",
+    "bcp47": "kmr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W305",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 28,
+    "details": {
+      "W305": {
+        "level": "W",
+        "count": 13,
+        "message": "synset has a blank definition",
+        "items": [
+          "kurdnet-00177861-v",
+          "kurdnet-01233027-v",
+          "kurdnet-01356038-v",
+          "kurdnet-01429455-v",
+          "kurdnet-01922303-n",
+          "kurdnet-02083346-n",
+          "kurdnet-02155872-n",
+          "kurdnet-02824858-n",
+          "kurdnet-03104594-n",
+          "kurdnet-03109693-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 15,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "kurdnet-00177861-v",
+          "kurdnet-01192510-v",
+          "kurdnet-01233027-v",
+          "kurdnet-01356038-v",
+          "kurdnet-01429455-v",
+          "kurdnet-01922303-n",
+          "kurdnet-02083346-n",
+          "kurdnet-02110793-v",
+          "kurdnet-02155872-n",
+          "kurdnet-02824858-n"
+        ]
+      }
+    }
+  },
+  "tufs-lo": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-lo-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-lo/tufs-lo.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Lao",
+    "bcp47": "lo",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-lo-77000061-a",
+          "tufs-lo-80001619-a",
+          "tufs-lo-77000075-a",
+          "tufs-lo-77000090-n",
+          "tufs-lo-80001331-x",
+          "tufs-lo-77000012-n",
+          "tufs-lo-77000015-n",
+          "tufs-lo-94373-a",
+          "tufs-lo-99848-a"
+        ]
+      }
+    }
+  },
+  "latinwn-archive": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Latin WordNet Archive",
+    "bcp47": "la",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "latinwn-revision": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "Latin WordNet Revision (LiLa)",
+    "bcp47": "la",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "tezaurs": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repository.clarin.lv/repository/xmlui/bitstream/handle/20.500.12574/119/tezaurs_2025_1_lmf.xml",
+    "xml": "build/pkg/tezaurs/tezaurs.xml",
+    "format": "GWA LMF",
+    "name": "T\u0113zaurs (Latvian Wordnet)",
+    "bcp47": "lv",
+    "validation": "errors",
+    "error_codes": [
+      "E101"
+    ],
+    "warning_codes": [
+      "W203",
+      "W305",
+      "W307"
+    ],
+    "error_count": 1378,
+    "warning_count": 255,
+    "details": {
+      "E101": {
+        "level": "E",
+        "count": 1378,
+        "message": "ID is not unique within the lexicon",
+        "items": [
+          "wordnet_lv-tezaurs_2025_1-amp\u0113rs:1-15343",
+          "wordnet_lv-tezaurs_2025_1-austrumi:1-38231",
+          "wordnet_lv-tezaurs_2025_1-Abaine:1-213",
+          "wordnet_lv-tezaurs_2025_1-abi:1-590",
+          "wordnet_lv-tezaurs_2025_1-ab\u0113js:1-439",
+          "wordnet_lv-tezaurs_2025_1-abi\u017eoties:1-508546",
+          "wordnet_lv-tezaurs_2025_1-\u0101bolains:1-761",
+          "wordnet_lv-tezaurs_2025_1-Abrupe:1-1094",
+          "wordnet_lv-tezaurs_2025_1-absol\u016bts:1-1158",
+          "wordnet_lv-tezaurs_2025_1-absol\u016bts:1-1156"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 84,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "aitasgalva",
+          "aitaspiere",
+          "aizsarg\u0101t",
+          "apbed\u012bt",
+          "apcer\u0113t",
+          "atlaida",
+          "\u0101trputra",
+          "aunapiere",
+          "bestija",
+          "cien\u012bt"
+        ]
+      },
+      "W305": {
+        "level": "W",
+        "count": 3,
+        "message": "synset has a blank definition",
+        "items": [
+          "wordnet_lv-tezaurs_2025_1-948",
+          "wordnet_lv-tezaurs_2025_1-1474",
+          "wordnet_lv-tezaurs_2025_1-1553"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 168,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "wordnet_lv-tezaurs_2025_1-122",
+          "wordnet_lv-tezaurs_2025_1-132",
+          "wordnet_lv-tezaurs_2025_1-204",
+          "wordnet_lv-tezaurs_2025_1-218",
+          "wordnet_lv-tezaurs_2025_1-262",
+          "wordnet_lv-tezaurs_2025_1-330",
+          "wordnet_lv-tezaurs_2025_1-339",
+          "wordnet_lv-tezaurs_2025_1-361",
+          "wordnet_lv-tezaurs_2025_1-362",
+          "wordnet_lv-tezaurs_2025_1-363"
+        ]
+      }
+    }
+  },
+  "omw-lt": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-lt-2.0.tar.xz",
+    "xml": "build/pkg/omw-lt/omw-lt.xml",
+    "format": "GWA LMF",
+    "name": "OMW Lithuanian Wordnet",
+    "bcp47": "lt",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-zsm": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-zsm-2.0.tar.xz",
+    "xml": "build/pkg/omw-zsm/omw-zsm.xml",
+    "format": "GWA LMF",
+    "name": "OMW Malay Wordnet",
+    "bcp47": "zsm",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-zsm": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ms-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-zsm/tufs-zsm.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Malay",
+    "bcp47": "zsm",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 71,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 71,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ms-77000072-n",
+          "tufs-ms-80001230-x",
+          "tufs-ms-77000061-a",
+          "tufs-ms-80001619-a",
+          "tufs-ms-77000075-a",
+          "tufs-ms-77000099-n",
+          "tufs-ms-77000090-n",
+          "tufs-ms-80001331-x",
+          "tufs-ms-77000079-a",
+          "tufs-ms-77000084-n"
+        ]
+      }
+    }
+  },
+  "monwn": {
+    "download": "ok",
+    "source": "repo_url",
+    "url": "https://github.com/kbatsuren/monwn",
+    "xml": "build/pkg/monwn/monwn.xml",
+    "format": "GWA LMF",
+    "converted_from": "OMW 1.0 tab",
+    "name": "Mongolian Wordnet (MonWN)",
+    "bcp47": "mn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-mn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-mn-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-mn/tufs-mn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Mongolian",
+    "bcp47": "mn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-mn-77000061-a",
+          "tufs-mn-80001619-a",
+          "tufs-mn-77000075-a",
+          "tufs-mn-77000090-n",
+          "tufs-mn-80001331-x",
+          "tufs-mn-77000012-n",
+          "tufs-mn-77000015-n",
+          "tufs-mn-94373-a",
+          "tufs-mn-99848-a"
+        ]
+      }
+    }
+  },
+  "gf-wordnet": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "GF Wordnet (Grammatical Framework)",
+    "bcp47": "mul",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "iwn-en": {
+    "download": "ok",
+    "source": "repo_url",
+    "url": "https://github.com/cfiltnlp/IWN-En",
+    "tab": "build/raw/iwn-en/iwn-en.tsv",
+    "format": "OMW 1.0 tab",
+    "note": "conversion failed: INFO:tsv2lmf:Converting iwn-en:1.0 [mul]: /Users/bond/git/curated-wordnets/build/raw/iwn-en/iwn-en.tsv\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-wordnets/ext/omw-data/scripts/",
+    "name": "Indian Wordnet\u2013English Links (IWN-En)",
+    "bcp47": "mul",
+    "validation": "skipped",
+    "validation_note": "conversion failed: INFO:tsv2lmf:Converting iwn-en:1.0 [mul]: /Users/bond/git/curated-wordnets/build/raw/iwn-en/iwn-en.tsv\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-wordnets/ext/omw-data/scripts/"
+  },
+  "afwn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn/afwn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (69)"
+    ],
+    "name": "African Wordnet (AfWN)",
+    "bcp47": "mul",
+    "validation": "parse_error",
+    "validation_note": "<Lexicon> missing required attribute: email"
+  },
+  "afwn-nso": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-nso/afwn-nso.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (6548)"
+    ],
+    "name": "African Wordnet \u2014 Sepedi (Sesotho sa Leboa)",
+    "bcp47": "nso",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W202",
+      "W203",
+      "W303",
+      "W402"
+    ],
+    "error_count": 0,
+    "warning_count": 2569,
+    "details": {
+      "W202": {
+        "level": "W",
+        "count": 26,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "nso-unt-82244f30-321d-11e9-bda4-0242ac120002",
+          "nso-unt-822452ec-321d-11e9-bda4-0242ac120002",
+          "nso-unt-82111290-321d-11e9-bda4-0242ac120002",
+          "nso-unt-8211114d-321d-11e9-bda4-0242ac120002",
+          "nso-unt-8217138b-321d-11e9-bda4-0242ac120002",
+          "nso-unt-82171208-321d-11e9-bda4-0242ac120002",
+          "nso-unt-821c068e-321d-11e9-bda4-0242ac120002",
+          "nso-unt-821c04d7-321d-11e9-bda4-0242ac120002",
+          "nso-unt-82125265-321d-11e9-bda4-0242ac120002",
+          "nso-unt-82125143-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 13,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "maatla",
+          "go kota",
+          "hwa ka disego",
+          "kgokagano ka molomo",
+          "polelo",
+          "hemelanago",
+          "swarwa ke",
+          "hwa",
+          "swaraganego",
+          "bulegilego"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 1472,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "nso-syn-5fa0136e-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5f9f9b4b-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa005f9-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fb244a4-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5f9f8d84-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fb7f830-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fb74ff5-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa25c99-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa5cfbd-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa72362-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 1058,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "nso-syn-5fa0136e-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5f9f8d84-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fb7f830-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fb74ff5-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa25c99-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa5cfbd-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa72362-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa16622-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5faf3242-321d-11e9-bda4-0242ac120002",
+          "nso-syn-5fa25e49-321d-11e9-bda4-0242ac120002"
+        ]
+      }
+    }
+  },
+  "norsk-ordvev-nb": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nob_1.1.2.zip",
+    "tab": "build/raw/norsk-ordvev-nb/norsk-ordvev-nb.tab",
+    "format": "OMW 1.0 tab",
+    "note": "conversion failed: INFO:tsv2lmf:Converting norsk-ordvev-nb:1.0 [nb]: /Users/bond/git/curated-wordnets/build/raw/norsk-ordvev-nb/norsk-ordvev-nb.tab\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-word",
+    "name": "Norsk Ordvev \u2013 Bokm\u00e5l (Norwegian Wordnet Bokm\u00e5l)",
+    "bcp47": "nb",
+    "validation": "skipped",
+    "validation_note": "conversion failed: INFO:tsv2lmf:Converting norsk-ordvev-nb:1.0 [nb]: /Users/bond/git/curated-wordnets/build/raw/norsk-ordvev-nb/norsk-ordvev-nb.tab\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-word"
+  },
+  "omw-nb": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nb-2.0.tar.xz",
+    "xml": "build/pkg/omw-nb/omw-nb.xml",
+    "format": "GWA LMF",
+    "name": "OMW Norwegian Bokm\u00e5l Wordnet",
+    "bcp47": "nb",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "norsk-ordvev-nn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://www.nb.no/sbfil/leksikalske_databaser/norsk_ordvev_nno_1.1.0.zip",
+    "tab": "build/raw/norsk-ordvev-nn/norsk-ordvev-nn.tab",
+    "format": "OMW 1.0 tab",
+    "note": "conversion failed: INFO:tsv2lmf:Converting norsk-ordvev-nn:1.0 [nn]: /Users/bond/git/curated-wordnets/build/raw/norsk-ordvev-nn/norsk-ordvev-nn.tab\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-word",
+    "name": "Norsk Ordvev \u2013 Nynorsk (Norwegian Wordnet Nynorsk)",
+    "bcp47": "nn",
+    "validation": "skipped",
+    "validation_note": "conversion failed: INFO:tsv2lmf:Converting norsk-ordvev-nn:1.0 [nn]: /Users/bond/git/curated-wordnets/build/raw/norsk-ordvev-nn/norsk-ordvev-nn.tab\nTraceback (most recent call last):\n  File \"/Users/bond/git/curated-word"
+  },
+  "omw-nn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-nn-2.0.tar.xz",
+    "xml": "build/pkg/omw-nn/omw-nn.xml",
+    "format": "GWA LMF",
+    "name": "OMW Norwegian Nynorsk Wordnet",
+    "bcp47": "nn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "ojw": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/OJW/releases/download/v2026.03.14/wnkaw-2026.03.14.tar.xz",
+    "xml": "build/pkg/ojw/ojw.xml",
+    "format": "GWA LMF",
+    "name": "Old Javanese Wordnet",
+    "bcp47": "kaw",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-pl": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-pl-2.0.tar.xz",
+    "xml": "build/pkg/omw-pl/omw-pl.xml",
+    "format": "GWA LMF",
+    "name": "OMW Polish Wordnet",
+    "bcp47": "pl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "plwordnet-4": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "plWordNet 4.0 (S\u0142owosie\u0107)",
+    "bcp47": "pl",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "plwordnet-gw": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/jmccrae/plwordnet-to-gw/blob/master/plwordnet.xml.gz",
+    "xml": "build/pkg/plwordnet-gw/plwordnet-gw.xml",
+    "format": "GWA LMF",
+    "name": "plWordNet in GWA Format",
+    "bcp47": "pl",
+    "validation": "parse_error",
+    "validation_note": "invalid or ill-formed XML"
+  },
+  "mwnpt": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "MWN.PT \u2014 WordNet of Portuguese",
+    "bcp47": "pt",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "own-pt": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/own-pt/openWordnet-PT/releases/download/v1.1.0/own-pt-2026.04.07.tar.xz",
+    "xml": "build/pkg/own-pt/own-pt.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched"
+    ],
+    "name": "OpenWordNet-PT",
+    "bcp47": "pt",
+    "validation": "parse_error",
+    "validation_note": "invalid or missing XML declaration"
+  },
+  "tufs-pt": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-pt-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-pt/tufs-pt.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Portuguese",
+    "bcp47": "pt",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-pt-77000061-a",
+          "tufs-pt-80001619-a",
+          "tufs-pt-77000075-a",
+          "tufs-pt-77000090-n",
+          "tufs-pt-80001331-x",
+          "tufs-pt-77000012-n",
+          "tufs-pt-77000015-n",
+          "tufs-pt-94373-a",
+          "tufs-pt-99848-a"
+        ]
+      }
+    }
+  },
+  "omw-ro": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-ro-2.0.tar.xz",
+    "xml": "build/pkg/omw-ro/omw-ro.xml",
+    "format": "GWA LMF",
+    "name": "OMW Romanian Wordnet",
+    "bcp47": "ro",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 5020,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 2728,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-ro-02779609-n",
+          "omw-ro-04230487-n",
+          "omw-ro-00323703-v",
+          "omw-ro-10500942-n",
+          "omw-ro-14976871-n",
+          "omw-ro-00300206-n",
+          "omw-ro-06265272-n",
+          "omw-ro-00229026-v",
+          "omw-ro-07469325-n",
+          "omw-ro-02671279-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 2292,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-ro-02962545-n",
+          "omw-ro-03093574-n",
+          "omw-ro-04127904-n",
+          "omw-ro-13308999-n",
+          "omw-ro-08276342-n",
+          "omw-ro-07352190-n",
+          "omw-ro-07859284-n",
+          "omw-ro-08276720-n",
+          "omw-ro-07811416-n",
+          "omw-ro-07490713-n"
+        ]
+      }
+    }
+  },
+  "rowordnet": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://raw.githubusercontent.com/racai-ai/RoWordNet/master/xml/rown.xml",
+    "xml": "build/pkg/rowordnet/rowordnet.xml",
+    "format": "GWA LMF",
+    "converted_from": "VisDic XML",
+    "name": "RoWordNet",
+    "bcp47": "ro",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307",
+      "W402",
+      "W403",
+      "W404",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 38250,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 2757,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "rowordnet-02779609-n",
+          "rowordnet-04230487-n",
+          "rowordnet-00323703-v",
+          "rowordnet-10500942-n",
+          "rowordnet-14976871-n",
+          "rowordnet-00300206-n",
+          "rowordnet-06265272-n",
+          "rowordnet-00229026-v",
+          "rowordnet-07469325-n",
+          "rowordnet-02671279-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 2314,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "rowordnet-02962545-n",
+          "rowordnet-03093574-n",
+          "rowordnet-04127904-n",
+          "rowordnet-13308999-n",
+          "rowordnet-08276342-n",
+          "rowordnet-07352190-n",
+          "rowordnet-07859284-n",
+          "rowordnet-08276720-n",
+          "rowordnet-07811416-n",
+          "rowordnet-07490713-n"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 22504,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "rowordnet-00017222-n",
+          "rowordnet-00027167-n",
+          "rowordnet-00039297-n",
+          "rowordnet-00045250-n",
+          "rowordnet-00161243-n",
+          "rowordnet-00358290-n",
+          "rowordnet-00410247-n",
+          "rowordnet-00523513-n",
+          "rowordnet-13525549-n",
+          "rowordnet-00859001-n"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 5720,
+        "message": "redundant relation between source and target",
+        "items": [
+          "rowordnet-00358290-n",
+          "rowordnet-13525549-n",
+          "rowordnet-03094503-n",
+          "rowordnet-03740161-n",
+          "rowordnet-03169390-n",
+          "rowordnet-03800933-n",
+          "rowordnet-10468962-n",
+          "rowordnet-11669335-n",
+          "rowordnet-13152742-n",
+          "rowordnet-14496710-n"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 4947,
+        "message": "reverse relation is missing",
+        "items": [
+          "rowordnet-14067076-n",
+          "rowordnet-00081367-v",
+          "rowordnet-09543154-n",
+          "rowordnet-00494768-n",
+          "rowordnet-08036849-n",
+          "rowordnet-13600822-n",
+          "rowordnet-02913152-n",
+          "rowordnet-00240293-v",
+          "rowordnet-08618379-n",
+          "rowordnet-08020242-n"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 8,
+        "message": "relation is a self-loop",
+        "items": [
+          "rowordnet-09319456-n",
+          "rowordnet-13997253-n",
+          "rowordnet-08672199-n",
+          "rowordnet-13844212-n",
+          "rowordnet-10664340-n",
+          "rowordnet-10246511-n",
+          "rowordnet-10246703-n",
+          "rowordnet-01606177-n"
+        ]
+      }
+    }
+  },
+  "tufs-ru": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ru-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-ru/tufs-ru.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Russian",
+    "bcp47": "ru",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ru-77000061-a",
+          "tufs-ru-80001619-a",
+          "tufs-ru-77000075-a",
+          "tufs-ru-77000090-n",
+          "tufs-ru-80001331-x",
+          "tufs-ru-77000012-n",
+          "tufs-ru-77000015-n",
+          "tufs-ru-94373-a",
+          "tufs-ru-99848-a"
+        ]
+      }
+    }
+  },
+  "srpwn": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "SrpWN (Serbian WordNet)",
+    "bcp47": "sr",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "omw-sk": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sk-2.0.tar.xz",
+    "xml": "build/pkg/omw-sk/omw-sk.xml",
+    "format": "GWA LMF",
+    "name": "OMW Slovak Wordnet",
+    "bcp47": "sk",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-sl": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sl-2.0.tar.xz",
+    "xml": "build/pkg/omw-sl/omw-sl.xml",
+    "format": "GWA LMF",
+    "name": "OMW Slovenian Wordnet",
+    "bcp47": "sl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 159,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 7,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-sl-00796767-n",
+          "omw-sl-05855004-n",
+          "omw-sl-06392001-n",
+          "omw-sl-07288215-n",
+          "omw-sl-07890617-n",
+          "omw-sl-09288769-n",
+          "omw-sl-13517080-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 152,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-sl-00326094-n",
+          "omw-sl-00451370-n",
+          "omw-sl-00625993-n",
+          "omw-sl-00688915-n",
+          "omw-sl-01163779-n",
+          "omw-sl-01925469-n",
+          "omw-sl-01927301-n",
+          "omw-sl-02329401-n",
+          "omw-sl-02373336-n",
+          "omw-sl-02411427-n"
+        ]
+      }
+    }
+  },
+  "oswn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1888/open_slovene_wordnet_1.0.zip",
+    "xml": "build/pkg/oswn/oswn.xml",
+    "format": "GWA LMF",
+    "name": "Open Slovene WordNet (OSWN) 1.0",
+    "bcp47": "sl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W202",
+      "W203",
+      "W302",
+      "W303",
+      "W305",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 3177,
+    "details": {
+      "W202": {
+        "level": "W",
+        "count": 111,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "oswn-Pierre_Charles_L--ap--Enfant-MWE-n__1",
+          "oswn-Pierre_Charles_L--ap--Enfant-MWE-n__2",
+          "oswn-alpinist-Som-n__1",
+          "oswn-alpinist-Som-n__2",
+          "oswn-anus-Som-n__1",
+          "oswn-anus-Som-n__2",
+          "oswn-armada-Soz-n__1",
+          "oswn-armada-Soz-n__2",
+          "oswn-barbarski-Pp-s__1",
+          "oswn-barbarski-Pp-s__2"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 71,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "DNK",
+          "EGS",
+          "EU",
+          "IT",
+          "Pierre Charles L'Enfant",
+          "RNK",
+          "TV",
+          "ZSSR",
+          "alpinist",
+          "anus"
+        ]
+      },
+      "W302": {
+        "level": "W",
+        "count": 8,
+        "message": "ILI is repeated across synsets",
+        "items": [
+          "oswn-00951435-n",
+          "oswn-00951878-n",
+          "oswn-00042912-s",
+          "oswn-00766556-s",
+          "oswn-00035037-s",
+          "oswn-00770909-s",
+          "oswn-02605751-v",
+          "oswn-00680696-v"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 2116,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "oswn-00024914-a",
+          "oswn-91000581-a",
+          "oswn-90019731-a",
+          "oswn-91001201-a",
+          "oswn-91000741-a",
+          "oswn-90009192-a",
+          "oswn-00024458-a",
+          "oswn-02820296-a",
+          "oswn-02964788-a",
+          "oswn-02867590-a"
+        ]
+      },
+      "W305": {
+        "level": "W",
+        "count": 18,
+        "message": "synset has a blank definition",
+        "items": [
+          "oswn-00850845-a",
+          "oswn-01660842-a",
+          "oswn-02131124-a",
+          "oswn-00850938-a",
+          "oswn-00848591-n",
+          "oswn-02852657-n",
+          "oswn-06757851-n",
+          "oswn-06792481-n",
+          "oswn-06750911-n",
+          "oswn-06857559-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 853,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "oswn-00617303-a",
+          "oswn-01849016-a",
+          "oswn-00886853-a",
+          "oswn-01371709-a",
+          "oswn-02662401-a",
+          "oswn-02503378-a",
+          "oswn-00561651-a",
+          "oswn-02332106-a",
+          "oswn-02724451-a",
+          "oswn-02864319-a"
+        ]
+      }
+    }
+  },
+  "slownet": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://www.clarin.si/repository/xmlui/bitstream/handle/11356/1026/slownet.zip",
+    "xml": "build/pkg/slownet/slownet.xml",
+    "format": "GWA LMF",
+    "converted_from": "VisDic XML",
+    "name": "sloWNet 3.1",
+    "bcp47": "sl",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W203",
+      "W301",
+      "W307",
+      "W402",
+      "W403",
+      "W404",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 150522,
+    "details": {
+      "W203": {
+        "level": "W",
+        "count": 8,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "izogibanje",
+          "majhen",
+          "veliki skovik",
+          "adelijski pingvin",
+          "abeceda",
+          "zdravo",
+          "zvezda jutranjica",
+          "absolutna frekvenca"
+        ]
+      },
+      "W301": {
+        "level": "W",
+        "count": 74941,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "slownet-00001740-r",
+          "slownet-00001837-r",
+          "slownet-00001981-r",
+          "slownet-00002098-a",
+          "slownet-00002142-r",
+          "slownet-00002296-r",
+          "slownet-00002325-v",
+          "slownet-00002436-r",
+          "slownet-00002527-a",
+          "slownet-00002573-v"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 1777,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "slownet-00003846-r",
+          "slownet-00005107-a",
+          "slownet-00005567-r",
+          "slownet-00005674-r",
+          "slownet-00006858-r",
+          "slownet-00007549-v",
+          "slownet-00009541-r",
+          "slownet-00019900-r",
+          "slownet-00020142-r",
+          "slownet-00020280-r"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 39899,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "slownet-00001740-a",
+          "slownet-00001740-v",
+          "slownet-00002137-n",
+          "slownet-00002325-v",
+          "slownet-00002573-v",
+          "slownet-00002684-n",
+          "slownet-00002724-v",
+          "slownet-00002942-v",
+          "slownet-00003093-r",
+          "slownet-00003131-a"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 2021,
+        "message": "redundant relation between source and target",
+        "items": [
+          "slownet-00428572-r",
+          "slownet-02598608-a",
+          "slownet-02598768-a",
+          "slownet-02599114-a",
+          "slownet-02599509-a",
+          "slownet-02599689-a",
+          "slownet-02599837-a",
+          "slownet-02599939-a",
+          "slownet-02600131-a",
+          "slownet-02600244-a"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 31867,
+        "message": "reverse relation is missing",
+        "items": [
+          "slownet-01521014-n",
+          "slownet-11418750-n",
+          "slownet-00173338-v",
+          "slownet-01546222-a",
+          "slownet-08691669-n",
+          "slownet-03046257-n",
+          "slownet-07573103-n",
+          "slownet-14662574-n",
+          "slownet-02713184-v",
+          "slownet-12041446-n"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 9,
+        "message": "relation is a self-loop",
+        "items": [
+          "slownet-01606177-n",
+          "slownet-04509417-n",
+          "slownet-08672199-n",
+          "slownet-09319456-n",
+          "slownet-10246511-n",
+          "slownet-10246703-n",
+          "slownet-10664340-n",
+          "slownet-13844212-n",
+          "slownet-13997253-n"
+        ]
+      }
+    }
+  },
+  "afwn-nd": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-nd/afwn-nd.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "stub synsets (967)"
+    ],
+    "name": "African Wordnet \u2014 isiNdebele",
+    "bcp47": "nd",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W202",
+      "W203"
+    ],
+    "error_count": 0,
+    "warning_count": 30,
+    "details": {
+      "W202": {
+        "level": "W",
+        "count": 20,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "nbl-unt-40a3e163-d268-11ea-861a-0242ac120002",
+          "nbl-unt-40d31f99-d268-11ea-861a-0242ac120002",
+          "nbl-unt-88b88940-d267-11ea-861a-0242ac120002",
+          "nbl-unt-8894eebb-d267-11ea-861a-0242ac120002",
+          "nbl-unt-56a54893-d268-11ea-861a-0242ac120002",
+          "nbl-unt-56801a99-d268-11ea-861a-0242ac120002",
+          "nbl-unt-3611d5b9-d267-11ea-861a-0242ac120002",
+          "nbl-unt-3652ef82-d267-11ea-861a-0242ac120002",
+          "nbl-unt-afec1e9b-d267-11ea-861a-0242ac120002",
+          "nbl-unt-afc2ba1f-d267-11ea-861a-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 10,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "ba na",
+          "umuntu",
+          "umthwalo",
+          "inyongo",
+          "khuluma",
+          "khetha",
+          "isibawo",
+          "vala",
+          "vikela",
+          "phendula"
+        ]
+      }
+    }
+  },
+  "afwn-st": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-st/afwn-st.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (968)"
+    ],
+    "name": "African Wordnet \u2014 Sesotho",
+    "bcp47": "st",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W303"
+    ],
+    "error_count": 0,
+    "warning_count": 1,
+    "details": {
+      "W303": {
+        "level": "W",
+        "count": 1,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "sot-syn-d1433735-3575-4810-87df-1d8ce729bb25"
+        ]
+      }
+    }
+  },
+  "omw-es": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-es-2.0.tar.xz",
+    "xml": "build/pkg/omw-es/omw-es.xml",
+    "format": "GWA LMF",
+    "name": "OMW Spanish Wordnet",
+    "bcp47": "es",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W301",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 1091,
+    "details": {
+      "W301": {
+        "level": "W",
+        "count": 531,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "omw-es-00121387-v",
+          "omw-es-00136377-r",
+          "omw-es-00138852-r",
+          "omw-es-00140900-n",
+          "omw-es-00157318-n",
+          "omw-es-00164353-r",
+          "omw-es-00166220-v",
+          "omw-es-00166331-v",
+          "omw-es-00171931-r",
+          "omw-es-00176312-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 560,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "omw-es-00004605-v",
+          "omw-es-00009541-r",
+          "omw-es-00020280-r",
+          "omw-es-00023383-a",
+          "omw-es-00036685-v",
+          "omw-es-00045607-r",
+          "omw-es-00047534-r",
+          "omw-es-00048912-v",
+          "omw-es-00049102-v",
+          "omw-es-00049220-r"
+        ]
+      }
+    }
+  },
+  "tufs-es": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-es-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-es/tufs-es.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Spanish",
+    "bcp47": "es",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 7,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 7,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-es-77000061-a",
+          "tufs-es-80001619-a",
+          "tufs-es-77000075-a",
+          "tufs-es-77000012-n",
+          "tufs-es-77000015-n",
+          "tufs-es-94373-a",
+          "tufs-es-99848-a"
+        ]
+      }
+    }
+  },
+  "afwn-ss": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-ss/afwn-ss.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "stub synsets (967)"
+    ],
+    "name": "African Wordnet \u2014 Siswati",
+    "bcp47": "ss",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-sv": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-sv-2.0.tar.xz",
+    "xml": "build/pkg/omw-sv/omw-sv.xml",
+    "format": "GWA LMF",
+    "name": "OMW Swedish Wordnet",
+    "bcp47": "sv",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "omw-th": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/omw-data/releases/download/v2.0/omw-th-2.0.tar.xz",
+    "xml": "build/pkg/omw-th/omw-th.xml",
+    "format": "GWA LMF",
+    "name": "OMW Thai Wordnet",
+    "bcp47": "th",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "details": {}
+  },
+  "tufs-th": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-th-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-th/tufs-th.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Thai",
+    "bcp47": "th",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-th-77000061-a",
+          "tufs-th-80001619-a",
+          "tufs-th-77000075-a",
+          "tufs-th-77000090-n",
+          "tufs-th-80001331-x",
+          "tufs-th-77000012-n",
+          "tufs-th-77000015-n",
+          "tufs-th-94373-a",
+          "tufs-th-99848-a"
+        ]
+      }
+    }
+  },
+  "afwn-ts": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-ts/afwn-ts.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (296)"
+    ],
+    "name": "African Wordnet \u2014 Xitsonga",
+    "bcp47": "ts",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W303"
+    ],
+    "error_count": 0,
+    "warning_count": 49,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 47,
+        "message": "lexical entry has no senses",
+        "items": [
+          "tso-ent-17",
+          "tso-ent-30",
+          "tso-ent-45",
+          "tso-ent-49",
+          "tso-ent-52",
+          "tso-ent-58",
+          "tso-ent-61",
+          "tso-ent-69",
+          "tso-ent-79",
+          "tso-ent-83"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 2,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "tso-syn-62a9de25-8c58-4587-a5a7-79c81b8dd304",
+          "tso-syn-77e26137-5195-4b6e-8412-e58061cab4b6"
+        ]
+      }
+    }
+  },
+  "afwn-tn": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-tn/afwn-tn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (8490)"
+    ],
+    "name": "African Wordnet \u2014 Setswana",
+    "bcp47": "tn",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W202",
+      "W203",
+      "W301",
+      "W303",
+      "W402"
+    ],
+    "error_count": 0,
+    "warning_count": 11188,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 23,
+        "message": "lexical entry has no senses",
+        "items": [
+          "tsn-ent-327",
+          "tsn-ent-588",
+          "tsn-ent-1637",
+          "tsn-ent-2182",
+          "tsn-ent-2779",
+          "tsn-ent-2780",
+          "tsn-ent-3160",
+          "tsn-ent-3367",
+          "tsn-ent-3563",
+          "tsn-ent-3701"
+        ]
+      },
+      "W202": {
+        "level": "W",
+        "count": 32,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "tsn-unt-82894908-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-828949cb-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-825268a7-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-8252675b-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-a861106a-d69c-11ea-9427-0242ac120003",
+          "tsn-unt-a82b4394-d69c-11ea-9427-0242ac120003",
+          "tsn-unt-82a8a263-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-82a8a15c-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-829505fc-321d-11e9-bda4-0242ac120002",
+          "tsn-unt-82950f7f-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 16,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "khutl\u00f4g\u00f4",
+          "bosugi",
+          "borosola",
+          "thufula",
+          "lolamisa",
+          "thabu\u00eal\u00f4",
+          "kubuga",
+          "kol\u00f4gan\u00f4",
+          "tum\u00ealan\u00f4",
+          "p\u00f4f\u00eal\u00f4"
+        ]
+      },
+      "W301": {
+        "level": "W",
+        "count": 5,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "tsn-syn-5fb89821-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fb896c1-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fb89a41-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fb8935a-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fb894b9-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 5689,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "tsn-syn-5fddd2b9-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd95779-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fbb26fd-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fc23a07-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fbaba24-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fcc061a-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fba691b-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd2580e-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd5c7ea-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd20673-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 5423,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "tsn-syn-5fddd2b9-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd95779-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fbb26fd-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fc23a07-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fbaba24-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fcc061a-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fba691b-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd2580e-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd5c7ea-321d-11e9-bda4-0242ac120002",
+          "tsn-syn-5fd20673-321d-11e9-bda4-0242ac120002"
+        ]
+      }
+    }
+  },
+  "kenet": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://raw.githubusercontent.com/StarlangSoftware/TurkishWordNet/master/src/main/resources/turkish_wordnet.xml",
+    "xml": "build/pkg/kenet/kenet.xml",
+    "format": "GWA LMF",
+    "name": "Turkish WordNet KeNet",
+    "bcp47": "tr",
+    "validation": "parse_error",
+    "validation_note": "invalid or missing XML declaration"
+  },
+  "tufs-tr": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-tr-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-tr/tufs-tr.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Turkish",
+    "bcp47": "tr",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-tr-77000061-a",
+          "tufs-tr-80001619-a",
+          "tufs-tr-77000075-a",
+          "tufs-tr-77000090-n",
+          "tufs-tr-80001331-x",
+          "tufs-tr-77000012-n",
+          "tufs-tr-77000015-n",
+          "tufs-tr-94373-a",
+          "tufs-tr-99848-a"
+        ]
+      }
+    }
+  },
+  "tufs-ur": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-ur-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-ur/tufs-ur.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Urdu",
+    "bcp47": "ur",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 53,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 53,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-ur-77000072-n",
+          "tufs-ur-80001230-x",
+          "tufs-ur-77000061-a",
+          "tufs-ur-80001619-a",
+          "tufs-ur-77000075-a",
+          "tufs-ur-77000099-n",
+          "tufs-ur-77000090-n",
+          "tufs-ur-80001331-x",
+          "tufs-ur-77000079-a",
+          "tufs-ur-77000012-n"
+        ]
+      }
+    }
+  },
+  "afwn-ve": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-ve/afwn-ve.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (3589)"
+    ],
+    "name": "African Wordnet \u2014 Tshivenda",
+    "bcp47": "ve",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W202",
+      "W203",
+      "W303",
+      "W402"
+    ],
+    "error_count": 0,
+    "warning_count": 68,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 5,
+        "message": "lexical entry has no senses",
+        "items": [
+          "ven-ent-1230",
+          "ven-ent-2470",
+          "ven-ent-2530",
+          "ven-ent-2684",
+          "ven-ent-3210"
+        ]
+      },
+      "W202": {
+        "level": "W",
+        "count": 14,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "ven-unt-82bcebad-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82bcee4b-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82bb3fd5-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82bb3e1c-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82b93f8c-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82b93ddd-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82babfb9-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82babf0c-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82bb746c-321d-11e9-bda4-0242ac120002",
+          "ven-unt-82bb751f-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 8,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "vhudzula",
+          "tshidakwa",
+          "muswiki",
+          "humela murahu",
+          "muhanedzi",
+          "muvhoni",
+          "phombwe",
+          "mubveleli"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 22,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "ven-syn-c569279b-3aa4-49f0-9fc8-416eadb613b1",
+          "ven-syn-46926fb1-9208-4444-869f-3939f5bb6e4b",
+          "ven-syn-8feb890a-21e1-4330-814c-f119e8141c13",
+          "ven-syn-479ad1a6-2967-4c69-8738-63168e1d5abc",
+          "ven-syn-061a8fe2-09aa-41e8-880a-d6786721f632",
+          "ven-syn-726a1b5f-843e-48af-bc08-220aed86435e",
+          "ven-syn-f404f31d-4439-4f06-bdf1-cca49016185d",
+          "ven-syn-fa627a34-3e8f-4a37-9d95-0c87cce269e2",
+          "ven-syn-0eaf3020-72a6-463a-8e43-22edc0637c88",
+          "ven-syn-5fe43773-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 19,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "ven-syn-c569279b-3aa4-49f0-9fc8-416eadb613b1",
+          "ven-syn-46926fb1-9208-4444-869f-3939f5bb6e4b",
+          "ven-syn-8feb890a-21e1-4330-814c-f119e8141c13",
+          "ven-syn-479ad1a6-2967-4c69-8738-63168e1d5abc",
+          "ven-syn-726a1b5f-843e-48af-bc08-220aed86435e",
+          "ven-syn-f404f31d-4439-4f06-bdf1-cca49016185d",
+          "ven-syn-fa627a34-3e8f-4a37-9d95-0c87cce269e2",
+          "ven-syn-0eaf3020-72a6-463a-8e43-22edc0637c88",
+          "ven-syn-5fe43773-321d-11e9-bda4-0242ac120002",
+          "ven-syn-b930acde-afba-454e-8ae8-5c89d32ed3dc"
+        ]
+      }
+    }
+  },
+  "tufs-vi": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-vi-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-vi/tufs-vi.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Vietnamese",
+    "bcp47": "vi",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-vi-77000061-a",
+          "tufs-vi-80001619-a",
+          "tufs-vi-77000075-a",
+          "tufs-vi-77000090-n",
+          "tufs-vi-80001331-x",
+          "tufs-vi-77000012-n",
+          "tufs-vi-77000015-n",
+          "tufs-vi-94373-a",
+          "tufs-vi-99848-a"
+        ]
+      }
+    }
+  },
+  "wncy": {
+    "download": "failed",
+    "note": "All URL attempts failed",
+    "name": "WordNet Cymraeg (Welsh WordNet)",
+    "bcp47": "cy",
+    "validation": "skipped",
+    "validation_note": "All URL attempts failed"
+  },
+  "afwn-xh": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-xh/afwn-xh.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (11071)"
+    ],
+    "name": "African Wordnet \u2014 isiXhosa",
+    "bcp47": "xh",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W202",
+      "W203",
+      "W301",
+      "W303",
+      "W402",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 13359,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 23,
+        "message": "lexical entry has no senses",
+        "items": [
+          "xho-ent-298",
+          "xho-ent-1244",
+          "xho-ent-1736",
+          "xho-ent-1773",
+          "xho-ent-4564",
+          "xho-ent-5141",
+          "xho-ent-5291",
+          "xho-ent-5875",
+          "xho-ent-6220",
+          "xho-ent-6491"
+        ]
+      },
+      "W202": {
+        "level": "W",
+        "count": 5592,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "xho-unt-81c50f93-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81c511b2-321d-11e9-bda4-0242ac120002",
+          "xho-unt-817889d3-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81788b69-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81788ab0-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81788de6-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81788d1e-321d-11e9-bda4-0242ac120002",
+          "xho-unt-8199aaf2-321d-11e9-bda4-0242ac120002",
+          "xho-unt-8199abfa-321d-11e9-bda4-0242ac120002",
+          "xho-unt-81814089-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 1908,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "umsimbithi",
+          "ihlazo",
+          "uthutho",
+          "ilothe",
+          "nobugwenxa",
+          "1",
+          "khohlakeleyo",
+          "neminwe emide",
+          "ukutshiza",
+          "ikhareji"
+        ]
+      },
+      "W301": {
+        "level": "W",
+        "count": 1,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "xho-syn-5f60ada1-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 3117,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "xho-syn-5f64d901-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f69a0ae-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7587a2-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f77c762-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f75629f-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7d749a-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6bb4c3-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6f96ff-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6e90e8-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7738df-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 2717,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "xho-syn-5f64d901-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f69a0ae-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7587a2-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f75629f-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7d749a-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6bb4c3-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6f96ff-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6e90e8-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f7738df-321d-11e9-bda4-0242ac120002",
+          "xho-syn-5f6f75c0-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 1,
+        "message": "relation is a self-loop",
+        "items": [
+          "xho-syn-5f6a289b-321d-11e9-bda4-0242ac120002"
+        ]
+      }
+    }
+  },
+  "open-xhosa-wn": {
+    "download": "ok",
+    "source": "example_file",
+    "url": "https://github.com/pssvlng/open-african-wordnets/blob/main/xh_inferred_plus.zip",
+    "xml": "build/pkg/open-xhosa-wn/open-xhosa-wn.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added"
+    ],
+    "name": "Open Xhosa Wordnet",
+    "bcp47": "xh",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W305",
+      "W307",
+      "W403",
+      "W404",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 5956,
+    "details": {
+      "W305": {
+        "level": "W",
+        "count": 2,
+        "message": "synset has a blank definition",
+        "items": [
+          "inxh-01556403-n",
+          "inxh-01034693-s"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 1640,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "inxh-05646331-n",
+          "inxh-05840263-n",
+          "inxh-05848940-n",
+          "inxh-05853408-n",
+          "inxh-05998150-n",
+          "inxh-06215672-n",
+          "inxh-12650707-n",
+          "inxh-12772314-n",
+          "inxh-12863525-n",
+          "inxh-13024734-n"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 958,
+        "message": "redundant relation between source and target",
+        "items": [
+          "inxh-canonic-a-03013161-01",
+          "inxh-collaborationism-n-01207831-02",
+          "inxh-OK-n-06700446-02",
+          "inxh-keen-s-00805750-01",
+          "inxh-wooly-s-00218260-01",
+          "inxh-Islam-n-06244979-01",
+          "inxh-retentivity-n-05659244-04",
+          "inxh-expansivity-n-04736968-02",
+          "inxh-worshipper-n-10811975-02",
+          "inxh-atheistic-a-02837382-02"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 3355,
+        "message": "reverse relation is missing",
+        "items": [
+          "inxh-pardon-v-00907805-02",
+          "inxh-Britain-n-08879115-04",
+          "inxh-kick-v-01940092-01",
+          "inxh-unsavoriness-n-05003736-05",
+          "inxh-entrant-n-10079983-01",
+          "inxh-suffer-v-00064841-01",
+          "inxh-appraiser-n-09821473-01",
+          "inxh-disabled-s-01022875-01",
+          "inxh-decrease-n-07370487-01",
+          "inxh-intermixture-n-02683938-02"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 1,
+        "message": "relation is a self-loop",
+        "items": [
+          "inxh-unicycle-n-04516712-01"
+        ]
+      }
+    }
+  },
+  "afwn-zu": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://repo.sadilar.org/bitstream/handle/20.500.12185/684/AfWN%20version%201.0.zip",
+    "xml": "build/pkg/afwn-zu/afwn-zu.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Lexicon attrs patched",
+      "DTD upgraded 1.0\u21921.1",
+      "Requires added",
+      "stub synsets (5714)"
+    ],
+    "name": "African Wordnet \u2014 isiZulu",
+    "bcp47": "zu",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W201",
+      "W202",
+      "W203",
+      "W301",
+      "W303",
+      "W402",
+      "W502"
+    ],
+    "error_count": 0,
+    "warning_count": 8287,
+    "details": {
+      "W201": {
+        "level": "W",
+        "count": 3,
+        "message": "lexical entry has no senses",
+        "items": [
+          "zul-ent-3564",
+          "zul-ent-4431",
+          "zul-ent-7054"
+        ]
+      },
+      "W202": {
+        "level": "W",
+        "count": 441,
+        "message": "redundant sense between lexical entry and synset",
+        "items": [
+          "zul-unt-81caa332-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caa0d5-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81ca9fc0-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caa7fb-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caa466-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caa92e-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caaa62-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81caa201-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81d54b44-321d-11e9-bda4-0242ac120002",
+          "zul-unt-81d54e38-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W203": {
+        "level": "W",
+        "count": 152,
+        "message": "redundant lexical entry with the same lemma and synset",
+        "items": [
+          "balulekileyo",
+          "umhlaba",
+          "ethathwa njengenyaniso",
+          "engqiqo",
+          "isibambiso",
+          "hlokomayo",
+          "eentlanga ngeentlanga",
+          "exesha elifutshane",
+          "ncitshisiwe",
+          "akhayo"
+        ]
+      },
+      "W301": {
+        "level": "W",
+        "count": 3,
+        "message": "synset is empty (not associated with any lexical entries)",
+        "items": [
+          "zul-syn-5f80fb3f-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f80fa76-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f80fbb9-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W303": {
+        "level": "W",
+        "count": 4291,
+        "message": "proposed ILI is missing a definition",
+        "items": [
+          "zul-syn-5f976dbc-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f82dc25-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f926e03-321d-11e9-bda4-0242ac120002",
+          "zul-syn-acea25f6-d7b2-4d1b-bc2a-298dfc54c825",
+          "zul-syn-5f9bb977-321d-11e9-bda4-0242ac120002",
+          "zul-syn-cb322728-4c2c-4c41-a39f-6472d3822091",
+          "zul-syn-5f89fdab-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f85ad2e-321d-11e9-bda4-0242ac120002",
+          "zul-syn-f23ecba6-1b77-4ded-ae1d-624cfbbb272c",
+          "zul-syn-5f8aefe7-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 3394,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "zul-syn-5f976dbc-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f82dc25-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f926e03-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f9bb977-321d-11e9-bda4-0242ac120002",
+          "zul-syn-cb322728-4c2c-4c41-a39f-6472d3822091",
+          "zul-syn-5f96722d-321d-11e9-bda4-0242ac120002",
+          "zul-syn-377cf242-b0c7-4e31-ab5b-6b806a2d38a4",
+          "zul-syn-5f8eee3f-321d-11e9-bda4-0242ac120002",
+          "zul-syn-77f4f385-aa25-4650-952b-0196ff2c2d7e",
+          "zul-syn-5f845ff3-321d-11e9-bda4-0242ac120002"
+        ]
+      },
+      "W502": {
+        "level": "W",
+        "count": 3,
+        "message": "relation is a self-loop",
+        "items": [
+          "zul-syn-5f8879d6-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f9c8333-321d-11e9-bda4-0242ac120002",
+          "zul-syn-5f99c26d-321d-11e9-bda4-0242ac120002"
+        ]
+      }
+    }
+  },
+  "tufs-pb": {
+    "download": "ok",
+    "source": "release_url",
+    "url": "https://github.com/omwn/tufs/releases/download/v2026.04.06/tufs-pb-2026.04.06.tar.xz",
+    "xml": "build/pkg/tufs-pb/tufs-pb.xml",
+    "format": "GWA LMF",
+    "transformations": [
+      "Requires added"
+    ],
+    "name": "TUFS Brazilian Portuguese",
+    "bcp47": "pt-BR",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 9,
+    "details": {
+      "W307": {
+        "level": "W",
+        "count": 9,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "tufs-pb-77000061-a",
+          "tufs-pb-80001619-a",
+          "tufs-pb-77000075-a",
+          "tufs-pb-77000090-n",
+          "tufs-pb-80001331-x",
+          "tufs-pb-77000012-n",
+          "tufs-pb-77000015-n",
+          "tufs-pb-94373-a",
+          "tufs-pb-99848-a"
+        ]
+      }
+    }
+  }
+}

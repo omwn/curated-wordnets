@@ -56,6 +56,27 @@ def status_label(wn_id: str, results: dict) -> str:
     return dl
 
 
+def conversion_label(toml_entry: dict, result: dict) -> str:
+    """Describe what conversion (if any) was applied to reach GWA LMF."""
+    parts = []
+
+    cf = result.get("converted_from", "")
+    toml_fmt = toml_entry.get("format", "")
+    res_fmt = result.get("format", "")
+
+    if cf:
+        parts.append(f"from {cf}")
+    elif res_fmt == "GWA LMF" and toml_fmt and toml_fmt != "GWA LMF":
+        parts.append(f"from {toml_fmt}")
+    elif toml_fmt not in ("GWA LMF", ""):
+        # Not yet successfully processed — show source format as a hint
+        parts.append(toml_fmt)
+
+    parts.extend(result.get("transformations", []))
+
+    return "; ".join(parts) if parts else "—"
+
+
 def licence_short(lic: str | None) -> str:
     if not lic:
         return "?"
@@ -168,7 +189,7 @@ def main(argv=None):
         return 0
 
     # ── table ──────────────────────────────────────────────────────────────
-    cols = ["ID", "Name", "Language", "BCP-47", "Format", "License", "Confidence", "Status"]
+    cols = ["ID", "Name", "Language", "BCP-47", "Format", "License", "Confidence", "Status", "Conversion"]
     rows = []
     for e in entries:
         wn_id   = e["id"]
@@ -179,7 +200,8 @@ def main(argv=None):
         lic     = licence_short(e.get("license"))
         conf_v  = e.get("confidence", "?")
         status  = status_label(wn_id, results)
-        rows.append([wn_id, name, lang, bcp, fmt_val, lic, conf_v, status])
+        conv    = conversion_label(e, results.get(wn_id, {}))
+        rows.append([wn_id, name, lang, bcp, fmt_val, lic, conf_v, status, conv])
 
     # column widths
     widths = [max(len(cols[i]), max(len(r[i]) for r in rows)) for i in range(len(cols))]
