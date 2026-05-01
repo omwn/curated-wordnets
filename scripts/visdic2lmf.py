@@ -90,31 +90,34 @@ ILR_MAP = {
     "mero_part": "mero_part",
     "substance_holonym": "holo_substance",
     "substance_meronym": "mero_substance",
+    "antonym": "antonym",
     "near_antonym": "antonym",
     "similar_to": "similar",
     "also_see": "also",
+    "also": "also",
     "derived": "derivation",
+    "derivation_related": "derivation",
     "eng_derivative": "derivation",
     "near_eng_derivat": "derivation",
     "be_in_state": "state_of",
     "subevent": "subevent",
     "causes": "causes",
     "is_caused_by": "is_caused_by",
-    "domain_TOPIC": "domain_topic",
+    "domain_topic": "domain_topic",
     "category_domain": "domain_topic",
-    "domain_REGION": "domain_region",
-    "domain_USAGE": "domain_usage",
-    "domain_member_TOPIC": "domain_topic",
-    "domain_member_REGION": "domain_region",
-    "domain_member_USAGE": "domain_usage",
-    "near_domain_member_TOPIC": "domain_topic",
-    "near_domain_member_REGION": "domain_region",
-    "near_domain_member_USAGE": "domain_usage",
+    "domain_region": "domain_region",
+    "domain_usage": "domain_usage",
+    "domain_member_topic": "domain_topic",
+    "member_topic": "domain_topic",
+    "domain_member_region": "domain_region",
+    "domain_member_usage": "domain_usage",
+    "near_domain_member_topic": "domain_topic",
+    "near_domain_member_region": "domain_region",
+    "near_domain_member_usage": "domain_usage",
     "verb_group": "similar",
     "attribute": "attribute",
     "participle_of_verb": "participle_of",
     "pertainym": "pertainym",
-    "also": "also",
 }
 
 
@@ -260,7 +263,7 @@ def convert(
     if keep_empty:
         _cur_id: str | None = None
         _cur_pos: str | None = None
-        for event, elem in ET.iterparse(io.StringIO(stripped), events=("end",)):
+        for _, elem in ET.iterparse(io.StringIO(stripped), events=("end",)):
             if elem.tag == "ID" and elem.text:
                 _cur_id = elem.text.strip()
             elif elem.tag == "POS" and elem.text:
@@ -364,11 +367,15 @@ def convert(
                         lang = elem.get(f"{xml_ns}lang") or elem.get("lang") or ""
                         cur["defs"].append((t, lang))
 
-                elif tag == "USAGE" and elem.text:
+                elif tag in ("USAGE", "EXAMPLE") and elem.text:
                     t = elem.text.strip()
                     if t and t.lower() != "none":
                         lang = elem.get(f"{xml_ns}lang") or elem.get("lang") or ""
-                        cur["exs"].append((t, lang))
+                        # KeNet uses "|" to separate multiple examples in one tag
+                        for part in t.split("|"):
+                            part = part.strip()
+                            if part:
+                                cur["exs"].append((part, lang))
 
                 elif tag == "DOMAIN" and elem.text:
                     cur["domain"] = elem.text.strip()
@@ -378,7 +385,14 @@ def convert(
                     type_sub = elem.find("TYPE")
                     if type_sub is not None and type_sub.text:
                         rel_type_raw = type_sub.text.strip()
-                    rel_type = ILR_MAP.get(rel_type_raw, "")
+                    # SYNONYM ILR to an external PWN synset → use as ILI hint
+                    if rel_type_raw.lower() == "synonym" and not cur.get("ili"):
+                        target_parsed = parse_offset_pos((elem.text or "").strip())
+                        if target_parsed:
+                            t_offset, t_pos = target_parsed
+                            cur["ili"] = ilimap.get(f"{t_offset}-{t_pos}", "")
+                        continue
+                    rel_type = ILR_MAP.get(rel_type_raw.lower(), "")
                     if rel_type:
                         target_raw = (elem.text or "").strip()
                         target_parsed = parse_offset_pos(target_raw)
@@ -466,8 +480,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--url", default="", help="Project URL")
     p.add_argument("--lang", dest="lang_filter", default=None, metavar="LANG",
                    help="xml:lang value to include from SYNONYM elements (DEBVisDic only)")
-    p.add_argument("--ili-map", dest="ili_map", default=None, metavar="PATH",
-                   help="PWN 3.0 → ILI map (ili TAB ssid)")
+    p.add_argument("--ili-map", dest="ili_maps", action="append", default=[], metavar="PATH",
+                   help="ILI map file (ili TAB offset-pos); can be given multiple times "
+                        "to merge maps (e.g. PWN 3.0 and PWN 3.1)")
     p.add_argument("--encoding", default="utf-8",
                    help="Input file encoding (default: utf-8)")
     p.add_argument("--no-keep-empty", dest="keep_empty", action="store_false", default=True,
@@ -477,17 +492,18 @@ def main(argv: list[str] | None = None) -> int:
 
     logging.basicConfig(format="%(levelname)s:%(name)s:%(message)s", level=logging.INFO)
 
-    ili_map_path = args.ili_map
-    if ili_map_path is None:
-        default = Path(__file__).parent / "ext/omw-data/etc/cili/ili-map-pwn30.tab"
+    ili_map_paths = args.ili_maps
+    if not ili_map_paths:
+        default = Path(__file__).parent.parent / "ext/omw-data/etc/cili/ili-map-pwn30.tab"
         if default.exists():
-            ili_map_path = str(default)
-            log.info("Using default ILI map: %s", ili_map_path)
+            ili_map_paths = [str(default)]
+            log.info("Using default ILI map: %s", default)
 
     ilimap: dict[str, str] = {}
-    if ili_map_path:
-        ilimap = load_ili_map(ili_map_path)
-        log.info("Loaded %d ILI mappings", len(ilimap))
+    for path in ili_map_paths:
+        loaded = load_ili_map(path)
+        ilimap.update(loaded)
+        log.info("Loaded %d ILI mappings from %s", len(loaded), path)
 
     output = args.output or Path(f"{args.id}.xml")
     ne, ns = convert(

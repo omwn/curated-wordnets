@@ -3056,10 +3056,11 @@ name = "Turkish WordNet KeNet"
 repo_url = "https://github.com/StarlangSoftware/TurkishWordNet"
 language = "Turkish"
 bcp47 = "tr"
-format = "custom XML"
+format = "VisDic XML"
 example_file = "https://raw.githubusercontent.com/StarlangSoftware/TurkishWordNet/master/src/main/resources/turkish_wordnet.xml"
+email = "oguzhan.ergelen@ozyegin.edu.tr"
 known_in_cygnet = false
-notes = "64 stars. Turkish wordnet with historical versions (1901–present). XML format; unclear if GWA LMF."
+notes = "Turkish wordnet with historical coverage (1901–present). Uses KeNet-variant VisDic format (<SYNSETS> root, uppercase relation types, <EXAMPLE> with | separators). ILI links point to PWN 3.1 (no 3.1→ILI map available; ILI not currently assigned)."
 confidence = "high"
 
 acl_ids = ["2021.gwc-1.19"]

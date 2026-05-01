@@ -10,11 +10,11 @@
 | Download OK | 92 |
 | Download failed | 19 |
 | Not yet tried | 28 |
-| **Validated OK** | **78** |
-| — of which with warnings | 54 |
+| **Validated OK** | **79** |
+| — of which with warnings | 55 |
 | — of which fully clean | 24 |
 | Validation errors | 2 |
-| XML parse errors | 8 |
+| XML parse errors | 7 |
 | Skipped (non-LMF) | 23 |
 
 ### Formats
@@ -23,9 +23,9 @@
 |--------|-------|
 | GWA LMF | 86 |
 | unknown | 19 |
-| custom XML | 10 |
+| custom XML | 9 |
+| VisDic XML | 6 |
 | RDF/TTL | 6 |
-| VisDic XML | 5 |
 | JSON | 3 |
 | OMW 1.0 tab | 3 |
 | DanNet TAB | 2 |
@@ -164,7 +164,7 @@
 | open-tsonga-wn    | Open Tsonga Wordnet                                | Tsonga                           | ts     | GWA LMF        | GPL                      | medium     | not tried                                          | —                                                                                 |
 | afwn-tn           | African Wordnet — Setswana                         | Tswana                           | tn     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (11188W)                                      | Lexicon attrs patched; DTD upgraded 1.0→1.1; Requires added; stub synsets (8490)  |
 | aeb-wn            | Tunisian Arabic WordNet (aeb)                      | Tunisian Arabic                  | aeb    | GWA LMF        | ?                        | medium     | not tried                                          | —                                                                                 |
-| kenet             | Turkish WordNet KeNet                              | Turkish                          | tr     | custom XML     | ?                        | high       | ✗ parse error                                      | from custom XML                                                                   |
+| kenet             | Turkish WordNet KeNet                              | Turkish                          | tr     | VisDic XML     | ?                        | high       | ✓ ok (7202W)                                       | from VisDic XML                                                                   |
 | tufs-tr           | TUFS Turkish                                       | Turkish                          | tr     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (9W)                                          | Requires added                                                                    |
 | ua-wordnet        | Open Ukrainian Wordnet                             | Ukrainian                        | uk     | GWA LMF        | GPL                      | medium     | not tried                                          | —                                                                                 |
 | tufs-ur           | TUFS Urdu                                          | Urdu                             | ur     | GWA LMF        | CC-BY-4.0                | high       | ✓ ok (53W)                                         | Requires added                                                                    |
@@ -260,6 +260,7 @@
 | tufs-th           | TUFS Thai                                   | th    | 704     | 489    | 56          | 0        | 91.5%  |
 | afwn-ts           | African Wordnet — Xitsonga                  | ts    | 298     | 336    | 0           | 0        | 0.0%   |
 | afwn-tn           | African Wordnet — Setswana                  | tn    | 14179   | 12752  | 0           | 0        | 0.0%   |
+| kenet             | Turkish WordNet KeNet                       | tr    | 78327   | 110259 | 78155       | 42339    | 24.4%  |
 | tufs-tr           | TUFS Turkish                                | tr    | 701     | 494    | 59          | 0        | 89.7%  |
 | tufs-ur           | TUFS Urdu                                   | ur    | 951     | 689    | 269         | 0        | 67.5%  |
 | afwn-ve           | African Wordnet — Tshivenda                 | ve    | 3611    | 3462   | 0           | 0        | 0.0%   |

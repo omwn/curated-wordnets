@@ -3375,8 +3375,51 @@
     "format": "GWA LMF",
     "name": "Turkish WordNet KeNet",
     "bcp47": "tr",
-    "validation": "parse_error",
-    "validation_note": "invalid or missing XML declaration"
+    "converted_from": "VisDic XML",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W302",
+      "W307"
+    ],
+    "error_count": 0,
+    "warning_count": 7202,
+    "details": {
+      "W302": {
+        "level": "W",
+        "count": 5281,
+        "message": "ILI is repeated across synsets",
+        "items": [
+          "kenet-TUR10_0000040-n",
+          "kenet-TUR10_0000450-n",
+          "kenet-TUR10_0000550-n",
+          "kenet-TUR10_0000720-a",
+          "kenet-TUR10_0001350-n",
+          "kenet-TUR10_0001360-n",
+          "kenet-TUR10_0001500-a",
+          "kenet-TUR10_0001570-n",
+          "kenet-TUR10_0002400-n",
+          "kenet-TUR10_0002430-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 1921,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "kenet-TUR10_0000120-a",
+          "kenet-TUR10_0002320-n",
+          "kenet-TUR10_0004690-a",
+          "kenet-TUR10_0005350-a",
+          "kenet-TUR10_0008170-n",
+          "kenet-TUR10_0009640-a",
+          "kenet-TUR10_0011220-n",
+          "kenet-TUR10_0011230-a",
+          "kenet-TUR10_0012110-a",
+          "kenet-TUR10_0012220-r"
+        ]
+      }
+    }
   },
   "tufs-tr": {
     "download": "ok",

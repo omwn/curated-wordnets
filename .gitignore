@@ -22,3 +22,5 @@ dist/
 # project-specific
 memory/
 ext/
+!ext/cili/
+!ext/cili/*
