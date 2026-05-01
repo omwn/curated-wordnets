@@ -700,10 +700,9 @@ def _convert_visdic(entry: dict, xml_in: Path, raw_dir: Path, pkg_dir: Path,
         cmd += ["--lang", lang_filter]
     if url := entry.get("repo_url") or entry.get("release_url"):
         cmd += ["--url", url]
-    if ili_map30.exists():
-        cmd += ["--ili-map", str(ili_map30)]
-    if ili_map31.exists():
-        cmd += ["--ili-map", str(ili_map31)]
+    for ili_map in [ili_map30, ili_map31]:
+        if ili_map.exists():
+            cmd += ["--ili-map", str(ili_map)]
 
     log_lines.append(f"  converting VisDic XML → LMF: {raw_xml.name}")
     result = subprocess.run(cmd, capture_output=True, text=True)

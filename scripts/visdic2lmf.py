@@ -385,14 +385,15 @@ def convert(
                     type_sub = elem.find("TYPE")
                     if type_sub is not None and type_sub.text:
                         rel_type_raw = type_sub.text.strip()
+                    rel_type_lower = rel_type_raw.lower()
                     # SYNONYM ILR to an external PWN synset → use as ILI hint
-                    if rel_type_raw.lower() == "synonym" and not cur.get("ili"):
-                        target_parsed = parse_offset_pos((elem.text or "").strip())
+                    if rel_type_lower == "synonym" and not cur.get("ili"):
+                        target_parsed = parse_offset_pos(elem.text or "")
                         if target_parsed:
                             t_offset, t_pos = target_parsed
                             cur["ili"] = ilimap.get(f"{t_offset}-{t_pos}", "")
                         continue
-                    rel_type = ILR_MAP.get(rel_type_raw.lower(), "")
+                    rel_type = ILR_MAP.get(rel_type_lower, "")
                     if rel_type:
                         target_raw = (elem.text or "").strip()
                         target_parsed = parse_offset_pos(target_raw)
