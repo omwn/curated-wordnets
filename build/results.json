@@ -3380,10 +3380,14 @@
     "error_codes": [],
     "warning_codes": [
       "W302",
-      "W307"
+      "W307",
+      "W402",
+      "W403",
+      "W404",
+      "W501"
     ],
     "error_count": 0,
-    "warning_count": 7202,
+    "warning_count": 53892,
     "details": {
       "W302": {
         "level": "W",
@@ -3417,6 +3421,72 @@
           "kenet-TUR10_0011230-a",
           "kenet-TUR10_0012110-a",
           "kenet-TUR10_0012220-r"
+        ]
+      },
+      "W402": {
+        "level": "W",
+        "count": 32148,
+        "message": "relation type is invalid for the source and target",
+        "items": [
+          "kenet-TUR10_0000030-n",
+          "kenet-TUR10_0000040-n",
+          "kenet-TUR10_0000060-n",
+          "kenet-TUR10_0000070-n",
+          "kenet-TUR10_0000080-a",
+          "kenet-TUR10_0000090-n",
+          "kenet-TUR10_0000100-n",
+          "kenet-TUR10_0000110-n",
+          "kenet-TUR10_0000120-a",
+          "kenet-TUR10_0000130-n"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 8,
+        "message": "redundant relation between source and target",
+        "items": [
+          "kenet-TUR10_0222200-n",
+          "kenet-TUR10_0356820-n",
+          "kenet-TUR10_0477720-n",
+          "kenet-TUR10_0559910-a",
+          "kenet-TUR10_0560240-a",
+          "kenet-TUR10_0568690-n",
+          "kenet-TUR10_0629420-n",
+          "kenet-TUR10_0750100-n"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 14476,
+        "message": "reverse relation is missing",
+        "items": [
+          "kenet-TUR10_0508190-n",
+          "kenet-TUR10_0261370-n",
+          "kenet-TUR10_0592180-n",
+          "kenet-TUR10_1235480-n",
+          "kenet-TUR10_0172210-n",
+          "kenet-TUR10_0109480-n",
+          "kenet-TUR10_0214880-n",
+          "kenet-TUR10_0004350-n",
+          "kenet-TUR10_0267320-n",
+          "kenet-TUR10_0585600-n"
+        ]
+      },
+      "W501": {
+        "level": "W",
+        "count": 58,
+        "message": "synset's part-of-speech is different from its hypernym's",
+        "items": [
+          "kenet-TUR10_0023040-a",
+          "kenet-TUR10_0045670-a",
+          "kenet-TUR10_0084820-a",
+          "kenet-TUR10_0092580-r",
+          "kenet-TUR10_0095270-a",
+          "kenet-TUR10_0095670-v",
+          "kenet-TUR10_0106580-a",
+          "kenet-TUR10_0106890-a",
+          "kenet-TUR10_0162080-a",
+          "kenet-TUR10_0173140-a"
         ]
       }
     }

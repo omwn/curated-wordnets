@@ -258,31 +258,35 @@ def convert(
     stub_synsets: dict[str, dict] = {}
     entry_count = 0
 
-    # Build the known_ids set in a lightweight first pass (just ID + POS elements)
+    # Pre-scan: collect all synset IDs to (a) know which stubs to add when
+    # keep_empty=True and (b) build raw_id_map for non-PWN ID resolution so
+    # internal SR relations (e.g. TUR10-* in KeNet) aren't silently dropped.
     known_ids: set[str] = set()
-    if keep_empty:
-        _cur_id: str | None = None
-        _cur_pos: str | None = None
-        for _, elem in ET.iterparse(io.StringIO(stripped), events=("end",)):
-            if elem.tag == "ID" and elem.text:
-                _cur_id = elem.text.strip()
-            elif elem.tag == "POS" and elem.text:
-                _cur_pos = elem.text.strip().lower()
-            elif elem.tag == "SYNSET":
-                if _cur_id:
-                    p = parse_offset_pos(_cur_id)
-                    if p:
-                        off, pos = p
-                        if _cur_pos:
-                            pos = POS_MAP.get(_cur_pos, _cur_pos)
-                        known_ids.add(f"{wn_id}-{off}-{pos}")
-                    else:
-                        safe = re.sub(r"[^A-Za-z0-9_]", "_", _cur_id)
-                        pos = POS_MAP.get(_cur_pos or "", _cur_pos or "n")
-                        known_ids.add(f"{wn_id}-{safe}-{pos}")
-                _cur_id = _cur_pos = None
-                elem.clear()
-        log.info("  Pre-scan: %d synset IDs", len(known_ids))
+    raw_id_map: dict[str, str] = {}  # raw source ID → constructed LMF synset ID
+    _cur_id: str | None = None
+    _cur_pos: str | None = None
+    for _, elem in ET.iterparse(io.StringIO(stripped), events=("end",)):
+        if elem.tag == "ID" and elem.text:
+            _cur_id = elem.text.strip()
+        elif elem.tag == "POS" and elem.text:
+            _cur_pos = elem.text.strip().lower()
+        elif elem.tag == "SYNSET":
+            if _cur_id:
+                p = parse_offset_pos(_cur_id)
+                if p:
+                    off, pos = p
+                    if _cur_pos:
+                        pos = POS_MAP.get(_cur_pos, _cur_pos)
+                    sid = f"{wn_id}-{off}-{pos}"
+                else:
+                    safe = re.sub(r"[^A-Za-z0-9_]", "_", _cur_id)
+                    pos = POS_MAP.get(_cur_pos or "", _cur_pos or "n")
+                    sid = f"{wn_id}-{safe}-{pos}"
+                    raw_id_map[_cur_id] = sid
+                known_ids.add(sid)
+            _cur_id = _cur_pos = None
+            elem.clear()
+    log.info("  Pre-scan: %d synset IDs", len(known_ids))
 
     # Main conversion pass — iterparse with both start and end events
     # so we can capture SYNONYM's xml:lang before processing its LITERAL children
@@ -400,11 +404,15 @@ def convert(
                         if target_parsed:
                             t_offset, t_pos = target_parsed
                             target_id = f"{wn_id}-{t_offset}-{t_pos}"
+                        else:
+                            # Non-PWN target ID (e.g. KeNet TUR10-* format)
+                            target_id = raw_id_map.get(target_raw, "")
+                        if target_id:
                             cur["rels"].append((rel_type, target_id))
                             if keep_empty and target_id not in known_ids:
                                 stub_synsets.setdefault(target_id, {
                                     "id": target_id,
-                                    "ili": ilimap.get(f"{t_offset}-{t_pos}", ""),
+                                    "ili": "",
                                     "pos": t_pos,
                                     "defs": [], "exs": [], "rels": [],
                                     "domain": "", "members": [],
