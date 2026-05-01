@@ -3381,13 +3381,12 @@
     "warning_codes": [
       "W302",
       "W307",
-      "W402",
       "W403",
       "W404",
       "W501"
     ],
     "error_count": 0,
-    "warning_count": 53892,
+    "warning_count": 21744,
     "details": {
       "W302": {
         "level": "W",
@@ -3423,23 +3422,6 @@
           "kenet-TUR10_0012220-r"
         ]
       },
-      "W402": {
-        "level": "W",
-        "count": 32148,
-        "message": "relation type is invalid for the source and target",
-        "items": [
-          "kenet-TUR10_0000030-n",
-          "kenet-TUR10_0000040-n",
-          "kenet-TUR10_0000060-n",
-          "kenet-TUR10_0000070-n",
-          "kenet-TUR10_0000080-a",
-          "kenet-TUR10_0000090-n",
-          "kenet-TUR10_0000100-n",
-          "kenet-TUR10_0000110-n",
-          "kenet-TUR10_0000120-a",
-          "kenet-TUR10_0000130-n"
-        ]
-      },
       "W403": {
         "level": "W",
         "count": 8,
@@ -3460,16 +3442,16 @@
         "count": 14476,
         "message": "reverse relation is missing",
         "items": [
-          "kenet-TUR10_0508190-n",
-          "kenet-TUR10_0261370-n",
-          "kenet-TUR10_0592180-n",
-          "kenet-TUR10_1235480-n",
-          "kenet-TUR10_0172210-n",
-          "kenet-TUR10_0109480-n",
-          "kenet-TUR10_0214880-n",
-          "kenet-TUR10_0004350-n",
-          "kenet-TUR10_0267320-n",
-          "kenet-TUR10_0585600-n"
+          "kenet-TUR10_0759430-n",
+          "kenet-TUR10_0759200-n",
+          "kenet-TUR10_0024150-n",
+          "kenet-TUR10_0109440-n",
+          "kenet-TUR10_0084010-n",
+          "kenet-TUR10_0849450-n",
+          "kenet-TUR10_0455410-n",
+          "kenet-TUR10_0443380-n",
+          "kenet-TUR10_0516450-n",
+          "kenet-TUR10_0336150-n"
         ]
       },
       "W501": {

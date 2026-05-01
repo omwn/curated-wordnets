@@ -96,9 +96,10 @@ ILR_MAP = {
     "also_see": "also",
     "also": "also",
     "derived": "derivation",
-    "derivation_related": "derivation",
     "eng_derivative": "derivation",
     "near_eng_derivat": "derivation",
+    # derivation_related is a sense-level link in GWA LMF but KeNet stores it
+    # at synset level with no sense pairing — dropped rather than mis-converted
     "be_in_state": "state_of",
     "subevent": "subevent",
     "causes": "causes",

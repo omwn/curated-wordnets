@@ -85,11 +85,13 @@ class TestUppercaseRelations:
     def test_antonym_captured(self):
         assert "antonym" in rel_types(self._lex, "test-TUR10_0000001-n")
 
-    def test_derivation_related_captured(self):
-        assert "derivation" in rel_types(self._lex, "test-TUR10_0000001-n")
+    def test_derivation_related_dropped(self):
+        # DERIVATION_RELATED is a sense-level link with no sense pairing in source
+        assert "derivation" not in rel_types(self._lex, "test-TUR10_0000001-n")
 
-    def test_three_relations_total(self):
-        assert len(rel_types(self._lex, "test-TUR10_0000001-n")) == 3
+    def test_two_relations_total(self):
+        # Only hypernym and antonym; derivation_related is dropped
+        assert len(rel_types(self._lex, "test-TUR10_0000001-n")) == 2
 
 
 # ── <EXAMPLE> tag with pipe splitting ─────────────────────────────────────
