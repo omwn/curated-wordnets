@@ -24,13 +24,13 @@ For each wordnet we aim to record:
 | Metric | Count |
 |--------|-------|
 | Total catalogued | 139 |
-| **Validated OK** | **83** |
-| — fully clean | 45 |
-| — with warnings only | 38 |
-| Validation errors | 0 |
-| XML parse errors | 5 |
-| Download OK | 90 |
-| Download failed / restricted | 18 |
+| **Validated OK** | **78** |
+| — fully clean | 24 |
+| — with warnings only | 54 |
+| Validation errors | 2 |
+| XML parse errors | 8 |
+| Download OK | 92 |
+| Download failed / restricted | 19 |
 
 See [SUMMARY.md](SUMMARY.md) for the full per-wordnet table.
 Regenerate with `uv run python scripts/summary.py > SUMMARY.md`.
@@ -43,6 +43,7 @@ citations/            # generated BibTeX files, one per wordnet
 scripts/
   download.py         # download + validate pipeline
   summary.py          # statistics + Markdown table
+  suggest_cygnet.py   # propose additions/updates to cygnet wordnets.toml
   make_citations.py   # generate citations/ from TOML acl_ids / bib fields
   sort_toml.py        # re-sort wordnets_found.toml by language after edits
   update_licenses.py  # populate license/license_url/license_raw from XML metadata
@@ -111,7 +112,7 @@ uv run python scripts/download.py --all --confidence medium  # include medium
 Pipeline per entry:
 1. **Download** — tries `release_url` → `example_file` → `repo_url`
 2. **Convert** — OMW 1.0 tab → GWA LMF (`tsv2lmf.py`, with PWN 3.0 → ILI map and `--requires omw-en:2.0` for expand-type); VisDic XML → GWA LMF (`visdic2lmf.py`)
-3. **Normalise** — fixes XML declaration whitespace; patches missing `<Lexicon email=…>` / `license=…` from TOML; adds `<Requires ref="omw-en" version="2.0" />` to expand-type GWA LMF files (upgrading DTD to WN-LMF-1.1 if needed); adds empty stub `<Synset>` elements for any synset IDs referenced by senses but not defined in the file (source data bug workaround — currently needed for AfWN v1.0)
+3. **Normalise** — fixes XML declaration whitespace; patches missing `<Lexicon email=…>` / `license=…` from TOML; adds `<Requires ref="omw-en" version="2.0" />` to expand-type GWA LMF files (upgrading DTD to WN-LMF-1.1 if needed); adds empty stub `<Synset>` elements for any synset IDs referenced by senses but not defined in the file (source data bug workaround); all transformations applied are recorded in `results.json`
 4. **Validate** — runs `wn.validate()` against the GWA LMF XML
 
 The PWN 3.0 → ILI map (`ext/omw-data/etc/cili/ili-map-pwn30.tab`, from [omwn/omw-data](https://github.com/omwn/omw-data)) is applied automatically during tab conversion so that senses in expand-type wordnets get correct `ili=` attributes.
@@ -122,6 +123,26 @@ The PWN 3.0 → ILI map (`ext/omw-data/etc/cili/ili-map-pwn30.tab`, from [omwn/o
 uv run python scripts/summary.py --stats      # stats only
 uv run python scripts/summary.py > SUMMARY.md # full Markdown table
 ```
+
+### `suggest_cygnet.py` — propose cygnet additions/updates
+
+```bash
+uv run python scripts/suggest_cygnet.py                         # fetch cygnet from GitHub
+uv run python scripts/suggest_cygnet.py --cygnet-dir ~/git/cygnet  # use local clone
+uv run python scripts/suggest_cygnet.py --test                  # also run cygnet build (~700 MB)
+```
+
+Compares our build results against [cygnet's `wordnets.toml`](https://github.com/omwn/cygnet)
+and writes to `build/cygnet/`:
+
+- `wordnets.toml` — proposed updated TOML (ready to drop into cygnet)
+- `CHANGES.md` — what was updated or added and why
+- `close_to_adoption.md` — wordnets that could be added once upstream issues are resolved
+
+Rules: **updates** proposed when our release is strictly newer and parses cleanly;
+**additions** when downloaded and parseable (validation errors accepted — cygnet handles
+them robustly, but issues are noted); **close-to-adoption** when converted from a
+non-LMF format (needs upstream GWA LMF release) or when the download URL is broken.
 
 ### `make_citations.py` — generate BibTeX
 

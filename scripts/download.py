@@ -681,7 +681,8 @@ def _convert_visdic(entry: dict, xml_in: Path, raw_dir: Path, pkg_dir: Path,
         if m:
             encoding = f"iso-8859-{m.group(1)}"
 
-    ili_map = ROOT / "ext/omw-data/etc/cili/ili-map-pwn30.tab"
+    ili_map30 = ROOT / "ext/omw-data/etc/cili/ili-map-pwn30.tab"
+    ili_map31 = ROOT / "ext/cili/ili-map-pwn31.tab"
 
     cmd = [
         sys.executable, str(visdic2lmf),
@@ -699,8 +700,9 @@ def _convert_visdic(entry: dict, xml_in: Path, raw_dir: Path, pkg_dir: Path,
         cmd += ["--lang", lang_filter]
     if url := entry.get("repo_url") or entry.get("release_url"):
         cmd += ["--url", url]
-    if ili_map.exists():
-        cmd += ["--ili-map", str(ili_map)]
+    for ili_map in [ili_map30, ili_map31]:
+        if ili_map.exists():
+            cmd += ["--ili-map", str(ili_map)]
 
     log_lines.append(f"  converting VisDic XML → LMF: {raw_xml.name}")
     result = subprocess.run(cmd, capture_output=True, text=True)

@@ -3375,8 +3375,103 @@
     "format": "GWA LMF",
     "name": "Turkish WordNet KeNet",
     "bcp47": "tr",
-    "validation": "parse_error",
-    "validation_note": "invalid or missing XML declaration"
+    "converted_from": "VisDic XML",
+    "validation": "ok",
+    "error_codes": [],
+    "warning_codes": [
+      "W302",
+      "W307",
+      "W403",
+      "W404",
+      "W501"
+    ],
+    "error_count": 0,
+    "warning_count": 21744,
+    "details": {
+      "W302": {
+        "level": "W",
+        "count": 5281,
+        "message": "ILI is repeated across synsets",
+        "items": [
+          "kenet-TUR10_0000040-n",
+          "kenet-TUR10_0000450-n",
+          "kenet-TUR10_0000550-n",
+          "kenet-TUR10_0000720-a",
+          "kenet-TUR10_0001350-n",
+          "kenet-TUR10_0001360-n",
+          "kenet-TUR10_0001500-a",
+          "kenet-TUR10_0001570-n",
+          "kenet-TUR10_0002400-n",
+          "kenet-TUR10_0002430-n"
+        ]
+      },
+      "W307": {
+        "level": "W",
+        "count": 1921,
+        "message": "synset repeats an existing definition",
+        "items": [
+          "kenet-TUR10_0000120-a",
+          "kenet-TUR10_0002320-n",
+          "kenet-TUR10_0004690-a",
+          "kenet-TUR10_0005350-a",
+          "kenet-TUR10_0008170-n",
+          "kenet-TUR10_0009640-a",
+          "kenet-TUR10_0011220-n",
+          "kenet-TUR10_0011230-a",
+          "kenet-TUR10_0012110-a",
+          "kenet-TUR10_0012220-r"
+        ]
+      },
+      "W403": {
+        "level": "W",
+        "count": 8,
+        "message": "redundant relation between source and target",
+        "items": [
+          "kenet-TUR10_0222200-n",
+          "kenet-TUR10_0356820-n",
+          "kenet-TUR10_0477720-n",
+          "kenet-TUR10_0559910-a",
+          "kenet-TUR10_0560240-a",
+          "kenet-TUR10_0568690-n",
+          "kenet-TUR10_0629420-n",
+          "kenet-TUR10_0750100-n"
+        ]
+      },
+      "W404": {
+        "level": "W",
+        "count": 14476,
+        "message": "reverse relation is missing",
+        "items": [
+          "kenet-TUR10_0759430-n",
+          "kenet-TUR10_0759200-n",
+          "kenet-TUR10_0024150-n",
+          "kenet-TUR10_0109440-n",
+          "kenet-TUR10_0084010-n",
+          "kenet-TUR10_0849450-n",
+          "kenet-TUR10_0455410-n",
+          "kenet-TUR10_0443380-n",
+          "kenet-TUR10_0516450-n",
+          "kenet-TUR10_0336150-n"
+        ]
+      },
+      "W501": {
+        "level": "W",
+        "count": 58,
+        "message": "synset's part-of-speech is different from its hypernym's",
+        "items": [
+          "kenet-TUR10_0023040-a",
+          "kenet-TUR10_0045670-a",
+          "kenet-TUR10_0084820-a",
+          "kenet-TUR10_0092580-r",
+          "kenet-TUR10_0095270-a",
+          "kenet-TUR10_0095670-v",
+          "kenet-TUR10_0106580-a",
+          "kenet-TUR10_0106890-a",
+          "kenet-TUR10_0162080-a",
+          "kenet-TUR10_0173140-a"
+        ]
+      }
+    }
   },
   "tufs-tr": {
     "download": "ok",
