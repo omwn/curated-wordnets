@@ -52,16 +52,9 @@ license_url = "https://creativecommons.org/licenses/by-sa/4.0/"
 license_raw = "https://creativecommons.org/licenses/by-sa/4.0/"
 known_in_cygnet = false
 notes = "Confirmed GWA LMF header. Inferred from English wordnet. passivlingo.com project."
+acl_ids = ["2025.gwc-1.24"]
 confidence = "high"
-type = "expand"
-
-bib = '''
-% HANDMADE: Open Afrikaans WordNet
-@misc{open-afrikaans-wn,
-  title = {Open Afrikaans WordNet},
-  url   = {https://github.com/ajarmain/afrikaans-wordnet}
-}
-'''
+type = "auto"
 
 
 # ──────────────────────────────── Albanian ────────────────────────────────
@@ -2639,7 +2632,7 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
-type = "expand"
+type = "auto"
 
 bib = '''
 % HANDMADE: Open Sesotho WordNet
@@ -3007,7 +3000,7 @@ license_url = "https://www.gnu.org/licenses/gpl-3.0.html"
 known_in_cygnet = false
 notes = "Likely GWA LMF. Same passivlingo.com project."
 confidence = "medium"
-type = "expand"
+type = "auto"
 
 bib = '''
 % HANDMADE: Open Tsonga WordNet
